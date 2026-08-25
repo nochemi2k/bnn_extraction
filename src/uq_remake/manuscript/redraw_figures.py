@@ -358,39 +358,40 @@ def figure1() -> list[Path]:
 
 # ------------------------------------------------------------------------ figure 2
 _F2 = [
-    ("sigma_total", r"$\sigma_{\mathrm{total}}$", C_SIGMA, 2.9, "-", 6),
-    ("mahalanobis_feature_median", "RDKit feature-median Mahalanobis distance", C_MAHAL, 2.7, "-", 4),
-    ("mahalanobis_feature_nn", "RDKit feature Mahalanobis nearest-neighbor distance",
-     C_MAHAL2, 2.7, (0, (5.0, 2.4)), 5),
-    ("tanimoto_median_distance", "Tanimoto median distance", C_TANI2, 2.2, "-", 3),
-    ("tanimoto_nn_distance", "Tanimoto nearest-neighbor distance", C_TANI, 2.6, "-", 3),
+    ("sigma_total", r"$\sigma_{\mathrm{total}}$ (model uncertainty)", C_SIGMA, 2.9, "-", 6),
+    ("pair_density_risk", "pair-density risk (training support count)", C_DENS, 2.7, "-", 5),
+    ("mahalanobis_feature_median", "RDKit feature-median Mahalanobis distance", C_MAHAL, 2.5, "-", 4),
+    ("tanimoto_median_distance", "Tanimoto median distance", C_TANI, 2.5, "-", 3),
 ]
 
 
 def figure2() -> list[Path]:
-    """Fixed-retention risk ordering, five scores plus a support baseline.
+    """Fixed-retention risk ordering: four risk scores against random retention.
 
-    The centroid and feature-median Mahalanobis curves nearly coincide (50% retained
-    MoP RMSE 1.586 vs 1.580). The previous version drew the median series solid and
-    last, hiding the centroid curve completely. Here the centroid is a heavy solid
-    line and the median a thin dashed overlay, so both read.
+    The four are chosen to separate *what each score can see* rather than to
+    inventory aggregation variants: model uncertainty, a pure training-support
+    count that uses no structure and no model output, a descriptor-space distance
+    that encodes metal and medium, and a ligand-fingerprint distance. Every one
+    carries a fold-SD band, because the notable result -- pair-density risk
+    ordering error better than either distance above 30% retention -- has to be
+    readable against fold spread to be believed.
+
+    Aggregation variants of the two distances (nearest-neighbor and centroid) are
+    in Supplementary Tables S7.1/S7.4 and behave like the median curves shown.
     """
     s = _read("results/downstream_cv/ad_retention/retention_summary.csv")
     s = s[(s.model_id == WORKHORSE) & (s.scope == "all_pairs")]
     fm = _read("manuscripts/final/tables/iz_mahalanobis_feature_median_retention_summary.csv")
     fm = fm[fm.scope == "all_pairs"]
-    nn = _read("manuscripts/final/tables/iz_mahalanobis_feature_nn_retention_summary.csv")
-    nn = nn[nn.scope == "all_pairs"]
     rnd = _read("results/downstream_cv/ad_retention/random_retention_summary.csv")
     rnd = rnd[(rnd.model_id == WORKHORSE) & (rnd.scope == "all_pairs")]
 
     def series(name, metric):
-        if name in ("mahalanobis_feature_median", "mahalanobis_feature_nn"):
-            src = fm if name == "mahalanobis_feature_median" else nn
-            g = src[src.metric_name == metric].sort_values("retention_fraction")
-            return (g.retention_fraction.to_numpy(float), g.fold_mean.to_numpy(float),
-                    g.fold_sd.to_numpy(float))
-        g = s[(s.score_name == name) & (s.metric_name == metric)].sort_values("retention_fraction")
+        src = fm if name == "mahalanobis_feature_median" else s
+        g = src[src.metric_name == metric]
+        if "score_name" in g.columns and name != "mahalanobis_feature_median":
+            g = g[g.score_name == name]
+        g = g.sort_values("retention_fraction")
         return (g.retention_fraction.to_numpy(float), g.fold_mean.to_numpy(float),
                 g.fold_sd.to_numpy(float))
 
@@ -408,35 +409,46 @@ def figure2() -> list[Path]:
             if not len(x):
                 continue
             m = np.isfinite(x) & np.isfinite(y)
+            # every retention strategy carries its fold-SD band
+            ax.fill_between(x[m], (y - sd)[m], (y + sd)[m], color=c, alpha=0.13,
+                            lw=0, zorder=z - 4)
             ax.plot(x[m], y[m], color=c, lw=lw, ls=ls, label=lab if ax is axes[0] else None,
                     zorder=z, solid_capstyle="round")
-            if name in ("sigma_total", "mahalanobis_feature_median", "tanimoto_nn_distance"):
-                ax.fill_between(x[m], (y - sd)[m], (y + sd)[m], color=c, alpha=0.12, zorder=1)
         g = rnd[rnd.metric_name == metric].sort_values("retention_fraction")
         if len(g):
             ax.plot(g.retention_fraction, g.fold_mean, color=C_RANDOM, ls=(0, (5, 2.2)),
-                    lw=2.3, label="random retention" if ax is axes[0] else None, zorder=7)
+                    lw=2.1, label="random retention" if ax is axes[0] else None, zorder=7)
         ax.set_xlabel("Retention fraction")
         ax.set_ylabel(ylab)
         ax.set_title(title, loc="left")
         _despine(ax)
 
-    axes[0].annotate("nearest-neighbor and median aggregation\nof the same distance differ little",
-                     xy=(0.40, 1.51), xytext=(0.44, 0.95), fontsize=8.5, color=C_MAHAL2,
-                     arrowprops=dict(arrowstyle="->", color=C_MAHAL2, lw=1.0,
-                                     connectionstyle="arc3,rad=0.25"))
-    axes[0].annotate("fingerprint distance sits above\nthe random-retention baseline",
-                     xy=(0.35, 1.87), xytext=(0.40, 2.18), fontsize=8.8, color=C_TANI,
-                     arrowprops=dict(arrowstyle="->", color=C_TANI, lw=1.1,
-                                     connectionstyle="arc3,rad=-0.2"))
+    ax = axes[0]
+    ax.set_ylim(0.0, 2.42)
+    ax.annotate("a count of training ligands per metal pair —\n"
+                "no structure, no model output — orders error\n"
+                "better than either distance above 30% retention",
+                xy=(0.55, 1.02), xytext=(0.40, 0.13), fontsize=8.6, color=C_DENS,
+                ha="left", va="bottom",
+                arrowprops=dict(arrowstyle="->", color=C_DENS, lw=1.1,
+                                connectionstyle="arc3,rad=-0.24"))
+    ax.annotate("but it fails in the tail:\nat 10% retention it is\nworse than random",
+                xy=(0.113, 1.27), xytext=(0.145, 1.86), fontsize=8.6, color=C_DENS,
+                arrowprops=dict(arrowstyle="->", color=C_DENS, lw=1.0,
+                                connectionstyle="arc3,rad=0.22"))
+    ax.annotate("the two distances converge above 30%\nretention and sit only modestly below random",
+                xy=(0.72, 1.83), xytext=(0.40, 2.26), fontsize=8.6, color=C_TANI,
+                ha="left",
+                arrowprops=dict(arrowstyle="->", color=C_TANI, lw=1.0,
+                                connectionstyle="arc3,rad=-0.18"))
 
-    fig.legend(loc="lower center", ncol=3, bbox_to_anchor=(0.5, -0.16), fontsize=9)
+    fig.legend(loc="lower center", ncol=3, bbox_to_anchor=(0.5, -0.15), fontsize=9)
     fig.suptitle("DS2 workhorse all-pair fixed-retention risk ordering", y=1.01)
-    fig.text(0.5, -0.225,
+    fig.text(0.5, -0.215,
              "Each score retains the lowest-risk fraction of held-out rows within every fold; "
-             "MoP RMSE is recomputed on pairs keeping at least three rows.\nBands are fold SD on "
-             "the three emphasized scores. Panel B makes the changing pair population explicit and "
-             "is not a performance metric.",
+             "MoP RMSE is recomputed on pairs keeping at least three rows.\nBands are fold SD "
+             r"($n=5$, $\mathrm{ddof}=1$) on all four scores. Panel B makes the changing pair "
+             "population explicit and is not a performance metric.",
              ha="center", va="top", fontsize=8.4, color=MUTED)
     fig.tight_layout()
     return _save(fig, "fig02_risk_ordering")
@@ -835,8 +847,87 @@ def figureS12() -> list[Path]:
     return _save(fig, "figS12_pair_event_support")
 
 
+
+
+
+# ---------------------------------------------------------------- figure S19
+_FAMILY = [
+    ("uncertainty", C_SIGMA,
+     ("sigma_total", "sigma_aleatoric", "sigma_epistemic_within", "sigma_epistemic_between")),
+    ("pair support (no structure, no model output)", C_DENS, ("pair_density_risk",)),
+    ("RDKit descriptor space (ligand + metal + medium)", C_MAHAL,
+     ("mahalanobis_feature_centroid", "mahalanobis_feature_median", "mahalanobis_feature_nn",
+      "mahalanobis_feature_knn_mean_5", "mahalanobis_feature_knn_mean_10",
+      "euclidean_feature_nn", "euclidean_feature_median")),
+    ("ligand fingerprint space", C_TANI,
+     ("tanimoto_nn_distance", "tanimoto_median_distance",
+      "tanimoto_knn_mean_5", "tanimoto_knn_mean_10")),
+    ("Chemprop learned representation", C_MAHAL2,
+     ("chemprop_std_euclidean_nn", "chemprop_std_euclidean_knn_5",
+      "chemprop_std_euclidean_knn_10", "chemprop_euclidean_nn", "chemprop_cosine_nn",
+      "chemprop_mahalanobis_centroid", "chemprop_mahalanobis_nn")),
+]
+
+
+def figureS19() -> list[Path]:
+    """Every score in Table 3 on one axis, sorted, with a rule at rho = 0.
+
+    Table 3's central claim is a *sign pattern* across 23 correlations -- every
+    nearest-neighbor and every embedding score lands on the negative side of zero,
+    across two unrelated representations. That is a statement about the shape of a
+    distribution, and it was previously only recoverable by scanning a 23-row table.
+    """
+    d = _read("manuscripts/final/tables/iz_risk_score_spearman.csv").copy()
+    colour, famlab = {}, {}
+    for lab, c, keys in _FAMILY:
+        for k in keys:
+            colour[k] = c
+            famlab[k] = lab
+    d = d[d.score.isin(colour)].copy()
+    d["c"] = d.score.map(colour)
+    d = d.sort_values("fold_mean").reset_index(drop=True)
+
+    apply_style()
+    fig, ax = plt.subplots(figsize=(10.4, 8.2))
+    y = np.arange(len(d))
+    ax.axvline(0.0, color=C_RANDOM, lw=1.5, zorder=2)
+    ax.axvspan(ax.get_xlim()[0], 0.0, color="#111111", alpha=0.035, zorder=0)
+    for yi, r in d.iterrows():
+        ax.plot([0.0, r.fold_mean], [yi, yi], color=r.c, lw=2.0, alpha=0.55, zorder=3)
+        ax.errorbar(r.fold_mean, yi, xerr=r.fold_sd, color=r.c, fmt="o", ms=7.0,
+                    capsize=3.0, lw=1.6, zorder=4)
+    ax.set_yticks(y)
+    ax.set_yticklabels(d.score_display.tolist(), fontsize=9)
+    ax.set_xlabel(r"Fold-mean Spearman $\rho$ with the absolute held-out residual $|y-\widehat y|$")
+    ax.set_ylabel("")
+    ax.set_ylim(-0.8, len(d) - 0.2)
+    ax.set_title("Score--residual association across the full score inventory", loc="left")
+    from matplotlib.lines import Line2D
+    handles = [Line2D([], [], color=c, marker="o", ls="-", lw=2.0, ms=7, label=lab)
+               for lab, c, _ in _FAMILY]
+    ax.legend(handles=handles, loc="upper right", bbox_to_anchor=(1.0, 0.68),
+              fontsize=8.8, frameon=True, facecolor="white", edgecolor=GRID)
+    n_neg = int((d.fold_mean < 0).sum())
+    ax.annotate(f"{n_neg} of {len(d)} scores land on the\nnegative side of zero: every\n"
+                "nearest-neighbor and every\nembedding distance, across two\n"
+                "unrelated representations",
+                xy=(-0.03, 5.4), xytext=(0.235, 1.4), fontsize=8.8, color=MUTED, ha="left",
+                arrowprops=dict(arrowstyle="->", color=MUTED, lw=1.0,
+                                connectionstyle="arc3,rad=0.2"))
+    _despine(ax)
+    ax.grid(axis="y", visible=False)
+    fig.text(0.5, -0.045,
+             "Points are fold means, whiskers fold SD ($n=5$, $\\mathrm{ddof}=1$), on 17,705 held-out rows per fold. "
+             "Same 23 values as main-text Table 3.\nScores are oriented so that larger means greater predicted risk, "
+             "so a positive $\\rho$ is the sign a usable risk score must have.",
+             ha="center", va="top", fontsize=8.4, color=MUTED)
+    fig.tight_layout()
+    return _save(fig, "figS19_score_residual_inventory")
+
+
 BUILDERS = {"0": figure0, "1": figure1, "2": figure2, "3": figure3, "4": figure4,
-            "S10": figureS10, "S11": figureS11, "S12": figureS12}
+            "S10": figureS10, "S11": figureS11, "S12": figureS12,
+            "S19": figureS19}
 
 
 def main(argv=None) -> int:
