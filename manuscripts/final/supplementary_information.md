@@ -4,7 +4,9 @@
 
 All numerical tables are generated from registered canonical artifacts. Headline entries of the form mean ± standard deviation (SD) are fold-level summaries (`ddof=1`) unless a row is explicitly marked partial, pooled, historical, excluded, or not computed. Aggregation conventions are defined once in Section S2 and are not restated before every table. The source collection is the Critical Materials Institute (CMI) literature M4 collection; DS1 and DS2 denote the absolute-binding and pairwise-selectivity representations, respectively. The main text uses mean-of-pairs (MoP) root mean squared error (RMSE) as the primary pair-level accuracy metric. This supplement provides inventories, fold-level values, and analyses marked not computed or not identifiable.
 
-**Main-text cross-references.** The main article contains four figures and four tables. Figure 1 is the all-pair direct-UQ model context and workhorse choice; Figure 2 is the all-pair fixed-retention risk ordering; Figure 3 is predicted magnitude, error, and uncertainty; Figure 4 is objective-specific pair acquisition. Table 1 is the official-CMI-versus-ligand-disjoint comparison; Table 2 is the integrated ad hoc/direct model comparison; Table 3 is the score–residual rank-correlation inventory; Table 4 is the compact pair-acquisition subset. Displayed supplementary figures are numbered S1–S18 in document order. Figures S15–S18 are intentionally grouped in Section S13.4 because they belong to the restricted rare-earth-element pair diagnostic rather than to the primary all-pair analysis.
+**Abbreviations.** Defined here once for the whole document, because several first appear inside tables. ACE, average coverage error; ARD, automatic relevance determination; AUC, area under the curve; AURC, area under the risk–coverage curve; BNN, Bayesian neural network; CMI, Critical Materials Institute; CV, cross-validation; D-MPNN, directed message-passing neural network; DS1, the absolute-binding dataset; DS2, the pairwise-selectivity dataset; FFN, feed-forward network; GPR, Gaussian process regression; LCB, lower confidence bound; LoTV, law of total variance; MAE, mean absolute error; MAPE, mean absolute percentage error; MC, Monte Carlo; MLP, multilayer perceptron; MoP, mean of pairs; NA, not applicable; NIG, Normal–Inverse-Gamma; NN, nearest neighbor (and $k$NN, the mean distance to the $k$ nearest); OOD, out of distribution; OOF, out of fold; PICP, prediction interval coverage probability; REE, rare-earth element; RFF, random Fourier feature; RMSE, root mean squared error; SD, standard deviation; SMILES, simplified molecular-input line-entry system; SNGP, spectral-normalized Gaussian process; SVGP, sparse variational Gaussian process; UQ, uncertainty quantification. Item numbers with a leading S (Table S7.4, Figure S11, Section S8) refer to this document; unprefixed numbers refer to the main article.
+
+**Main-text cross-references.** The main article contains four figures and four tables, plus Figure 0, the graphical abstract. Figure 1 is the all-pair direct-UQ model context and workhorse choice; Figure 2 is the all-pair fixed-retention risk ordering; Figure 3 is predicted magnitude, error, and uncertainty; Figure 4 is objective-specific pair acquisition. Table 1 is the official-CMI-versus-ligand-disjoint comparison; Table 2 is the integrated ad hoc/direct model comparison; Table 3 is the score–residual rank-correlation inventory; Table 4 is the compact pair-acquisition subset. Displayed supplementary figures are numbered S1–S18 in document order. Figures S15–S18 are intentionally grouped in Section S13.4 because they belong to the restricted rare-earth-element pair diagnostic rather than to the primary all-pair analysis.
 
 ## S1. Data, targets, and split design
 
@@ -55,8 +57,8 @@ Three features of Table S1.2 shape the analyses that follow. First, DS2 has more
 
 | Family | Construction | Dimension | Imputation |
 | --- | --- | ---: | --- |
-| RDKit DS1 | 187 2D descriptors + 9 metal props + charges + temperature/ionic-strength features + solvent MW/density | 203 | none |
-| RDKit DS2 | same ligand block + paired metal/charge columns + temperature/ionic-strength features + solvent MW/density | 214 | none |
+| RDKit DS1 | 187 2D descriptors + 9 metal props + charges + temperature/ionic-strength features + solvent molecular weight/density | 203 | none |
+| RDKit DS2 | same ligand block + paired metal/charge columns + temperature/ionic-strength features + solvent molecular weight/density | 214 | none |
 | Chemprop DS1 | complex graph + 16 additional continuous features | graph + 16 | none in production CV |
 | Chemprop DS2 | ligand graph + 27 additional continuous features | graph + 27 | none in production CV |
 | CPEMB | excluded from active grid | — | — |
@@ -164,7 +166,7 @@ The H$^+$ decision remains `train_with_H` on the basis of Chemprop point metal-c
 
 ## S2. Metrics and uncertainty definitions
 
-This section defines the aggregation conventions used throughout the supplement and lists the model inventory. First uses: prediction interval coverage probability (PICP); average coverage error (ACE); law of total variance (LoTV); Normal–Inverse-Gamma (NIG); directed message-passing neural network (D-MPNN); sparse variational Gaussian process (SVGP); random Fourier feature (RFF). Later sections refer back here rather than redefining the same terms.
+This section defines the aggregation conventions used throughout the supplement and lists the model inventory. Abbreviations are collected in the preamble above; later sections refer back here rather than redefining the same terms.
 
 **Model-status legend.** `complete`: all required point and interval outputs exist for five folds. `partial`: an artifact exists, but only some outputs are valid (for Chemprop evidential, 13 invalid native NIG interval rows; pair-level accuracy remains complete across five folds, and interval metrics are conditional on valid rows). `not_computed`: the analysis was not performed. `point_complete_uq_not_computed`: point predictions exist, but native interval metrics were not computed for the saved artifact. `not_identifiable`: the split or design does not permit the requested comparison. `excluded`: computationally infeasible or outside the active grid.
 
@@ -611,7 +613,7 @@ This section reports the fold-local retention study. It answers whether model-de
 
 Fixed-retention scores rank held-out rows by predicted unreliability (`configs/experiments/ad_retention_spec.yaml`; artifacts in `results/downstream_cv/ad_retention/`). Ranking is performed within each analysis scope; at fraction $r$ the retained set is the $\lfloor r n\rfloor$ lowest-risk rows, with ties broken by record identifier.
 
-All retention analyses in this SI are empirical error-ordering analyses. They do not provide coverage guarantees, accept/reject thresholds, or universal candidate-quality scores.
+All retention analyses in this document are empirical error-ordering analyses. They do not provide coverage guarantees, accept/reject thresholds, or universal candidate-quality scores.
 
 Chemprop evidential model = the `GRAPH_DMPNN_EVID` checkpoint; Chemprop native UQ = native NIG interval output; Chemprop representation-space score = embedding distance. These three objects are not interchangeable.
 
@@ -755,7 +757,7 @@ Supplementary Figure S8 shows the same dominance from the variance side: decompo
 
 This section answers whether pair support, medium strata, or tested molecular-distance scores explain held-out error. It is supporting context for the main-text risk-ordering result. Pair density is a support diagnostic that helps explain why some pair contexts are harder than others; it is not a validated applicability domain.
 
-All retention analyses in this SI are empirical error-ordering analyses. They do not provide coverage guarantees, accept/reject thresholds, or universal candidate-quality scores.
+All retention analyses in this document are empirical error-ordering analyses. They do not provide coverage guarantees, accept/reject thresholds, or universal candidate-quality scores.
 
 S8 reports contextual support diagnostics based on pair support, medium strata, and the association between ligand-level molecular-distance scores and row-level absolute residual. The primary fixed-retention inventory is S7. Pair-level error-ordering metrics (Table S7.1) and row-level retention-error diagnostics are distinguished below.
 
@@ -859,7 +861,7 @@ Two further cautions attach to the table. The `0 training ligands` bin is a dist
 
 **Table S8.4. Fold-wise association between ligand-level molecular-distance score and row-level absolute residual.**
 
-> **Aggregation note.** Descriptive association diagnostic for the selected workhorse (`DS2_RDKIT_MLPENS5_HETERO`) and the Chemprop evidential model (`DS2_GRAPH_DMPNN_EVID`). Each fold computes Pearson $r$ and Spearman $\rho$ between the named molecular-distance score and the row-level absolute residual $|y-\widehat y|$. RDKit feature-space extras (Mahalanobis NN, Mahalanobis $k$NN mean, Euclidean-NN, median Euclidean-to-all) are SI-only and are not plotted on retention-curve figures. Values are five-fold mean $\pm$ SD. This is not a selection metric, not a retained-subset RMSE, and not a substitute for the fixed-retention error-ordering analysis. The tested molecular-distance associations were weak and did not provide a sufficiently strong basis for replacing the workhorse uncertainty score in the ligand-disjoint DS2 retention analysis. Source: `results/downstream_cv/ad_distance_error_corr/ad_distance_error_corr_summary.csv`; manuscript rendering copy: `manuscripts/final/tables/ad_distance_error_corr.csv`.
+> **Aggregation note.** Descriptive association diagnostic for the selected workhorse (`DS2_RDKIT_MLPENS5_HETERO`) and the Chemprop evidential model (`DS2_GRAPH_DMPNN_EVID`). Each fold computes Pearson $r$ and Spearman $\rho$ between the named molecular-distance score and the row-level absolute residual $|y-\widehat y|$. RDKit feature-space extras (Mahalanobis NN, Mahalanobis $k$NN mean, Euclidean-NN, median Euclidean-to-all) are supplement-only and are not plotted on retention-curve figures. Values are five-fold mean $\pm$ SD. This is not a selection metric, not a retained-subset RMSE, and not a substitute for the fixed-retention error-ordering analysis. The tested molecular-distance associations were weak and did not provide a sufficiently strong basis for replacing the workhorse uncertainty score in the ligand-disjoint DS2 retention analysis. Source: `results/downstream_cv/ad_distance_error_corr/ad_distance_error_corr_summary.csv`; manuscript rendering copy: `manuscripts/final/tables/ad_distance_error_corr.csv`.
 
 | model | scope | score | Pearson $r$ | Spearman $\rho$ | n_valid_folds |
 | --- | --- | --- | --- | --- | --- |
