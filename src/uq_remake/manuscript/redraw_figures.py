@@ -18,18 +18,23 @@ Figure 1  Fold-SD error bars added on both axes. The figure's argument is that t
           bands redrawn as light guide lines, not filled regions, because they are not
           the screen and were being read as a pass/fail area.
 
-Figure 3  Old panels A and B were the same curve twice - error and uncertainty against
+Figure 4  Old panels A and B were the same curve twice - error and uncertainty against
           predicted magnitude, in the same units, on separate axes, which hid the
           coupling that is the point. Merged into one twin-series panel. The freed
           panel now shows the magnitude-adjusted partial correlation, previously
           reported only in prose although it is the number that proves sigma_total is
           not a relabelling of |yhat|.
 
-Figure 4  LCB-1/2/3 recoloured as an ordered ramp of one hue (they are a monotone
+Figure 5  LCB-1/2/3 recoloured as an ordered ramp of one hue (they are a monotone
           penalty, previously orange/red/purple). Y-axes cropped to the data. The dead
           true-hit panel is dropped and its one live column (k=1) folded into the
           precision panel. The objective inversion is annotated directly. Regret panels
           carry an explicit "lower is better" arrow.
+
+Figure 3  Promoted from the Supporting Information and replaces the 23-row score-residual
+          table that used to sit in Section 3.4: the claim is a sign pattern across two
+          representations, which a sorted axis shows and a table makes the reader assemble.
+          Exact values moved to Supplementary Table S8.6.
 
 Figure S10 Three series were near-identical teal across two unrelated score families.
           Recoloured by family with distinct lightness. Pair-density risk promoted to a
@@ -37,7 +42,7 @@ Figure S10 Three series were near-identical teal across two unrelated score fami
           it.
 
 Figure S11 Panels A and C (error and uncertainty against pair support) overlaid on one
-          twin axis, same reasoning as Figure 3. PICP panel keeps its own axis and gains
+          twin axis, same reasoning as Figure 4. PICP panel keeps its own axis and gains
           the nominal-coverage reference.
 
 Figure S12 Both panels were an unreadable pile at the origin; now log-scaled. Panel B's
@@ -210,10 +215,15 @@ def figure0() -> list[Path]:
     s = s[(s.model_id == WORKHORSE) & (s.scope == "all_pairs") & (s.metric_name == "mop_rmse")]
     rnd = _read("results/downstream_cv/ad_retention/random_retention_summary.csv")
     rnd = rnd[(rnd.model_id == WORKHORSE) & (rnd.scope == "all_pairs") & (rnd.metric_name == "mop_rmse")]
+    # Same four scores as Figure 2, so the abstract cannot drift from the paper.
+    fm = _read("manuscripts/final/tables/iz_mahalanobis_feature_median_retention_summary.csv")
+    fm = fm[(fm.scope == "all_pairs") & (fm.metric_name == "mop_rmse")]
     for nm, lab, c, lw in [("sigma_total", r"$\sigma_{\mathrm{total}}$", C_SIGMA, 2.8),
-                           ("mahalanobis_feature_centroid", "descriptor distance", C_MAHAL, 2.0),
-                           ("tanimoto_nn_distance", "fingerprint distance", C_TANI, 2.0)]:
-        g = s[s.score_name == nm].sort_values("retention_fraction")
+                           ("pair_density_risk", "pair-support count", C_DENS, 2.3),
+                           ("mahalanobis_feature_median", "descriptor distance", C_MAHAL, 2.0),
+                           ("tanimoto_median_distance", "fingerprint distance", C_TANI, 2.0)]:
+        g = (fm if nm == "mahalanobis_feature_median"
+             else s[s.score_name == nm]).sort_values("retention_fraction")
         ax.plot(g.retention_fraction, g.fold_mean, color=c, lw=lw, label=lab, zorder=3)
     g = rnd.sort_values("retention_fraction")
     ax.plot(g.retention_fraction, g.fold_mean, color=C_RANDOM, ls=(0, (4, 2)), lw=1.9,
@@ -223,13 +233,18 @@ def figure0() -> list[Path]:
     ax.set_title("Which predictions can you trust?", loc="left", fontsize=10.4)
     ax.tick_params(labelsize=8.4)
     ax.set_ylim(0.05, 2.45)
-    ax.legend(fontsize=7.8, loc="upper left", ncol=2, columnspacing=0.9,
-              handlelength=1.4, bbox_to_anchor=(0.0, 1.02))
+    ax.legend(fontsize=7.5, loc="upper left", ncol=2, columnspacing=0.9,
+              handlelength=1.4, bbox_to_anchor=(0.0, 1.03))
     ax.annotate("keep the half the model is\nsurest of: error drops 65%",
-                xy=(0.5, 0.73), xytext=(0.50, 0.14), fontsize=8.2, color=C_SIGMA,
+                xy=(0.62, 0.90), xytext=(0.60, 0.17), fontsize=8.2, color=C_SIGMA,
                 ha="left", va="bottom",
                 arrowprops=dict(arrowstyle="->", color=C_SIGMA, lw=1.1,
                                 connectionstyle="arc3,rad=0.25"))
+    ax.annotate("a support count with no chemistry\nin it beats both distances",
+                xy=(0.47, 1.00), xytext=(0.115, 0.20), fontsize=8.2, color=C_DENS,
+                ha="left", va="bottom",
+                arrowprops=dict(arrowstyle="->", color=C_DENS, lw=1.0,
+                                connectionstyle="arc3,rad=-0.25"))
     _despine(ax)
 
     # ---- result 2: the objective inverts the value of an uncertainty penalty ----
@@ -426,8 +441,8 @@ def figure2() -> list[Path]:
     ax = axes[0]
     ax.set_ylim(0.0, 2.42)
     ax.annotate("a count of training ligands per metal pair —\n"
-                "no structure, no model output — orders error\n"
-                "better than either distance above 30% retention",
+                "no structure, no model output — sits below\n"
+                "both distances above 30% retention (but see B)",
                 xy=(0.55, 1.02), xytext=(0.40, 0.13), fontsize=8.6, color=C_DENS,
                 ha="left", va="bottom",
                 arrowprops=dict(arrowstyle="->", color=C_DENS, lw=1.1,
@@ -442,13 +457,22 @@ def figure2() -> list[Path]:
                 arrowprops=dict(arrowstyle="->", color=C_TANI, lw=1.0,
                                 connectionstyle="arc3,rad=-0.18"))
 
+    axes[1].annotate("pair-density risk keeps a third as many pairs\n"
+                     "as anything else: its advantage in A is\n"
+                     "selection, not ordering (Table S7.6)",
+                     xy=(0.50, 96), xytext=(0.10, 880), fontsize=8.6, color=C_DENS,
+                     ha="left", va="top",
+                     arrowprops=dict(arrowstyle="->", color=C_DENS, lw=1.0,
+                                     connectionstyle="arc3,rad=0.30"))
+
     fig.legend(loc="lower center", ncol=3, bbox_to_anchor=(0.5, -0.15), fontsize=9)
     fig.suptitle("DS2 workhorse all-pair fixed-retention risk ordering", y=1.01)
     fig.text(0.5, -0.215,
              "Each score retains the lowest-risk fraction of held-out rows within every fold; "
              "MoP RMSE is recomputed on pairs keeping at least three rows.\nBands are fold SD "
              r"($n=5$, $\mathrm{ddof}=1$) on all four scores. Panel B makes the changing pair "
-             "population explicit and is not a performance metric.",
+             "population explicit and is not a performance metric; on the pairs all scores share,\n"
+             "the ordering of the three non-uncertainty scores reverses (Supplementary Table S7.6).",
              ha="center", va="top", fontsize=8.4, color=MUTED)
     fig.tight_layout()
     return _save(fig, "fig02_risk_ordering")
@@ -460,7 +484,7 @@ _BINS = ["abs_yhat_0-0.5", "abs_yhat_0.5-1", "abs_yhat_1-2",
 _BINLAB = ["[0, 0.5)", "[0.5, 1)", "[1, 2)", "[2, 4)", "[4, 8)", r"[8, $\infty$)"]
 
 
-def figure3() -> list[Path]:
+def figure4() -> list[Path]:
     b = _read("results/downstream_cv/pair_acquisition/pair_acquisition_calibration_bin_summary.csv")
     b = b[b.model_id == WORKHORSE]
     r = _read("results/downstream_cv/pair_acquisition/magnitude_adjusted_risk_summary.csv")
@@ -545,7 +569,7 @@ def figure3() -> list[Path]:
         ha="center", va="top", fontsize=8.5, color=MUTED,
     )
     fig.tight_layout()
-    return _save(fig, "fig03_predicted_magnitude")
+    return _save(fig, "fig04_predicted_magnitude")
 
 
 # ------------------------------------------------------------------------ figure 4
@@ -577,7 +601,7 @@ def _acq(df, task, orient, stem, k):
     return np.array(out)
 
 
-def figure4() -> list[Path]:
+def figure5() -> list[Path]:
     """Objective-specific pair acquisition, three metrics x two objectives.
 
     True hit@k is restored: it answers a different experimental question from
@@ -655,13 +679,13 @@ def figure4() -> list[Path]:
         "LCB-1/2/3 are one rule at increasing uncertainty penalty, shaded light to dark. "
         "The threshold-margin rule divides the distance past the event threshold by\n"
         "$\\sigma_{\\mathrm{total}}$ instead of subtracting it, and is the only "
-        "uncertainty-integrated rule that never falls below the value-only baseline on an event "
+        "uncertainty-integrated rule that never falls materially below the value-only baseline on an event "
         "metric in either objective.\nBars are fold means, error bars fold SD ($n=5$), after a "
         "pair-equal mean within each fold.",
         ha="center", va="top", fontsize=8.5, color=MUTED,
     )
     fig.tight_layout()
-    return _save(fig, "fig04_pair_acquisition")
+    return _save(fig, "fig05_pair_acquisition")
 
 
 # ----------------------------------------------------------------------- figure S10
@@ -702,7 +726,7 @@ def figureS10() -> list[Path]:
 
     ax.set_xlabel("Retention fraction (fold-local)")
     ax.set_ylabel(r"Retained-subset all-pair MoP RMSE ($\Delta\log K$)")
-    ax.set_title("All-pair MoP retention error curves, complete score inventory", loc="left")
+    ax.set_title("All-pair MoP retention error curves, registered inventory", loc="left")
     ax.annotate(
         "fingerprint distance is worse than\nno filter at all across this range",
         xy=(0.32, 1.86), xytext=(0.36, 1.30), fontsize=9, color=C_TANI,
@@ -710,7 +734,7 @@ def figureS10() -> list[Path]:
                         connectionstyle="arc3,rad=0.25"),
     )
     ax.annotate(
-        "counting training ligands per metal pair\nbeats every molecular distance",
+        "counting training ligands per metal pair beats\nevery molecular distance from 30% retention up",
         xy=(0.5, 0.956), xytext=(0.54, 0.42), fontsize=9, color=C_DENS,
         arrowprops=dict(arrowstyle="->", color=C_DENS, lw=1.2,
                         connectionstyle="arc3,rad=-0.2"),
@@ -869,7 +893,7 @@ _FAMILY = [
 ]
 
 
-def figureS19() -> list[Path]:
+def figure3() -> list[Path]:
     """Every score in Table 3 on one axis, sorted, with a rule at rho = 0.
 
     Table 3's central claim is a *sign pattern* across 23 correlations -- every
@@ -908,9 +932,11 @@ def figureS19() -> list[Path]:
     ax.legend(handles=handles, loc="upper right", bbox_to_anchor=(1.0, 0.68),
               fontsize=8.8, frameon=True, facecolor="white", edgecolor=GRID)
     n_neg = int((d.fold_mean < 0).sum())
-    ax.annotate(f"{n_neg} of {len(d)} scores land on the\nnegative side of zero: every\n"
-                "nearest-neighbor and every\nembedding distance, across two\n"
-                "unrelated representations",
+    ax.annotate(f"{n_neg} of {len(d)} scores land on the negative\n"
+                "side of zero, and they are exactly the\n"
+                "fingerprint nearest-neighbor and the\n"
+                "learned-embedding scores: two unrelated\n"
+                "representations, no positives among them",
                 xy=(-0.03, 5.4), xytext=(0.235, 1.4), fontsize=8.8, color=MUTED, ha="left",
                 arrowprops=dict(arrowstyle="->", color=MUTED, lw=1.0,
                                 connectionstyle="arc3,rad=0.2"))
@@ -918,16 +944,15 @@ def figureS19() -> list[Path]:
     ax.grid(axis="y", visible=False)
     fig.text(0.5, -0.045,
              "Points are fold means, whiskers fold SD ($n=5$, $\\mathrm{ddof}=1$), on 17,705 held-out rows per fold. "
-             "Same 23 values as main-text Table 3.\nScores are oriented so that larger means greater predicted risk, "
+             "Exact values are Supplementary Table S8.6.\nScores are oriented so that larger means greater predicted risk, "
              "so a positive $\\rho$ is the sign a usable risk score must have.",
              ha="center", va="top", fontsize=8.4, color=MUTED)
     fig.tight_layout()
-    return _save(fig, "figS19_score_residual_inventory")
+    return _save(fig, "fig03_score_residual_inventory")
 
 
 BUILDERS = {"0": figure0, "1": figure1, "2": figure2, "3": figure3, "4": figure4,
-            "S10": figureS10, "S11": figureS11, "S12": figureS12,
-            "S19": figureS19}
+            "5": figure5, "S10": figureS10, "S11": figureS11, "S12": figureS12}
 
 
 def main(argv=None) -> int:
