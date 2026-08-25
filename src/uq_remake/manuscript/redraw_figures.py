@@ -241,7 +241,8 @@ def figure0() -> list[Path]:
     groups = [("High selectivity\n" + r"$\Delta\log K>1$", "high_selectivity", "both"),
               ("Near-zero\n" + r"$|\Delta\log K|<1$", "low_selectivity", "near_zero")]
     rules = [("y_pred", "value only", C_VALUE), ("lcb_1sigma", "LCB-1", LCB_RAMP[0]),
-             ("lcb_2sigma", "LCB-2", LCB_RAMP[1]), ("lcb_3sigma", "LCB-3", LCB_RAMP[2])]
+             ("lcb_3sigma", "LCB-3", LCB_RAMP[2]),
+             ("expected_improvement", "threshold margin", C_MARGIN)]
     w = 0.19
     for gi, (glab, task, orient) in enumerate(groups):
         for ri, (key, rlab, c) in enumerate(rules):
@@ -249,19 +250,25 @@ def figure0() -> list[Path]:
                    edgecolor="white", linewidth=0.6,
                    label=rlab if gi == 0 else None, zorder=3)
     ax.set_xticks([0, 1]); ax.set_xticklabels([g[0] for g in groups], fontsize=8.6)
-    ax.set_ylim(0.55, 0.90); ax.set_ylabel("Event precision@1", fontsize=9)
-    ax.set_title("Does penalizing uncertainty help?", loc="left", fontsize=10.4)
+    ax.set_ylim(0.55, 1.03); ax.set_ylabel("Event precision@1", fontsize=9)
+    ax.set_title("How should uncertainty enter the ranking?", loc="left", fontsize=10.4)
     ax.tick_params(labelsize=8.4)
-    ax.legend(fontsize=8.0, ncol=4, loc="upper center", columnspacing=0.8,
-              handlelength=1.1, bbox_to_anchor=(0.5, 1.02))
-    ax.annotate("hurts", xy=(0.28, 0.668), xytext=(0.52, 0.598), fontsize=8.6,
-                color=LCB_RAMP[2], fontweight="bold", ha="center",
-                arrowprops=dict(arrowstyle="->", color=LCB_RAMP[2], lw=1.2))
-    ax.annotate("helps", xy=(1.28, 0.800), xytext=(1.05, 0.635), fontsize=8.6,
-                color=LCB_RAMP[2], fontweight="bold", ha="center",
+    ax.set_yticks([0.6, 0.7, 0.8, 0.9])
+    ax.legend(fontsize=7.8, ncol=4, loc="lower center", columnspacing=0.7,
+              handlelength=1.0, bbox_to_anchor=(0.5, -0.44))
+    ax.annotate("subtract $\\sigma$:\nhurts badly", xy=(0.095, 0.678), xytext=(0.055, 0.925),
+                fontsize=8.3, color=LCB_RAMP[2], fontweight="bold", ha="center", va="center",
                 arrowprops=dict(arrowstyle="->", color=LCB_RAMP[2], lw=1.2,
-                                connectionstyle="arc3,rad=-0.25"))
-    ax.set_xlim(-0.55, 1.55)
+                                connectionstyle="arc3,rad=0.15"))
+    ax.annotate("divide by $\\sigma$:\nbest here", xy=(0.285, 0.840), xytext=(0.53, 0.960),
+                fontsize=8.3, color=C_MARGIN, fontweight="bold", ha="center", va="center",
+                arrowprops=dict(arrowstyle="->", color=C_MARGIN, lw=1.2,
+                                connectionstyle="arc3,rad=-0.2"))
+    ax.annotate("both help, equally", xy=(1.09, 0.812), xytext=(1.25, 0.945),
+                fontsize=8.3, color=INK, fontweight="bold", ha="center", va="center",
+                arrowprops=dict(arrowstyle="->", color=INK, lw=1.1,
+                                connectionstyle="arc3,rad=0.2"))
+    ax.set_xlim(-0.55, 1.60)
     _despine(ax)
 
     fig.suptitle("Uncertainty-based risk ordering and objective-specific ligand ranking "
@@ -287,8 +294,7 @@ def figure1() -> list[Path]:
     others = ~selected & ~partial
 
     apply_style()
-    fig, axes = plt.subplots(1, 3, figsize=(15.4, 4.9),
-                             gridspec_kw={"width_ratios": [1.0, 1.0, 0.92]})
+    fig, axes = plt.subplots(1, 2, figsize=(11.6, 5.0))
 
     panels = [
         ("all_pair_mop_ace_mean", "all_pair_mop_ace_sd", "All-pair MoP ACE",
@@ -327,39 +333,6 @@ def figure1() -> list[Path]:
         ax.set_title(title, loc="left")
         _despine(ax)
 
-    # --- C: row weighting flatters calibration, for every model ---
-    ax = axes[2]
-    row_ace = d["all_pair_ace_mean"].to_numpy(float)
-    mop_ace = d["all_pair_mop_ace_mean"].to_numpy(float)
-    order = np.argsort(mop_ace)
-    ys_pos = np.arange(len(order))
-    for i, k in enumerate(order):
-        ax.plot([row_ace[k], mop_ace[k]], [i, i], color=MUTED, lw=1.1, zorder=1)
-        ax.scatter(row_ace[k], i, marker="o", s=42, facecolors="#FFFFFF",
-                   edgecolors=MUTED, linewidths=1.4, zorder=3)
-        ax.scatter(mop_ace[k], i, marker="o", s=46,
-                   color=C_SIGMA if selected.to_numpy()[k] else INK, zorder=3)
-    ax.axvline(0.10, color=MUTED, ls=(0, (4, 3)), lw=1.0, zorder=0)
-    ax.annotate("row-level screen\nlimit, ACE = 0.10", xy=(0.10, len(order) - 0.4),
-                xytext=(6, 0), textcoords="offset points",
-                fontsize=8.2, color=MUTED, va="top")
-    ax.set_yticks(ys_pos)
-    ax.set_yticklabels([d["display_name"].to_numpy()[k] for k in order], fontsize=8.4)
-    ax.set_xlabel("All-pair ACE")
-    ax.set_title("C. Row weighting flatters calibration", loc="left")
-    ax.grid(axis="y", visible=False)
-    ax.set_xlim(0, max(mop_ace.max(), 0.26) * 1.10)
-    ax.set_ylim(-1.6, len(order) - 0.35)   # blank strip below the rows for the legend
-    handles = [
-        Line2D([], [], marker="o", ls="none", ms=7, mfc="white", mec=MUTED, mew=1.4,
-               label="row-level (row-weighted)"),
-        Line2D([], [], marker="o", ls="none", ms=7, color=INK, label="MoP (pair-equal)"),
-        Line2D([], [], color=MUTED, lw=1.1, label="same model, both aggregations"),
-    ]
-    ax.legend(handles=handles, loc="lower right", fontsize=8.2,
-              bbox_to_anchor=(1.005, -0.02))
-    _despine(ax)
-
     handles = [
         Line2D([], [], marker="*", ls="none", ms=17, mfc=C_SIGMA, mec=C_SIGMA,
                label="selected workhorse (heteroscedastic MLP ensemble)"),
@@ -372,13 +345,11 @@ def figure1() -> list[Path]:
                bbox_to_anchor=(0.5, -0.09), fontsize=9)
     fig.suptitle("All-pair direct-UQ model context and workhorse choice", y=1.02)
     fig.text(
-        0.5, -0.145,
-        "Panels A and B are pair-equal (MoP) throughout; error bars are fold SD "
-        "($n=5$, $\\mathrm{ddof}=1$). Accuracy differences across the grid are smaller than\n"
-        "those bars, so the candidates separate on calibration rather than on RMSE. Panel C "
-        "gives the row-weighted value of the same quantity: every model's ACE is lower\n"
-        "row-weighted than pair-equal (median ratio $2.0\\times$), because row weighting is "
-        "dominated by densely sampled pairs. Row-level values are reported only here.",
+        0.5, -0.135,
+        "Both panels are pair-equal (MoP) on both axes; error bars are fold SD "
+        "($n=5$, $\\mathrm{ddof}=1$). The horizontal bars overlap heavily: neighboring models\n"
+        "differ in accuracy by well under one fold standard deviation, so the candidates "
+        "separate on calibration rather than on RMSE.",
         ha="center", va="top", fontsize=8.4, color=MUTED,
     )
     fig.tight_layout()
@@ -388,9 +359,9 @@ def figure1() -> list[Path]:
 # ------------------------------------------------------------------------ figure 2
 _F2 = [
     ("sigma_total", r"$\sigma_{\mathrm{total}}$", C_SIGMA, 2.9, "-", 6),
-    ("mahalanobis_feature_centroid", "RDKit feature-centroid Mahalanobis distance", C_MAHAL, 3.4, "-", 4),
-    ("mahalanobis_feature_median", "RDKit feature-median Mahalanobis (post hoc)",
-     C_MAHAL2, 1.7, (0, (4.5, 3.2)), 5),
+    ("mahalanobis_feature_median", "RDKit feature-median Mahalanobis distance", C_MAHAL, 2.7, "-", 4),
+    ("mahalanobis_feature_nn", "RDKit feature Mahalanobis nearest-neighbor distance",
+     C_MAHAL2, 2.7, (0, (5.0, 2.4)), 5),
     ("tanimoto_median_distance", "Tanimoto median distance", C_TANI2, 2.2, "-", 3),
     ("tanimoto_nn_distance", "Tanimoto nearest-neighbor distance", C_TANI, 2.6, "-", 3),
 ]
@@ -407,13 +378,16 @@ def figure2() -> list[Path]:
     s = _read("results/downstream_cv/ad_retention/retention_summary.csv")
     s = s[(s.model_id == WORKHORSE) & (s.scope == "all_pairs")]
     fm = _read("manuscripts/final/tables/iz_mahalanobis_feature_median_retention_summary.csv")
-    fm = fm[fm.scope == "all_pairs"].rename(columns={"retention_fraction": "retention_fraction"})
+    fm = fm[fm.scope == "all_pairs"]
+    nn = _read("manuscripts/final/tables/iz_mahalanobis_feature_nn_retention_summary.csv")
+    nn = nn[nn.scope == "all_pairs"]
     rnd = _read("results/downstream_cv/ad_retention/random_retention_summary.csv")
     rnd = rnd[(rnd.model_id == WORKHORSE) & (rnd.scope == "all_pairs")]
 
     def series(name, metric):
-        if name == "mahalanobis_feature_median":
-            g = fm[fm.metric_name == metric].sort_values("retention_fraction")
+        if name in ("mahalanobis_feature_median", "mahalanobis_feature_nn"):
+            src = fm if name == "mahalanobis_feature_median" else nn
+            g = src[src.metric_name == metric].sort_values("retention_fraction")
             return (g.retention_fraction.to_numpy(float), g.fold_mean.to_numpy(float),
                     g.fold_sd.to_numpy(float))
         g = s[(s.score_name == name) & (s.metric_name == metric)].sort_values("retention_fraction")
@@ -436,7 +410,7 @@ def figure2() -> list[Path]:
             m = np.isfinite(x) & np.isfinite(y)
             ax.plot(x[m], y[m], color=c, lw=lw, ls=ls, label=lab if ax is axes[0] else None,
                     zorder=z, solid_capstyle="round")
-            if name in ("sigma_total", "mahalanobis_feature_centroid", "tanimoto_nn_distance"):
+            if name in ("sigma_total", "mahalanobis_feature_median", "tanimoto_nn_distance"):
                 ax.fill_between(x[m], (y - sd)[m], (y + sd)[m], color=c, alpha=0.12, zorder=1)
         g = rnd[rnd.metric_name == metric].sort_values("retention_fraction")
         if len(g):
@@ -447,8 +421,8 @@ def figure2() -> list[Path]:
         ax.set_title(title, loc="left")
         _despine(ax)
 
-    axes[0].annotate("the two descriptor-space Mahalanobis\nvariants coincide almost exactly",
-                     xy=(0.40, 1.46), xytext=(0.46, 0.92), fontsize=8.5, color=C_MAHAL2,
+    axes[0].annotate("nearest-neighbor and median aggregation\nof the same distance differ little",
+                     xy=(0.40, 1.51), xytext=(0.44, 0.95), fontsize=8.5, color=C_MAHAL2,
                      arrowprops=dict(arrowstyle="->", color=C_MAHAL2, lw=1.0,
                                      connectionstyle="arc3,rad=0.25"))
     axes[0].annotate("fingerprint distance sits above\nthe random-retention baseline",
@@ -592,83 +566,86 @@ def _acq(df, task, orient, stem, k):
 
 
 def figure4() -> list[Path]:
+    """Objective-specific pair acquisition, three metrics x two objectives.
+
+    True hit@k is restored: it answers a different experimental question from
+    precision ("will this shortlist contain anything at all" versus "what fraction
+    of it works"), and it is the only metric on which the most aggressive
+    uncertainty penalty falls below random ranking.
+
+    The figure is ordered so that the threshold-margin rule reads as the one
+    uncertainty-integrated score that never underperforms the value-only baseline.
+    """
     hp = _read("manuscripts/final/tables/pair_acquisition_hit_and_precision.csv")
     rg = _read("manuscripts/final/tables/pair_acquisition_regret.csv")
 
     apply_style()
-    fig, axes = plt.subplots(2, 2, figsize=(12.2, 8.4))
+    fig, axes = plt.subplots(3, 2, figsize=(12.4, 11.4))
     width = 0.13
     ks = [1, 5, 10]
 
-    for col, (task, orient, tlab) in enumerate(_TASKS):
-        # ---- top row: event precision ----
-        ax = axes[0][col]
-        for j, (key, lab, c) in enumerate(_STRAT):
-            m = np.array([_acq(hp, task, orient, "event_precision", k)[j] for k in ks])
-            xs = np.arange(len(ks)) + (j - 2.5) * width
-            ax.bar(xs, m[:, 0], width, yerr=m[:, 1], color=c,
-                   edgecolor="white", linewidth=0.5, label=lab if col == 0 else None,
-                   error_kw=dict(ecolor=INK, capsize=2, lw=0.8), zorder=2)
-        ax.set_xticks(np.arange(len(ks)))
-        ax.set_xticklabels([f"$k = {k}$" for k in ks])
-        ax.set_ylim(0.35, 0.95)
-        ax.set_ylabel("Event precision@$k$" if col == 0 else "")
-        ax.set_title(f"{'AB'[col]}. {tlab}", loc="left")
-        ax.annotate("higher is better", xy=(0.015, 0.955), xycoords="axes fraction",
-                    fontsize=8.5, color=MUTED, ha="left", va="top")
-        _despine(ax)
+    specs = [
+        (hp, "any_hit", "True hit@$k$", "higher is better", (0.55, 1.02), False),
+        (hp, "event_precision", "Event precision@$k$", "higher is better", (0.35, 0.95), False),
+        (rg, None, r"Retrospective regret@$k$ ($\Delta\log K$)", "lower is better  \u2193", None, True),
+    ]
 
-        # ---- bottom row: regret ----
-        ax = axes[1][col]
-        for j, (key, lab, c) in enumerate(_STRAT):
-            m = np.array([_acq(rg, task, orient, "regret", k)[j] for k in ks])
-            xs = np.arange(len(ks)) + (j - 2.5) * width
-            ax.bar(xs, m[:, 0], width, yerr=m[:, 1], color=c,
-                   edgecolor="white", linewidth=0.5,
-                   error_kw=dict(ecolor=INK, capsize=2, lw=0.8), zorder=2)
-        ax.set_xticks(np.arange(len(ks)))
-        ax.set_xticklabels([f"$k = {k}$" for k in ks])
-        ax.set_ylabel(r"Retrospective regret@$k$ ($\Delta\log K$)" if col == 0 else "")
-        ax.set_title(f"{'CD'[col]}. {tlab}", loc="left")
-        ax.annotate("lower is better  ↓", xy=(0.015, 0.955), xycoords="axes fraction",
-                    fontsize=8.5, color=MUTED, ha="left", va="top", fontweight="bold")
-        _despine(ax)
+    for row, (src, stem, ylab, hint, ylim, is_regret) in enumerate(specs):
+        for col, (task, orient, tlab) in enumerate(_TASKS):
+            ax = axes[row][col]
+            for j2, (key, lab, c) in enumerate(_STRAT):
+                s = "regret" if is_regret else stem
+                m = np.array([_acq(src, task, orient, s, k)[j2] for k in ks])
+                xs = np.arange(len(ks)) + (j2 - 2.5) * width
+                ax.bar(xs, m[:, 0], width, yerr=m[:, 1], color=c, edgecolor="white",
+                       linewidth=0.5, label=lab if (row == 0 and col == 0) else None,
+                       error_kw=dict(ecolor=INK, capsize=2, lw=0.8), zorder=2)
+            ax.set_xticks(np.arange(len(ks)))
+            ax.set_xticklabels([f"$k = {k}$" for k in ks])
+            if ylim:
+                ax.set_ylim(*ylim)
+            if col == 0:
+                ax.set_ylabel(ylab)
+            ax.set_title(f"{'ABCDEF'[row * 2 + col]}. {tlab}", loc="left", fontsize=10.6)
+            ax.annotate(hint, xy=(0.015, 0.965), xycoords="axes fraction",
+                        fontsize=8.4, color=MUTED, ha="left", va="top",
+                        fontweight="bold" if is_regret else "normal")
+            _despine(ax)
 
-    # The inversion is the result; state it on the figure.
-    # The inversion between columns is the result; state it in each panel's headroom.
-    axes[0][0].annotate(
-        "stronger penalty,\nworse recovery",
-        xy=(0.065, 0.700), xytext=(0.60, 0.905),
-        fontsize=9.5, color=LCB_RAMP[2], fontweight="bold", ha="center", va="center",
-        arrowprops=dict(arrowstyle="-|>", color=LCB_RAMP[2], lw=1.6,
-                        connectionstyle="arc3,rad=0.18"),
-    )
-    axes[0][0].annotate(
-        "LCB-3 ≈ random", xy=(0.065, 0.645), xytext=(0.72, 0.455),
-        fontsize=9, color=LCB_RAMP[2], ha="center", va="center",
-        arrowprops=dict(arrowstyle="-|>", color=LCB_RAMP[2], lw=1.3,
-                        connectionstyle="arc3,rad=-0.18"),
-    )
-    axes[0][1].annotate(
-        "same penalty,\nno cost here",
-        xy=(0.065, 0.835), xytext=(0.62, 0.905),
-        fontsize=9.5, color=LCB_RAMP[2], fontweight="bold", ha="center", va="center",
-        arrowprops=dict(arrowstyle="-|>", color=LCB_RAMP[2], lw=1.6,
-                        connectionstyle="arc3,rad=0.18"),
-    )
+    # the two results the figure exists to show
+    # LCB-3 sits above random at k=1 and below it at k=5 and k=10; annotate where it is true.
+    axes[0][0].annotate("at $k\\geq5$ the strongest penalty\nfinds an event less often than random",
+                        xy=(2.065, 0.828), xytext=(1.20, 0.632),
+                        fontsize=8.8, color=LCB_RAMP[2], fontweight="bold", ha="center",
+                        arrowprops=dict(arrowstyle="-|>", color=LCB_RAMP[2], lw=1.4,
+                                        connectionstyle="arc3,rad=-0.22"))
+    axes[0][0].annotate("", xy=(2.325, 0.888), xytext=(1.20, 0.652),
+                        arrowprops=dict(arrowstyle="-|>", color=C_RAND_BAR, lw=1.2,
+                                        connectionstyle="arc3,rad=-0.18"))
+    axes[1][0].annotate("threshold margin leads\nwhere LCB collapses",
+                        xy=(0.195, 0.835), xytext=(0.95, 0.885),
+                        fontsize=9.2, color=C_MARGIN, fontweight="bold", ha="center",
+                        arrowprops=dict(arrowstyle="-|>", color=C_MARGIN, lw=1.5,
+                                        connectionstyle="arc3,rad=0.18"))
+    axes[1][1].annotate("and matches the best rule here",
+                        xy=(0.195, 0.804), xytext=(0.92, 0.885),
+                        fontsize=9.2, color=C_MARGIN, fontweight="bold", ha="center",
+                        arrowprops=dict(arrowstyle="-|>", color=C_MARGIN, lw=1.5,
+                                        connectionstyle="arc3,rad=0.18"))
 
     handles = [Line2D([], [], marker="s", ls="none", ms=10, color=c, label=lab)
                for _, lab, c in _STRAT]
     fig.legend(handles=handles, loc="lower center", ncol=6,
-               bbox_to_anchor=(0.5, -0.045), fontsize=9.5)
+               bbox_to_anchor=(0.5, -0.028), fontsize=9.5)
     fig.suptitle("Objective-specific pair acquisition", y=1.0)
     fig.text(
-        0.5, -0.085,
-        "LCB-1/2/3 are one rule at increasing uncertainty penalty and are shaded light to dark. "
-        "The penalty degrades high-selectivity event recovery\ntoward random ranking and improves the "
-        "near-zero objective: the ordering inverts between columns. Bars are fold means, error bars fold SD "
-        "($n=5$).\nTrue hit@$k$ is not shown - it saturates above 0.97 for every non-random rule at "
-        "$k\\geq5$; the full inventory is Table S10.2.",
+        0.5, -0.062,
+        "LCB-1/2/3 are one rule at increasing uncertainty penalty, shaded light to dark. "
+        "The threshold-margin rule divides the distance past the event threshold by\n"
+        "$\\sigma_{\\mathrm{total}}$ instead of subtracting it, and is the only "
+        "uncertainty-integrated rule that never falls below the value-only baseline on an event "
+        "metric in either objective.\nBars are fold means, error bars fold SD ($n=5$), after a "
+        "pair-equal mean within each fold.",
         ha="center", va="top", fontsize=8.5, color=MUTED,
     )
     fig.tight_layout()
