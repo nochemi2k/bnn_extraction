@@ -1,0 +1,6 @@
+dataset,model_id,fold_id,expected_rows,predicted_rows,missing_rows,unexpected_rows,duplicate_rows,y_true_mismatches,alignment_status
+DS2,DS2_GRAPH_DMPNN_EVID,fold0,17705,17705,0,0,0,0,ok
+DS2,DS2_GRAPH_DMPNN_EVID,fold1,17705,17705,0,0,0,0,ok
+DS2,DS2_GRAPH_DMPNN_EVID,fold2,17705,17705,0,0,0,0,ok
+DS2,DS2_GRAPH_DMPNN_EVID,fold3,17705,17705,0,0,0,0,ok
+DS2,DS2_GRAPH_DMPNN_EVID,fold4,17705,17705,0,0,0,0,ok

@@ -1,0 +1,11 @@
+{
+  "Atomic_number": "dimensionless (Z); CMI row-level",
+  "metal_density": "g cm^-3 (CMI M4 table); element-invariant in this corpus",
+  "metal_dipole_polarizability": "as provided in CMI M4 (not CRC 10^-24 cm^3); element-invariant",
+  "metal_vdw_radius": "pm (CMI M4 table); element-invariant",
+  "metal_atomic_weight": "g mol^-1 (CMI M4 table); element-invariant",
+  "metal_covalent_radius_by_pyykko": "pm (Pyykko, CMI M4 table); element-invariant",
+  "metal_Sanderson Electronegativity": "Sanderson scale as provided in CMI M4; element-invariant",
+  "IE": "eV; CMI row-level (varies with oxidation state). Not computed from logK.",
+  "metal_valence_e": "count; CMI row-level (varies with oxidation state). Not computed from logK."
+}

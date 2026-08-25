@@ -1,0 +1,134 @@
+font_family: DejaVu Sans
+font_size: 9
+axes_title_size: 10
+axes_label_size: 9
+tick_size: 8
+legend_size: 7.5
+figure_dpi: 300
+output_format:
+  - png
+  - pdf
+error_bar_definition: fold_sd
+confidence_interval_definition: not_used; error bars are fold SD (ddof=1), not standard error
+random_seed: 0
+nominal_picp: 0.90
+ace_visual_gate: 0.20
+picp_visual_lower: 0.85
+picp_visual_upper: 0.95
+workhorse_model_id: DS2_RDKIT_MLPENS5_HETERO
+workhorse_display_name: Heteroscedastic MLP ensemble
+ad_retention_status: empirical_ranking
+pair_density_bin_order:
+  - "0"
+  - "1-5"
+  - "6-10"
+  - "11-25"
+  - "26-50"
+  - ">50"
+pair_density_bin_labels:
+  "0": "0 training ligands"
+  "1-5": "1–5"
+  "6-10": "6–10"
+  "11-25": "11–25"
+  "26-50": "26–50"
+  ">50": ">50"
+model_order:
+  - Evidential MLP ensemble
+  - Heteroscedastic MLP ensemble
+  - Evidential MLP
+  - Heteroscedastic MLP
+  - MC-dropout ensemble
+  - MC-dropout MLP
+  - SNGP ensemble
+  - SNGP
+  - Sparse variational GPR
+  - Full variational BNN ensemble
+  - Full variational BNN
+  - Chemprop evidential
+  - RDKit MLP
+  - RDKit XGBoost
+  - Chemprop point
+color_map:
+  Evidential MLP ensemble: "#4C72B0"
+  Evidential MLP: "#7AA3E5"
+  Heteroscedastic MLP ensemble: "#E17C05"
+  Heteroscedastic MLP: "#F4A261"
+  MC-dropout ensemble: "#2A9D8F"
+  MC-dropout MLP: "#52B788"
+  SNGP ensemble: "#8C510A"
+  SNGP: "#BF812D"
+  Sparse variational GPR: "#A0522D"
+  Full variational BNN ensemble: "#6A4C93"
+  Full variational BNN: "#9B72CF"
+  Chemprop evidential: "#087E8B"
+  RDKit MLP: "#7F8C8D"
+  RDKit XGBoost: "#95A5A6"
+  Chemprop point: "#B0B0B0"
+score_color_map:
+  sigma_total: "#C44E52"
+  sigma_epistemic_within: "#E07A5F"
+  sigma_epistemic_between: "#F2CC8F"
+  sigma_aleatoric: "#2A9D8F"
+  pair_density_risk: "#3D405B"
+  mahalanobis_feature_centroid: "#577590"
+  mahalanobis_joint: "#577590"
+  tanimoto_median_distance: "#4D908E"
+  tanimoto_knn_mean_5: "#43AA8B"
+  tanimoto_knn_mean_10: "#277DA1"
+  tanimoto_nn_distance: "#90BE6D"
+  chemprop_std_euclidean_nn: "#087E8B"
+  chemprop_mahalanobis_centroid: "#6A4C93"
+  chemprop_mahalanobis_nn: "#9B72CF"
+  chemprop_cosine_nn: "#4A4A4A"
+  chemprop_euclidean_nn: "#2A9D8F"
+  chemprop_std_euclidean_knn_5: "#43AA8B"
+  chemprop_std_euclidean_knn_10: "#254441"
+score_order:
+  - sigma_total
+  - sigma_epistemic_within
+  - sigma_epistemic_between
+  - sigma_aleatoric
+  - pair_density_risk
+  - mahalanobis_feature_centroid
+  - tanimoto_median_distance
+  - tanimoto_nn_distance
+  - chemprop_std_euclidean_nn
+  - chemprop_mahalanobis_centroid
+  - chemprop_cosine_nn
+score_labels:
+  sigma_total: "$\\sigma_{\\mathrm{total}}$"
+  sigma_epistemic_within: "$\\sigma_{\\mathrm{epistemic,within}}$"
+  sigma_epistemic_between: "$\\sigma_{\\mathrm{epistemic,between}}$"
+  sigma_aleatoric: "$\\sigma_{\\mathrm{aleatoric}}$"
+  pair_density_risk: "pair-density risk"
+  mahalanobis_feature_centroid: "RDKit feature-centroid Mahalanobis distance"
+  mahalanobis_joint: "RDKit feature-centroid Mahalanobis distance"
+  tanimoto_median_distance: "Tanimoto median distance"
+  tanimoto_knn_mean_5: "Tanimoto $k$NN mean, $k=5$"
+  tanimoto_knn_mean_10: "Tanimoto $k$NN mean, $k=10$"
+  tanimoto_nn_distance: "Tanimoto NN distance"
+  chemprop_std_euclidean_nn: "Chemprop Euclidean-NN"
+  chemprop_mahalanobis_centroid: "Chemprop embedding-centroid Mahalanobis"
+  chemprop_mahalanobis_nn: "Chemprop embedding Mahalanobis-NN"
+  chemprop_cosine_nn: "Chemprop cosine-NN"
+  chemprop_euclidean_nn: "Chemprop Euclidean-NN (raw)"
+  chemprop_std_euclidean_knn_5: "Chemprop Euclidean-kNN, k=5"
+  chemprop_std_euclidean_knn_10: "Chemprop Euclidean-kNN, k=10"
+forbidden_source_substrings:
+  - manuscript_corrected
+  - pre_corrected
+  - quarantine
+  - stage3
+  - stage4
+  - stage5
+  - full_manuscript
+  - archive/experiments
+  - archive/models
+obsolete_model_tokens:
+  - BAYES_LASTLAYER
+  - CPEMB
+  - GRAPH_DMPNN_MCDROPOUT
+  - +RANK
+  - CHEMPROP_MC
+  - "_GPR"
+exact_gpr_allow_if_contains: GPR_SPARSE

@@ -1,0 +1,14 @@
+{
+  "ad": "ran",
+  "context": "ran",
+  "pair_acquisition": "ran",
+  "ad_hoc": "ran",
+  "from_existing_scores": true,
+  "rescore": false,
+  "artifacts": {
+    "ad": true,
+    "context": true,
+    "pair_acquisition": true,
+    "ad_hoc": true
+  }
+}

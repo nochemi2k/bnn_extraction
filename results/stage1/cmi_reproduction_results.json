@@ -1,0 +1,299 @@
+{
+  "cmi_published": {
+    "cmi_published_m4_test_mae": 0.599,
+    "cmi_published_m4_test_r2": 0.934,
+    "cmi_published_m4_ext_mae": 0.834,
+    "cmi_published_m4_ext_r2": 0.942
+  },
+  "released_weights": {
+    "status": "complete",
+    "chemprop_version_used": "unknown",
+    "n_checkpoints": 5,
+    "architecture": {
+      "hidden_size": 2400,
+      "depth": 6,
+      "dropout": 0.0,
+      "ffn_num_layers": 3,
+      "ffn_hidden_size": 2400,
+      "epochs": 30,
+      "batch_size": 50,
+      "init_lr": 0.0001,
+      "max_lr": 0.001,
+      "final_lr": 0.0001,
+      "warmup_epochs": 2.0,
+      "aggregation": "mean",
+      "activation": "ReLU",
+      "bias": false,
+      "features_scaling": true,
+      "no_features_scaling": false,
+      "seed": 0,
+      "pytorch_seed": 0,
+      "metric": "rmse",
+      "dataset_type": "regression",
+      "ensemble_size": 1,
+      "number_of_molecules": 1
+    },
+    "architecture_mismatches": [
+      {
+        "fold": 1,
+        "key": "seed",
+        "ref": 0,
+        "got": 1
+      },
+      {
+        "fold": 2,
+        "key": "seed",
+        "ref": 0,
+        "got": 2
+      },
+      {
+        "fold": 3,
+        "key": "seed",
+        "ref": 0,
+        "got": 3
+      },
+      {
+        "fold": 4,
+        "key": "seed",
+        "ref": 0,
+        "got": 4
+      }
+    ],
+    "official_csvs": {
+      "train": {
+        "data": "data/processed/features/chemprop_cmi_official/train.csv",
+        "features": "data/processed/features/chemprop_cmi_official/train_features.csv",
+        "n": 39050,
+        "n_na_feature_rows": 0
+      },
+      "test": {
+        "data": "data/processed/features/chemprop_cmi_official/test.csv",
+        "features": "data/processed/features/chemprop_cmi_official/test_features.csv",
+        "n": 4338,
+        "n_na_feature_rows": 0
+      },
+      "ext": {
+        "data": "data/processed/features/chemprop_cmi_official/ext.csv",
+        "features": "data/processed/features/chemprop_cmi_official/ext_features.csv",
+        "n": 398,
+        "n_na_feature_rows": 0
+      }
+    },
+    "evaluations": {
+      "cmi_test": {
+        "n": 4338,
+        "ensemble": {
+          "r2": 0.9513486068473822,
+          "mae": 0.5387712390205979,
+          "n": 4338.0
+        },
+        "fold_mean_mae": 0.591701846215219,
+        "fold_mean_r2": 0.9430916682944371,
+        "fold_sd_mae": 0.004462649961991699,
+        "fold_sd_r2": 0.0014612848817260353,
+        "per_fold": [
+          {
+            "fold": 0,
+            "r2": 0.9441293553877981,
+            "mae": 0.5877606053970026,
+            "n": 4338.0
+          },
+          {
+            "fold": 1,
+            "r2": 0.9415654170421635,
+            "mae": 0.5924536916331112,
+            "n": 4338.0
+          },
+          {
+            "fold": 2,
+            "r2": 0.9446743548481995,
+            "mae": 0.5898714830953273,
+            "n": 4338.0
+          },
+          {
+            "fold": 3,
+            "r2": 0.9415367063086075,
+            "mae": 0.5893325292780947,
+            "n": 4338.0
+          },
+          {
+            "fold": 4,
+            "r2": 0.9435525078854166,
+            "mae": 0.5990909216725596,
+            "n": 4338.0
+          }
+        ],
+        "pred_path": "results/stage1/cmi_released_preds/test_ensemble.csv"
+      },
+      "cmi_ext": {
+        "n": 398,
+        "ensemble": {
+          "r2": 0.941852685921195,
+          "mae": 0.8336876546971707,
+          "n": 398.0
+        },
+        "fold_mean_mae": 0.8978267660364253,
+        "fold_mean_r2": 0.9349868509410502,
+        "fold_sd_mae": 0.0480896157085044,
+        "fold_sd_r2": 0.006682577711148865,
+        "per_fold": [
+          {
+            "fold": 0,
+            "r2": 0.9381850374078571,
+            "mae": 0.8768100529915842,
+            "n": 398.0
+          },
+          {
+            "fold": 1,
+            "r2": 0.9400155536553669,
+            "mae": 0.9104095523105252,
+            "n": 398.0
+          },
+          {
+            "fold": 2,
+            "r2": 0.9237264373234706,
+            "mae": 0.9696385953599438,
+            "n": 398.0
+          },
+          {
+            "fold": 3,
+            "r2": 0.9389236422608047,
+            "mae": 0.838888065022169,
+            "n": 398.0
+          },
+          {
+            "fold": 4,
+            "r2": 0.9340835840577513,
+            "mae": 0.8933875644979039,
+            "n": 398.0
+          }
+        ],
+        "pred_path": "results/stage1/cmi_released_preds/ext_ensemble.csv"
+      }
+    },
+    "note": "Released CMI best_model fold_0\u2013fold_4 weights evaluated with Chemprop 1.6.1 on the official CMI train/test/validation CSVs. Ensemble = mean of five fold predictions. fold_mean_* averages the five per-fold metrics on the same open file (closer to a CV-average estimand than the ensemble)."
+  },
+  "architecture_retrain": {
+    "status": "complete",
+    "trained_this_run": true,
+    "chemprop_version_used": "unknown",
+    "architecture": {
+      "hidden_size": 2400,
+      "depth": 6,
+      "dropout": 0.0,
+      "ffn_num_layers": 3,
+      "ffn_hidden_size": 2400,
+      "epochs": 30,
+      "batch_size": 50,
+      "init_lr": 0.0001,
+      "max_lr": 0.001,
+      "final_lr": 0.0001,
+      "warmup_epochs": 2.0,
+      "aggregation": "mean",
+      "activation": "ReLU",
+      "bias": false,
+      "features_scaling": true,
+      "no_features_scaling": false,
+      "seed": 0,
+      "pytorch_seed": 0,
+      "metric": "rmse",
+      "dataset_type": "regression",
+      "ensemble_size": 1,
+      "number_of_molecules": 1
+    },
+    "checkpoint_dir": "checkpoints/M4_GRAPH_DMPNN_POINT_cmiarch",
+    "evaluations": {
+      "cmi_test": {
+        "n": 4338,
+        "ensemble": {
+          "r2": 0.95100450578427,
+          "mae": 0.540673472473824,
+          "n": 4338.0
+        },
+        "fold_mean_mae": 0.5946900675535871,
+        "fold_mean_r2": 0.9421593141115714,
+        "fold_sd_mae": 0.005133715257639306,
+        "fold_sd_r2": 0.002036300993391583,
+        "per_fold": [
+          {
+            "fold": 0,
+            "r2": 0.944895613934298,
+            "mae": 0.5921027871579826,
+            "n": 4338.0
+          },
+          {
+            "fold": 1,
+            "r2": 0.9409078072880492,
+            "mae": 0.5992061638440481,
+            "n": 4338.0
+          },
+          {
+            "fold": 2,
+            "r2": 0.9415519062181874,
+            "mae": 0.5933126356345612,
+            "n": 4338.0
+          },
+          {
+            "fold": 3,
+            "r2": 0.9398796117497965,
+            "mae": 0.5882385495885282,
+            "n": 4338.0
+          },
+          {
+            "fold": 4,
+            "r2": 0.9435616313675256,
+            "mae": 0.6005902015428156,
+            "n": 4338.0
+          }
+        ],
+        "pred_path": "results/stage1/cmi_arch_preds/test_ensemble.csv"
+      },
+      "cmi_ext": {
+        "n": 398,
+        "ensemble": {
+          "r2": 0.9345960784467455,
+          "mae": 0.8806233886924911,
+          "n": 398.0
+        },
+        "fold_mean_mae": 0.9450859770852779,
+        "fold_mean_r2": 0.9281339993350908,
+        "fold_sd_mae": 0.030147775727645574,
+        "fold_sd_r2": 0.004260416537875503,
+        "per_fold": [
+          {
+            "fold": 0,
+            "r2": 0.9301063099880835,
+            "mae": 0.9523548726844684,
+            "n": 398.0
+          },
+          {
+            "fold": 1,
+            "r2": 0.932596121184995,
+            "mae": 0.9164067318338472,
+            "n": 398.0
+          },
+          {
+            "fold": 2,
+            "r2": 0.9216029147489809,
+            "mae": 0.993861054568748,
+            "n": 398.0
+          },
+          {
+            "fold": 3,
+            "r2": 0.9264295677057691,
+            "mae": 0.9332468746428203,
+            "n": 398.0
+          },
+          {
+            "fold": 4,
+            "r2": 0.9299350830476253,
+            "mae": 0.929560351696505,
+            "n": 398.0
+          }
+        ],
+        "pred_path": "results/stage1/cmi_arch_preds/ext_ensemble.csv"
+      }
+    },
+    "note": "From-scratch Chemprop 1.6.1 training with architecture recovered from the released CMI best_model checkpoints (hidden 2400, depth 6, three FFN layers, batch 50, 30 epochs, seed 0, five random folds on the official train file). Published CMI weights were not loaded."
+  }
+}

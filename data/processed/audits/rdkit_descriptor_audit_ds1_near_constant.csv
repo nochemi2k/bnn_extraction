@@ -1,0 +1,8 @@
+name,reason,n_finite,nunique,mean,std,cv
+SMR_VSA8,nunique,132311,1,0.0,0.0,0.0
+SlogP_VSA9,nunique,132311,1,0.0,0.0,0.0
+fr_benzodiazepine,nunique,132311,1,0.0,0.0,0.0
+fr_diazo,nunique,132311,1,0.0,0.0,0.0
+fr_isocyan,nunique,132311,1,0.0,0.0,0.0
+fr_isothiocyan,nunique,132311,1,0.0,0.0,0.0
+fr_prisulfonamd,nunique,132311,1,0.0,0.0,0.0

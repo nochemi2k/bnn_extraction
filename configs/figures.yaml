@@ -1,0 +1,7 @@
+# Figure regeneration reads canonical CSVs; it does not retrain models.
+
+figure_config: manuscripts/final/figure_config.yaml
+figure_specs: src/uq_remake/manuscript/figure_specs.py
+output_dir: manuscripts/final/figures
+captions: manuscripts/final/figures/captions.md
+registry: manuscripts/final/figure_data_registry.csv

@@ -1,0 +1,4 @@
+display_name,model_id,scope,rmse,r2,picp_90,ace,interval_status,n_valid_folds,metric_status,aggregation
+RDKit MLP,DS1_RDKIT_MLP_POINT,metal_complex,2.211 ± 0.183,0.834 ± 0.018,NA (no UQ),NA (no UQ),unavailable,5,complete,fold_mean_plus_sd_ddof1
+RDKit XGBoost,DS1_RDKIT_XGB_POINT,metal_complex,2.292 ± 0.161,0.821 ± 0.020,NA (no UQ),NA (no UQ),unavailable,5,complete,fold_mean_plus_sd_ddof1
+Chemprop point,DS1_GRAPH_DMPNN_POINT,metal_complex,2.330 ± 0.265,0.816 ± 0.027,NA (no UQ),NA (no UQ),unavailable,5,complete,fold_mean_plus_sd_ddof1

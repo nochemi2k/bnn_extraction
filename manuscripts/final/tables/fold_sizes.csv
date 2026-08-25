@@ -1,0 +1,11 @@
+dataset,fold_id,n_train,n_val,n_test,feature_dimension,artifact_path
+DS1,fold0,29590,5120,8678,203,data/processed/features/rdkit_ds1/fold0/manifest.json
+DS1,fold1,29920,4790,8678,203,data/processed/features/rdkit_ds1/fold1/manifest.json
+DS1,fold2,31030,3680,8678,203,data/processed/features/rdkit_ds1/fold2/manifest.json
+DS1,fold3,30081,4630,8677,203,data/processed/features/rdkit_ds1/fold3/manifest.json
+DS1,fold4,30098,4613,8677,203,data/processed/features/rdkit_ds1/fold4/manifest.json
+DS2,fold0,60602,10218,17705,214,data/processed/features/rdkit_ds2/fold0/manifest.json
+DS2,fold1,63184,7636,17705,214,data/processed/features/rdkit_ds2/fold1/manifest.json
+DS2,fold2,57833,12987,17705,214,data/processed/features/rdkit_ds2/fold2/manifest.json
+DS2,fold3,60389,10431,17705,214,data/processed/features/rdkit_ds2/fold3/manifest.json
+DS2,fold4,58355,12465,17705,214,data/processed/features/rdkit_ds2/fold4/manifest.json

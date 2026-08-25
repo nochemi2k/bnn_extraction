@@ -1,0 +1,5 @@
+artifact,status,reason
+old numeric CSVs from superseded OOF grids,invalid,old features + residual Chemprop UQ + BayesMLP dummy aleatoric
+Chemprop MC-dropout predictions,excluded,not in active grid
+POINT model sigma fields,unavailable,no UQ head; fields are NaN
+fast-mode checkpoints copied into full,do_not_reuse,active grid trains fresh under checkpoints/active/

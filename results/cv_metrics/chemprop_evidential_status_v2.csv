@@ -1,0 +1,2 @@
+dataset,model_id,ranking_status,uq_status,n_folds_attempted,n_ranking_valid_folds,n_uq_valid_folds,n_uq_invalid_rows_total,notes
+DS2,DS2_GRAPH_DMPNN_EVID,complete_5_of_5,partial_native_invalid_rows,5,5,3,13,No Chemprop retraining. Native NIG parameters preserved. Invalid native-UQ rows total=13. Folds with zero invalid NIG rows=3. PICP/ACE use student_t_nig_predictive on uq_valid rows only; invalid rows retained in prediction files with NaN variances.

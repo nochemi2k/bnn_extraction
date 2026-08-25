@@ -1,0 +1,33 @@
+model_id,display_name,dataset,overall_status,training_status,prediction_status,point_metric_status,uq_status,interval_status,ranking_status,pair_metric_status,native_uq_status,invalid_native_nig_rows,active_for_manuscript,canonical_artifact_prefix
+DS1_RDKIT_MLP_POINT,RDKit MLP,DS1,pass,complete,complete,complete,not_computed,not_computed,complete,complete,not_computed,0,True,checkpoints/active/DS1_RDKIT_MLP_POINT
+DS1_RDKIT_XGB_POINT,RDKit XGBoost,DS1,pass,complete,complete,complete,not_computed,not_computed,complete,complete,not_computed,0,True,checkpoints/active/DS1_RDKIT_XGB_POINT
+DS1_GRAPH_DMPNN_POINT,Chemprop point,DS1,pass,complete,complete,complete,not_computed,not_computed,complete,complete,not_computed,0,True,checkpoints/active/DS1_GRAPH_DMPNN_POINT
+DS1_RDKIT_MLP_EVID,Evidential MLP,DS1,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS1_RDKIT_MLP_EVID
+DS1_RDKIT_MLPENS5_EVID,Evidential MLP ensemble,DS1,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS1_RDKIT_MLPENS5_EVID
+DS1_RDKIT_MLP_HETERO,Heteroscedastic MLP,DS1,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS1_RDKIT_MLP_HETERO
+DS1_RDKIT_MLPENS5_HETERO,Heteroscedastic MLP ensemble,DS1,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS1_RDKIT_MLPENS5_HETERO
+DS1_RDKIT_MLP_MCDROPOUT,MC-dropout MLP,DS1,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS1_RDKIT_MLP_MCDROPOUT
+DS1_RDKIT_MLPENS5_MCDROPOUT,MC-dropout MLP ensemble,DS1,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS1_RDKIT_MLPENS5_MCDROPOUT
+DS1_RDKIT_MLP_BAYES_FULL,Full variational BNN,DS1,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS1_RDKIT_MLP_BAYES_FULL
+DS1_RDKIT_MLPENS5_BAYES_FULL,Full variational BNN ensemble,DS1,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS1_RDKIT_MLPENS5_BAYES_FULL
+DS1_RDKIT_SNGP,SNGP,DS1,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS1_RDKIT_SNGP
+DS1_RDKIT_SNGPENS5,SNGP ensemble,DS1,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS1_RDKIT_SNGPENS5
+DS1_RDKIT_GPR,Exact GPR,DS1,excluded,excluded,excluded,excluded,excluded,excluded,excluded,excluded,excluded,0,False,checkpoints/active/DS1_RDKIT_GPR
+DS1_RDKIT_GPR_SPARSE,Sparse variational GPR,DS1,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS1_RDKIT_GPR_SPARSE
+DS1_GRAPH_DMPNN_EVID,Chemprop evidential,DS1,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS1_GRAPH_DMPNN_EVID
+DS2_RDKIT_MLP_POINT,RDKit MLP,DS2,pass,complete,complete,complete,not_computed,not_computed,complete,complete,not_computed,0,True,checkpoints/active/DS2_RDKIT_MLP_POINT
+DS2_RDKIT_XGB_POINT,RDKit XGBoost,DS2,pass,complete,complete,complete,not_computed,not_computed,complete,complete,not_computed,0,True,checkpoints/active/DS2_RDKIT_XGB_POINT
+DS2_GRAPH_DMPNN_POINT,Chemprop point,DS2,pass,complete,complete,complete,not_computed,not_computed,complete,complete,not_computed,0,True,checkpoints/active/DS2_GRAPH_DMPNN_POINT
+DS2_RDKIT_MLP_EVID,Evidential MLP,DS2,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS2_RDKIT_MLP_EVID
+DS2_RDKIT_MLPENS5_EVID,Evidential MLP ensemble,DS2,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS2_RDKIT_MLPENS5_EVID
+DS2_RDKIT_MLP_HETERO,Heteroscedastic MLP,DS2,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS2_RDKIT_MLP_HETERO
+DS2_RDKIT_MLPENS5_HETERO,Heteroscedastic MLP ensemble,DS2,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS2_RDKIT_MLPENS5_HETERO
+DS2_RDKIT_MLP_MCDROPOUT,MC-dropout MLP,DS2,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS2_RDKIT_MLP_MCDROPOUT
+DS2_RDKIT_MLPENS5_MCDROPOUT,MC-dropout MLP ensemble,DS2,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS2_RDKIT_MLPENS5_MCDROPOUT
+DS2_RDKIT_MLP_BAYES_FULL,Full variational BNN,DS2,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS2_RDKIT_MLP_BAYES_FULL
+DS2_RDKIT_MLPENS5_BAYES_FULL,Full variational BNN ensemble,DS2,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS2_RDKIT_MLPENS5_BAYES_FULL
+DS2_RDKIT_SNGP,SNGP,DS2,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS2_RDKIT_SNGP
+DS2_RDKIT_SNGPENS5,SNGP ensemble,DS2,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS2_RDKIT_SNGPENS5
+DS2_RDKIT_GPR,Exact GPR,DS2,excluded,excluded,excluded,excluded,excluded,excluded,excluded,excluded,excluded,0,False,checkpoints/active/DS2_RDKIT_GPR
+DS2_RDKIT_GPR_SPARSE,Sparse variational GPR,DS2,pass,complete,complete,complete,complete,complete,complete,complete,complete,0,True,checkpoints/active/DS2_RDKIT_GPR_SPARSE
+DS2_GRAPH_DMPNN_EVID,Chemprop evidential,DS2,partial,complete,complete,complete,partial,partial,complete_5_of_5,complete_5_of_5,partial_native_invalid_rows,13,True,results/cv_metrics/chemprop_evidential_status_v2.csv

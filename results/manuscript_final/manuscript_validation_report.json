@@ -1,0 +1,1718 @@
+{
+  "n_checks": 341,
+  "n_pass": 341,
+  "n_fail": 0,
+  "pass": true,
+  "untraced_pm_tokens": [],
+  "checks": [
+    {
+      "check": "main_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "claim_registry_nonempty",
+      "pass": true,
+      "detail": "n=1096"
+    },
+    {
+      "check": "workhorse_id",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "selection_rerun",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "selection_type_operational",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "primary_is_mop_rmse",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "rank_correlation_not_primary_selection",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "row_metrics_not_used_for_selection",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "selection_not_nested",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "r2_auxiliary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "rank_correlation_not_used",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "chemprop_not_operational_candidate",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ds1_n_records",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ds1_n_ligands",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ds1_n_metals",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ds2_n_rows",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "chemprop_13",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "species_pair_example",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "operational_screen_in_text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_crc_language_in_manuscript",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "exact_gpr_no_active_numbers",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "bayes_lastlayer_not_active",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mape_not_computed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "medium_not_identifiable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "pair_acquisition_computed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "event_precision_named",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "true_hit_named",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "regret_formulated_in_methods",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "regret_motivation_in_methods",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "regret_motivation_in_results",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "regret_in_discussion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table4_has_regret",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s108c_regret_table",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "fig5_caption_regret",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "not_prospective_experimental_validation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "retrospective_ranking_simulation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "tested_distance_weaker_not_primary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_old_directional_topk",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "adhoc_computed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s13_adhoc_completed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_s5_placeholder_heading",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s5_workhorse_bridge",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s6_heading_workhorse_choice",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "canonical_main_present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "archive_trees_removed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "full_manuscript_tree_removed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_obsolete_BAYES_LASTLAYER_in_active_grid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_obsolete_CPEMB_in_active_grid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_obsolete_+RANK_in_active_grid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_obsolete_GRAPH_DMPNN_MCDROPOUT_in_active_grid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_obsolete_CHEMPROP_MC_in_active_grid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_exact_gpr_row_main_ds1_point_results",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_exact_gpr_row_main_ds1_uq_results",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_exact_gpr_row_main_ds2_workhorse_selection",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_exact_gpr_row_ds2_ree_pairs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "chemprop_partial_with_picp",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ad_50pct_table",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ad_random_baseline",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ad_not_coverage_guarantee",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "pair_level_ad_table4",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "metal_medium_si_table",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "fold_paired_differences_si",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mop_r2_zero_invalid_stated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ad_not_accept_reject_threshold",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ranking_eligibility_distinct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "five_main_figures",
+      "pass": true,
+      "detail": "n_main=5 ids=['fig01_study_design', 'fig02_workhorse_selection', 'fig03_risk_ordering', 'fig04_predicted_magnitude', 'fig05_pair_acquisition']"
+    },
+    {
+      "check": "no_obsolete_main_figure_fig_study_design",
+      "pass": true,
+      "detail": "fig_study_design"
+    },
+    {
+      "check": "no_obsolete_adhoc_validation_fig_study_design",
+      "pass": true,
+      "detail": "fig_study_design"
+    },
+    {
+      "check": "no_obsolete_main_figure_fig_ad_hoc_vs_direct_selectivity",
+      "pass": true,
+      "detail": "fig_ad_hoc_vs_direct_selectivity"
+    },
+    {
+      "check": "no_obsolete_adhoc_validation_fig_ad_hoc_vs_direct_selectivity",
+      "pass": true,
+      "detail": "fig_ad_hoc_vs_direct_selectivity"
+    },
+    {
+      "check": "no_obsolete_main_figure_fig05_workhorse_selection",
+      "pass": true,
+      "detail": "fig05_workhorse_selection"
+    },
+    {
+      "check": "no_obsolete_adhoc_validation_fig05_workhorse_selection",
+      "pass": true,
+      "detail": "fig05_workhorse_selection"
+    },
+    {
+      "check": "no_obsolete_main_figure_fig08_risk_coverage",
+      "pass": true,
+      "detail": "fig08_risk_coverage"
+    },
+    {
+      "check": "no_obsolete_adhoc_validation_fig08_risk_coverage",
+      "pass": true,
+      "detail": "fig08_risk_coverage"
+    },
+    {
+      "check": "no_obsolete_main_figure_fig_pair_acq_hitrate",
+      "pass": true,
+      "detail": "fig_pair_acq_hitrate"
+    },
+    {
+      "check": "no_obsolete_adhoc_validation_fig_pair_acq_hitrate",
+      "pass": true,
+      "detail": "fig_pair_acq_hitrate"
+    },
+    {
+      "check": "no_obsolete_main_figure_fig02_direct_vs_ad_hoc_selectivity",
+      "pass": true,
+      "detail": "fig02_direct_vs_ad_hoc_selectivity"
+    },
+    {
+      "check": "no_obsolete_adhoc_validation_fig02_direct_vs_ad_hoc_selectivity",
+      "pass": true,
+      "detail": "fig02_direct_vs_ad_hoc_selectivity"
+    },
+    {
+      "check": "no_obsolete_main_figure_fig03_workhorse_selection",
+      "pass": true,
+      "detail": "fig03_workhorse_selection"
+    },
+    {
+      "check": "no_obsolete_adhoc_validation_fig03_workhorse_selection",
+      "pass": true,
+      "detail": "fig03_workhorse_selection"
+    },
+    {
+      "check": "no_obsolete_main_figure_fig04_risk_ordering",
+      "pass": true,
+      "detail": "fig04_risk_ordering"
+    },
+    {
+      "check": "no_obsolete_adhoc_validation_fig04_risk_ordering",
+      "pass": true,
+      "detail": "fig04_risk_ordering"
+    },
+    {
+      "check": "no_obsolete_main_figure_fig02_representative_uq",
+      "pass": true,
+      "detail": "fig02_representative_uq"
+    },
+    {
+      "check": "no_obsolete_adhoc_validation_fig02_representative_uq",
+      "pass": true,
+      "detail": "fig02_representative_uq"
+    },
+    {
+      "check": "no_obsolete_main_figure_fig02_risk_ordering",
+      "pass": true,
+      "detail": "fig02_risk_ordering"
+    },
+    {
+      "check": "no_obsolete_adhoc_validation_fig02_risk_ordering",
+      "pass": true,
+      "detail": "fig02_risk_ordering"
+    },
+    {
+      "check": "no_obsolete_main_figure_fig03_pair_acquisition",
+      "pass": true,
+      "detail": "fig03_pair_acquisition"
+    },
+    {
+      "check": "no_obsolete_adhoc_validation_fig03_pair_acquisition",
+      "pass": true,
+      "detail": "fig03_pair_acquisition"
+    },
+    {
+      "check": "no_obsolete_main_figure_figS19_predicted_magnitude_calibration",
+      "pass": true,
+      "detail": "figS19_predicted_magnitude_calibration"
+    },
+    {
+      "check": "no_obsolete_adhoc_validation_figS19_predicted_magnitude_calibration",
+      "pass": true,
+      "detail": "figS19_predicted_magnitude_calibration"
+    },
+    {
+      "check": "no_obsolete_main_figure_figS21_workhorse_selection",
+      "pass": true,
+      "detail": "figS21_workhorse_selection"
+    },
+    {
+      "check": "no_obsolete_adhoc_validation_figS21_workhorse_selection",
+      "pass": true,
+      "detail": "figS21_workhorse_selection"
+    },
+    {
+      "check": "main_figure_1_filename",
+      "pass": true,
+      "detail": "fig01_study_design.png"
+    },
+    {
+      "check": "main_figure_2_filename",
+      "pass": true,
+      "detail": "fig02_workhorse_selection.png"
+    },
+    {
+      "check": "main_figure_3_filename",
+      "pass": true,
+      "detail": "fig03_risk_ordering.png"
+    },
+    {
+      "check": "main_figure_4_filename",
+      "pass": true,
+      "detail": "fig04_predicted_magnitude.png"
+    },
+    {
+      "check": "main_figure_5_filename",
+      "pass": true,
+      "detail": "fig05_pair_acquisition.png"
+    },
+    {
+      "check": "figure_id_prefixes",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "si_figures_s1_through_s19",
+      "pass": true,
+      "detail": "nums=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]"
+    },
+    {
+      "check": "caption_si_number_matches_filename",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "si_image_filename_matches_number",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "no_obsolete_figure_files",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "no_extra_figure_pngs",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "s13_has_ree_36pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_candidate_proxy_in_main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "contribution_not_architecture",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_703_at_least_one_orientation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table3b_warning_once",
+      "pass": true,
+      "detail": "n=1"
+    },
+    {
+      "check": "s32_row_vs_mop_diagnostic",
+      "pass": true,
+      "detail": "n=1"
+    },
+    {
+      "check": "s32_no_prioritization_repeat",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s43_row_weighted",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s44_highsel_row",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s45_highsel_pair",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "dropout_not_shared",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "zero_training_ligand_bin",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "cmi_different_estimands",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "fold_mean_sd_stated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "pooled_labeled",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "workhorse_rmse_value",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "workhorse_picp_value",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "workhorse_ace_value",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "workhorse_mop_r2_value",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_omits_row_rmse_as_headline",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "pm_tokens_traceable_or_few",
+      "pass": true,
+      "detail": "untraced=[]"
+    },
+    {
+      "check": "no_stale_figure_sources",
+      "pass": true,
+      "detail": "n=0"
+    },
+    {
+      "check": "pair_acq_figures_canonical",
+      "pass": true,
+      "detail": "n=3"
+    },
+    {
+      "check": "experiment_ids_unique",
+      "pass": true,
+      "detail": "n=31"
+    },
+    {
+      "check": "no_stale_topk_not_computed_row",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sigma_pair_acquisition_marked_complete",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "pair_acq_threshold_sensitivity_marked_complete",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ad_retention_marked_complete",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "adhoc_marked_complete",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_lists_every_experiment_id",
+      "pass": true,
+      "detail": "missing=[]"
+    },
+    {
+      "check": "s11_omits_completed_experiments",
+      "pass": true,
+      "detail": "ids=[]"
+    },
+    {
+      "check": "numbers_not_computed_in_inventory",
+      "pass": true,
+      "detail": "missing=[]"
+    },
+    {
+      "check": "numbers_not_identifiable_in_inventory",
+      "pass": true,
+      "detail": "missing=[]"
+    },
+    {
+      "check": "si_inventory_fig01_study_design",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_fig02_workhorse_selection",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_fig03_risk_ordering",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_fig04_predicted_magnitude",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_fig05_pair_acquisition",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS1_ds1_complete",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS1_ds1_complete",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS2_ds1_point",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS2_ds1_point",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS3_ds1_uq",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS3_ds1_uq",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS4_ds2_all_pairs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS4_ds2_all_pairs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS5_ds2_highsel_row",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS5_ds2_highsel_row",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS6_ds2_highsel_pair",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS6_ds2_highsel_pair",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS7_workhorse_fold_stability",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS7_workhorse_fold_stability",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS8_chemprop_embedding_retention",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS8_chemprop_embedding_retention",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS9_uncertainty_decomposition",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS9_uncertainty_decomposition",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS10_ad_orientation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS10_ad_orientation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS11_retention_all_pairs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS11_retention_all_pairs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS12_pair_density",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS12_pair_density",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS13_pair_event_support",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS13_pair_event_support",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS14_sign_stability_detail",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS14_sign_stability_detail",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS15_pair_acquisition_threshold_sensitivity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS15_pair_acquisition_threshold_sensitivity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS16_ad_hoc_interval_calibration",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS16_ad_hoc_interval_calibration",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS17_retention_ree",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS17_retention_ree",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS18_direct_vs_ad_hoc_selectivity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS18_direct_vs_ad_hoc_selectivity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_inventory_figS19_ree_fold_stability",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_cites_figS19_ree_fold_stability",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s82_not_same_estimand",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s10_has_rank_correlation_table",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s1012_threshold_sensitivity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s1012_cites_hit_and_regret",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s42_interpretation_heading",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s4_subsection_order",
+      "pass": true,
+      "detail": "s4=['### S4.1', '### S4.2', '### S4.3', '### S4.4', '### S4.5']"
+    },
+    {
+      "check": "s8_tables_sequential",
+      "pass": true,
+      "detail": "pos=(85176, 88136, 89106, 91699, 95950)"
+    },
+    {
+      "check": "s8_5_is_frequent_pairs",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s8_2_is_metal_medium",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s8_3_is_pair_context",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_manuscript_final_pair_event_canonical",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "pair_event_canonical_is_downstream",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_k_support_qualification",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "abstract_ree_plural_diagnostics",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s10_h2_h3_prespecified_rules",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s10_uncertainty_penalty_variants",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s7_nn_expanded_in_table",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s7_no_standalone_nn_sentence",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_points_to_s22_sensitivity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "primary_pair_acq_threshold_one",
+      "pass": true,
+      "detail": "1.0"
+    },
+    {
+      "check": "pair_acq_sens_thresholds",
+      "pass": true,
+      "detail": "high=2.0 low=0.5"
+    },
+    {
+      "check": "s100_generic_auc_column",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s82_ree_scope_heading",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ad_chemprop_embedding_methods",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ad_hypotheses_named",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_fixed_loss_cap_sensitivity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "pair_ad_split_files",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "spec_ad_retention",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "label_Evidential MLP ensemble",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "label_Full variational BNN",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "label_MC-dropout MLP",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "label_SNGP",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "label_Sparse variational GPR",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "label_Chemprop evidential",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_picp_070_in_main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_picp_070_as_current",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_rank_correlation_primary_in_active_text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_best_model_unqualified",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "operational_compromise_phrasing",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_stage3_as_result",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_stage4_as_result",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_bayes_generic_for_mc",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table1_present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table3_present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table2_present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table4_present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s13_adhoc_status",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "figure_registry_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "spec_operational_screen",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "spec_rmse_primary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_lowest_ree_selection",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_legacy_50_100_tokens",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_s85_legacy",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s85_is_distance_error_corr",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "spec_no_rank_correlation_endpoint",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_ad_distance_error_corr_table",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "spec_row_not_selection",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_ds2_table_no_row_metrics",
+      "pass": true,
+      "detail": "cols=[]"
+    },
+    {
+      "check": "main_ds2_has_mop_rmse",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_ds2_has_all_pair_mop_r2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_ds2_has_all_pair_row_r2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_ds2_has_regime",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_ds2_has_calibration_usable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_ds2_has_mop_r2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "selection_artifact_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "selection_json_type",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "selection_json_primary_rmse",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "selection_json_no_row",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "selection_json_not_nested",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "selected_matches_numbers",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_row_diagnostics_exist",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_row_diagnostics_labeled",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_rank_correlation_primary_claim",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_old_picp_gated_mae_current",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table3_leads_with_selected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table3_includes_adhoc_point",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table3_includes_adhoc_uq",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table3_adhoc_mlp_regime",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table3_adhoc_mlp_no_picp",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table3_adhoc_chemprop_regime",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table3_adhoc_chemprop_uses_mop_picp",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table3_adhoc_chemprop_not_selected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "published_tables_omit_mae_and_pair_balanced",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_planned_before_submission",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_best_calibrated_claim",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_table_3c_in_main",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_omits_ree_from_table3_display",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_defines_row_level_picp",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_table3_displays_mop_picp",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table2_md_is_workhorse_context",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table2_md_omits_adhoc_comparators",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table3_md_is_retention",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table3_md_omits_usable_role",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table3_md_omits_adhoc_grid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_screen_remains_row_level",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_fig2_ace_visual_gate_020",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "workhorse_all_pair_only",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "pair_context_support_named",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "threshold_margin_named",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ree_restricted_diagnostic_framing",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "intervals_not_sign_certifying",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "picp_not_called_pair_level_calibration",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_ree_in_primary_results",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "m4_defined_as_source",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "internal_aleatoric_named",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mop_defined_before_ds2_results",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_s13_formulation_diagnostics",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "early_si_omits_ree_pairs_scope",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "early_si_omits_ree_ree_term",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s13_tables_renumbered",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s13_omits_stale_table_ids",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "inventory_si_figures_s1_s19",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_has_figure_s19",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_restricted_figures_grouped_s13_4",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_empty_table_s74",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_deleted_s14_heatmap",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_tables_no_letter_suffix",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "si_tables_no_dot_zero",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_tables_consecutive_per_section",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "si_figures_display_s1_to_s19",
+      "pass": true,
+      "detail": "order=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]"
+    },
+    {
+      "check": "inventory_main_figures_1_5",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "hetero_workhorse_samples_30",
+      "pass": true,
+      "detail": "samples=30"
+    },
+    {
+      "check": "no_independent_quadrature_wording",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_y_yhat_slash_token",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "fig2_shade_not_eligibility_gate",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s18_plots_between_member",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s18_variance_additivity_stated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "composite_predictive_risk_named",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s7_distinguishes_mop_and_row_retention",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s11_restricted_diagnostic",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s21_restricted_diagnostic",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s8_restricted_diagnostic",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s20_restricted_diagnostic",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "s22_supporting_sensitivity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_section_order_s10_s11_s12_s13",
+      "pass": true,
+      "detail": "tail=['## S10.', '## S11.', '## S12.', '## S13.']"
+    },
+    {
+      "check": "si_last_h2_is_s13",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "si_scientific_heading_order",
+      "pass": true,
+      "detail": "pos=[1194, 4913, 13138, 28689, 34053, 36601, 37001, 38984, 43164, 47666, 49014, 57364, 83501, 98683, 100177, 126927, 130634, 147033]"
+    },
+    {
+      "check": "s13_restricted_figures_numerical_block",
+      "pass": true,
+      "detail": "pos=[694, 984, 1460, 1825]"
+    },
+    {
+      "check": "s13_defers_restricted_figure_images",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "ds2_delta_from_species_medians",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "pareto_direction_stated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "mc_dropout_defined",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "cmi_retrain_from_scratch",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "cmi_shared_retrain_no_pt",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "cmi_released_weights_evaluated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "cmi_chemprop_161_stated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "cmi_chemprop_152_stated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "cmi_retrain_protocol_table",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "cmi_released_weight_metrics_table",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "cmi_architecture_retrain_table",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "cmi_hidden_2400_stated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table1_has_released_weights",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "table1_has_cmi_architecture",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "discussion_cmi_architecture",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "discussion_cmi_released_match",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "discussion_ds_inventories",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "discussion_distance_si",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "discussion_sign_si",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "discussion_acquisition_si",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_pair_event_count_formatted",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "main_pair_event_source_explicit",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "workhorse": "DS2_RDKIT_MLPENS5_HETERO",
+  "primary_metric": "all_pairs mop_rmse after operational interval-usability screen and RMSE-PICP-ACE Pareto selection",
+  "chemprop_invalid_nig_rows": 13,
+  "ad_retention_status": "fold-local retention analysis (empirical error ordering); 50% retention is the prespecified RMSE comparison; sigma-only pair acquisition is the primary screening analysis; not a formal coverage or accept/reject guarantee"
+}

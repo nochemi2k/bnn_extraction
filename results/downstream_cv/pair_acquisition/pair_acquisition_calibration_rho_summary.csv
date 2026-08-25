@@ -1,0 +1,5 @@
+model_id,metric_name,fold_mean,fold_sd,n_valid_folds,scope,aggregation
+DS2_RDKIT_MLPENS5_HETERO,rho_abs_yhat_abs_error,0.5410890003840219,0.02862319503377962,5,all_heldout_rows,fold_mean_plus_sd
+DS2_RDKIT_MLPENS5_HETERO,rho_sigma_abs_error,0.6479539998160032,0.020066942613223726,5,all_heldout_rows,fold_mean_plus_sd
+DS2_RDKIT_MLPENS5_HETERO,rho_sigma_abs_y,0.7047155698170781,0.026535676717844993,5,all_heldout_rows,fold_mean_plus_sd
+DS2_RDKIT_MLPENS5_HETERO,rho_sigma_abs_yhat,0.785830986173779,0.018879508503337555,5,all_heldout_rows,fold_mean_plus_sd

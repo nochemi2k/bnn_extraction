@@ -1,0 +1,13 @@
+{
+  "n_rows": 43786,
+  "parse_status": {
+    "ok": 43786
+  },
+  "n_quarantine": 0,
+  "n_empty_ligand": 0,
+  "n_failed_parts": 0,
+  "n_discarded_organic_fragments_rows": 0,
+  "n_multi_ligand_fragments": 0,
+  "n_metal_label_disagreement": 0,
+  "convention": "Ligand = largest organic fragment by heavy atoms; else largest non-metal fragment. Proton tokens are exact [H+]/[H]/H+ only (Hg/Ho/Hf are metals)."
+}

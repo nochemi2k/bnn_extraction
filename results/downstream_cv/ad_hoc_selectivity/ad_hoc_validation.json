@@ -1,0 +1,122 @@
+{
+  "pass": true,
+  "computation_status": "complete",
+  "n_ad_hoc_models": 14,
+  "comparison_phrase": "did not consistently outperform",
+  "failures": [],
+  "spec_path": "configs\\experiments\\ad_hoc_selectivity_spec.yaml",
+  "n_checks": 22,
+  "n_pass": 22,
+  "checks": [
+    {
+      "check": "artifact_ad_hoc_selectivity_fold_metrics.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\ad_hoc_selectivity\\ad_hoc_selectivity_fold_metrics.csv"
+    },
+    {
+      "check": "artifact_ad_hoc_selectivity_summary.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\ad_hoc_selectivity\\ad_hoc_selectivity_summary.csv"
+    },
+    {
+      "check": "artifact_ad_hoc_selectivity_comparison.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\ad_hoc_selectivity\\ad_hoc_selectivity_comparison.csv"
+    },
+    {
+      "check": "artifact_ad_hoc_validation.json",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\ad_hoc_selectivity\\ad_hoc_validation.json"
+    },
+    {
+      "check": "artifact_ad_hoc_spec_snapshot.json",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\ad_hoc_selectivity\\ad_hoc_spec_snapshot.json"
+    },
+    {
+      "check": "validation_pass_flag",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "computation_complete",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "fold_rows_nonempty",
+      "pass": true,
+      "detail": "n=290"
+    },
+    {
+      "check": "has_direct_method",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "has_ad_hoc_method",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "five_outer_folds",
+      "pass": true,
+      "detail": "['fold0', 'fold1', 'fold2', 'fold3', 'fold4']"
+    },
+    {
+      "check": "min_pair_size_three",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "pairs_nonnegative",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "uq_uses_independent_quadrature",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "uq_has_mop_picp",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "adhoc_has_row_r2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_heldout_targets_in_fitting",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_invented_covariance",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "manuscript_table_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "manuscript_matches_canonical",
+      "pass": true,
+      "detail": "n=29"
+    },
+    {
+      "check": "figure_source_exists",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\manuscripts\\final\\figures\\data\\figS18_direct_vs_ad_hoc_selectivity.csv"
+    },
+    {
+      "check": "figure_png_exists",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\manuscripts\\final\\figures\\figS18_direct_vs_ad_hoc_selectivity.png"
+    }
+  ]
+}

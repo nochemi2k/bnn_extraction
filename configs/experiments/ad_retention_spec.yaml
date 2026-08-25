@@ -1,0 +1,129 @@
+# Registered applicability-domain retention study.
+# Frozen before inspecting held-out metrics. Not a formal risk-control procedure.
+experiment_id: ad_retention_study
+status: active
+scientific_question: >
+  Does a reliability score identify held-out rows or pair-level observations
+  with lower prediction error at a fixed retention fraction than random
+  retention? Fixed-retention RMSE is an empirical error-ordering diagnostic
+  and does not itself constitute a ligand-screening evaluation.
+estimand: empirical_AD_risk_ordering
+not:
+  - formal_selective_risk_control
+  - coverage_guarantee
+  - deployment_risk_guarantee
+  - validated_accept_reject_threshold
+fold_locality: required
+pooled_oof_metrics: forbidden
+n_folds: 5
+aggregation: fold_mean_plus_sd_ddof1
+random_seed: 0
+random_n_repeats: 20
+retention_grid: [0.10, 0.20, 0.25, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00]
+primary_retention: 0.50
+high_confidence_retention: 0.10
+narrow_shortlist_retention: 0.25
+unfiltered_retention: 1.00
+tanimoto:
+  type: morgan
+  radius: 2
+  n_bits: 2048
+  k: [1, 5, 10]
+  reference: outer_training_ligands_only
+chemprop_embeddings:
+  source: fold_local_GRAPH_DMPNN_EVID_checkpoint
+  fingerprint: MPN_graph_hidden_without_extra_features
+  extra_features_concatenated: false
+  note: >
+    Chemprop encoder concatenates additional features into the MPN output when
+    use_input_features is true. AD embeddings disable that concatenation so
+    distances remain ligand-graph distances. These scores are Chemprop-specific
+    and are not reported for MLP, SNGP, or GPR models.
+chemprop_mahalanobis_default: centroid
+# Frozen before metric inspection:
+#   chemprop_mahalanobis_centroid = Ledoit-Wolf Mahalanobis distance to the
+#   training-embedding centroid after train-fold standardization.
+#   Nearest-embedding Mahalanobis is a sensitivity score only.
+models:
+  workhorse_ds1: DS1_RDKIT_MLPENS5_EVID
+  workhorse_ds2: DS2_RDKIT_MLPENS5_HETERO
+  chemprop_ds1: DS1_GRAPH_DMPNN_EVID
+  chemprop_ds2: DS2_GRAPH_DMPNN_EVID
+scopes:
+  DS1_primary: metal_complex
+  DS2_primary: all_pairs
+  DS2_secondary: ree_pairs
+primary_metrics:
+  DS1: row_rmse
+  DS2_error_ordering: all_pair_mop_rmse
+ranking_rule: >
+  At each target retention fraction r, the retained set contains the floor(r n)
+  lowest-risk rows in that scoped outer-test fold (r=1 uses all n rows). Ties at
+  the cutoff are resolved deterministically by record_id. Ranking is performed
+  within the analysis scope after apply_scope: REE–REE metrics use a REE-only
+  cutoff, not an all-pair ranking followed by a REE subset.
+pair_support_columns:
+  n_pairs_before: unique pairs in the scoped held-out fold before score-based row retention
+  n_pairs_after: unique pairs represented among retained rows (any retained row)
+  n_pairs_with_at_least_3_retained: pairs contributing to MoP after requiring at least three retained ligands
+enrichment_10: RMSE_random_10 / RMSE_score_10
+min_pair_n: 3
+primary_scores:
+  workhorse:
+    - sigma_total
+    - tanimoto_nn_distance
+    - mahalanobis_feature_centroid
+  chemprop:
+    - sigma_total
+    - tanimoto_nn_distance
+    - chemprop_std_euclidean_nn
+    - chemprop_mahalanobis_centroid
+sensitivity_scores:
+  workhorse:
+    - sigma_epistemic_within
+    - sigma_epistemic_between
+    - sigma_aleatoric
+    - tanimoto_knn_mean_5
+    - tanimoto_knn_mean_10
+    - tanimoto_median_distance
+    - pair_density_risk
+  chemprop:
+    - chemprop_cosine_nn
+    - chemprop_euclidean_nn
+    - chemprop_mahalanobis_nn
+    - chemprop_std_euclidean_knn_5
+    - chemprop_std_euclidean_knn_10
+    - tanimoto_knn_mean_5
+    - tanimoto_knn_mean_10
+    - tanimoto_median_distance
+si_only_feature_space_scores:
+  note: >
+    Additional RDKit+metal+medium feature-space aggregations. Computed for the
+    DS2 workhorse and Chemprop evidential models. Used only for the SI
+    distance-vs-|error| Pearson/rank-correlation association table. Not plotted on retention-curve
+    figures and not used for workhorse selection.
+  k: [5, 10]
+  scores:
+    - mahalanobis_feature_nn
+    - mahalanobis_feature_knn_mean_5
+    - mahalanobis_feature_knn_mean_10
+    - euclidean_feature_nn
+    - euclidean_feature_median
+hypotheses:
+  H1: Workhorse predictive uncertainty identifies held-out subsets with lower DS1 and DS2 prediction error at fixed retention than random retention.
+  H2: Chemical-distance scores identify ligand-extrapolation risk; larger training-set distance is associated with larger held-out error.
+  H3: Chemprop embedding distance provides information not fully captured by Tanimoto distance or predictive uncertainty.
+  H4: The most useful reliability score may differ between DS1 error reduction and DS2 error reduction.
+  H5: At low retention, pair-level improvements may coincide with reduced pair support; conclusions require both performance and retained-pair counts.
+h3_support_rule: >
+  Chemprop embedding distance is supported only if it improves over the best
+  existing baseline across at least two adjacent retention levels, on the
+  relevant primary metric, and on most held-out folds or a clearly lower
+  mean retention-curve AUC. A single favorable 50% value is not sufficient.
+utility_analysis:
+  separate_from_risk_coverage: true
+  ds1_predicted_utility: y_pred
+  ds2_predicted_utility: abs_y_pred
+  utility_shortlists: [0.10, 0.20]
+  ad_quantiles: [0.10, 0.50]
+output_dir: results/downstream_cv/ad_retention

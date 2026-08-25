@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: If you use this repository, please cite the manuscript.
+title: "Uncertainty-Based Risk Ordering and Objective-Specific Ligand Ranking for Metal–Ligand Selectivity"
+authors:
+  - family-names: TBD
+    given-names: TBD
+type: article
+license: TBD
+repository-code: TBD
+abstract: >
+  Direct ligand-disjoint modelling of metal-metal selectivity (DS2) alongside
+  absolute stability constants (DS1). A heteroscedastic MLP ensemble workhorse
+  provides predictive uncertainty that orders held-out error far more effectively
+  than fingerprint, descriptor-space, learned-representation, or pair-support
+  distances, and objective-specific pair-acquisition ranking shows that the best
+  shortlist rule depends on the experimental objective.
+preferred-citation:
+  type: article
+  title: "Uncertainty-Based Risk Ordering and Objective-Specific Ligand Ranking for Metal–Ligand Selectivity"
+  authors:
+    - family-names: TBD
+      given-names: TBD
+  year: 2026
+  notes: Citation placeholder pending journal assignment.

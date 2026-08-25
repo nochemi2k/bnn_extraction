@@ -1,0 +1,23 @@
+# Ready-to-use processed tables and ligand-disjoint splits.
+# Optional `python scripts/prepare_data.py --verify` checks fold feature matrices
+# against these sources without rewriting them.
+
+processed:
+  ds1: data/processed/ds1.csv
+  ds2: data/processed/ds2.csv
+  metal_properties: data/processed/metal_property_table.json
+  ds1_rdkit_schema: data/processed/features/ds1_rdkit_schema.json
+  ds2_rdkit_schema: data/processed/features/ds2_rdkit_schema.json
+  prepare_data_findings: data/processed/audits/prepare_data_findings.json
+
+splits:
+  ds1: data/splits/project_folds.json
+  ds2: data/splits/ds2_project_folds.json
+  cmi_official: data/splits/cmi_official_split.json
+
+raw_m4: data/raw_m4
+composition:
+  ds1: results/canonical/ds1_composition.json
+  ds2: results/canonical/ds2_composition.json
+  hplus: results/canonical/hplus_decision.json
+  cmi_split: results/stage1/stage1a_cmisplit_results.json

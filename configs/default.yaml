@@ -1,0 +1,9 @@
+# Training protocol for the active DS1/DS2 grid.
+# Full retraining is NOT part of the supported release workflow.
+# Use scripts/train.py only if you intend to retrain from processed features.
+
+grid: configs/active_grid.json
+shared_dmpnn: configs/shared_dmpnn.json
+registry: configs/experiments/active_registry.yaml
+checkpoints: checkpoints/active
+seed_protocol: src/uq_remake/training/protocol.py

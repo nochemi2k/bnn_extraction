@@ -1,0 +1,24 @@
+model_id,score,fold_mean,fold_sd,n_valid_folds,n_rows,score_display,role,model,Spearman ρ,_ord,role_ord
+DS2_RDKIT_MLPENS5_HETERO,sigma_total,0.6479539998160031,0.0200669426132237,5,17705.0,$\sigma_{\mathrm{total}}$,primary,workhorse (direct DS2),0.648 ± 0.020,0.0,0
+DS2_RDKIT_MLPENS5_HETERO,tanimoto_nn_distance,-0.0872482613217386,0.0695138306291373,5,17705.0,Tanimoto nearest-neighbor distance,primary,workhorse (direct DS2),-0.087 ± 0.070,4.0,0
+DS2_RDKIT_MLPENS5_HETERO,mahalanobis_feature_centroid,0.1252191292019466,0.0757543331525829,5,17705.0,RDKit feature-centroid Mahalanobis distance,primary,workhorse (direct DS2),0.125 ± 0.076,8.0,0
+DS2_RDKIT_MLPENS5_HETERO,sigma_aleatoric,0.6456387576017425,0.020207287884119,5,17705.0,$\sigma_{\mathrm{aleatoric}}$,sensitivity,workhorse (direct DS2),0.646 ± 0.020,1.0,1
+DS2_RDKIT_MLPENS5_HETERO,sigma_epistemic_within,0.6351453016790666,0.0245120346258464,5,17705.0,"$\sigma_{\mathrm{epistemic,within}}$",sensitivity,workhorse (direct DS2),0.635 ± 0.025,2.0,1
+DS2_RDKIT_MLPENS5_HETERO,sigma_epistemic_between,0.5886317375416159,0.0194324603314256,5,17705.0,"$\sigma_{\mathrm{epistemic,between}}$",sensitivity,workhorse (direct DS2),0.589 ± 0.019,3.0,1
+DS2_RDKIT_MLPENS5_HETERO,tanimoto_knn_mean_5,-0.0919206485901387,0.075836222089448,5,17705.0,"Tanimoto $k$NN mean, $k=5$",sensitivity,workhorse (direct DS2),-0.092 ± 0.076,5.0,1
+DS2_RDKIT_MLPENS5_HETERO,tanimoto_knn_mean_10,-0.0875172622393039,0.0842244909109597,5,17705.0,"Tanimoto $k$NN mean, $k=10$",sensitivity,workhorse (direct DS2),-0.088 ± 0.084,6.0,1
+DS2_RDKIT_MLPENS5_HETERO,tanimoto_median_distance,0.1023104370242848,0.0963029621055654,5,17705.0,Tanimoto median distance,sensitivity,workhorse (direct DS2),0.102 ± 0.096,7.0,1
+DS2_RDKIT_MLPENS5_HETERO,mahalanobis_feature_nn,0.0922091193568452,0.0621008707925241,5,17705.0,RDKit feature Mahalanobis-NN,sensitivity,workhorse (direct DS2),0.092 ± 0.062,9.0,1
+DS2_RDKIT_MLPENS5_HETERO,mahalanobis_feature_knn_mean_5,0.109495806441198,0.0618711435927814,5,17705.0,"RDKit feature Mahalanobis $k$NN mean, $k=5$",sensitivity,workhorse (direct DS2),0.109 ± 0.062,10.0,1
+DS2_RDKIT_MLPENS5_HETERO,mahalanobis_feature_knn_mean_10,0.1177385956351308,0.0618371849278308,5,17705.0,"RDKit feature Mahalanobis $k$NN mean, $k=10$",sensitivity,workhorse (direct DS2),0.118 ± 0.062,11.0,1
+DS2_RDKIT_MLPENS5_HETERO,euclidean_feature_nn,0.1583624960380585,0.0823590376202046,5,17705.0,RDKit feature Euclidean-NN,sensitivity,workhorse (direct DS2),0.158 ± 0.082,12.0,1
+DS2_RDKIT_MLPENS5_HETERO,euclidean_feature_median,0.2496269631487999,0.0777287485430994,5,17705.0,RDKit feature median Euclidean distance,sensitivity,workhorse (direct DS2),0.250 ± 0.078,13.0,1
+DS2_RDKIT_MLPENS5_HETERO,pair_density_risk,0.2742892163769792,0.0235158353240991,5,17705.0,pair-density risk,sensitivity,workhorse (direct DS2),0.274 ± 0.024,14.0,1
+DS2_GRAPH_DMPNN_EVID,chemprop_std_euclidean_nn,-0.067576649155978,0.0511075747246563,5,17705.0,Chemprop Euclidean-NN,sensitivity,Chemprop evidential (learned representation),-0.068 ± 0.051,15.0,1
+DS2_GRAPH_DMPNN_EVID,chemprop_std_euclidean_knn_5,-0.0654517710200374,0.0772462112160291,5,17705.0,"Chemprop Euclidean-$k$NN, $k=5$",sensitivity,Chemprop evidential (learned representation),-0.065 ± 0.077,16.0,1
+DS2_GRAPH_DMPNN_EVID,chemprop_std_euclidean_knn_10,-0.0543731109437754,0.0876612776311574,5,17705.0,"Chemprop Euclidean-$k$NN, $k=10$",sensitivity,Chemprop evidential (learned representation),-0.054 ± 0.088,17.0,1
+DS2_GRAPH_DMPNN_EVID,chemprop_euclidean_nn,-0.0160145956203672,0.0430137631935883,5,17705.0,Chemprop Euclidean-NN (unstandardized),sensitivity,Chemprop evidential (learned representation),-0.016 ± 0.043,18.0,1
+DS2_GRAPH_DMPNN_EVID,chemprop_cosine_nn,-0.0531364687134793,0.0353689027210456,5,17705.0,Chemprop cosine-NN,sensitivity,Chemprop evidential (learned representation),-0.053 ± 0.035,19.0,1
+DS2_GRAPH_DMPNN_EVID,chemprop_mahalanobis_centroid,-0.0496391971391636,0.0809117870772619,5,17705.0,Chemprop embedding-centroid Mahalanobis,sensitivity,Chemprop evidential (learned representation),-0.050 ± 0.081,20.0,1
+DS2_GRAPH_DMPNN_EVID,chemprop_mahalanobis_nn,-0.1203647710435684,0.0593693842774125,5,17705.0,Chemprop embedding Mahalanobis-NN,sensitivity,Chemprop evidential (learned representation),-0.120 ± 0.059,21.0,1
+DS2_RDKIT_MLPENS5_HETERO,mahalanobis_feature_median,0.1272989705513606,0.07518249117685465,5,17705.0,RDKit feature-median Mahalanobis distance,sensitivity,workhorse (direct DS2),0.127 ± 0.075,13.5,1

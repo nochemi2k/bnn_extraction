@@ -1,0 +1,84 @@
+{
+  "decision": "train_with_H",
+  "rationale": "Higher fold-mean R2 on metal_complex-only test with H+ in training.",
+  "decided_using": "M4_GRAPH_DMPNN_POINT only (Chemprop D-MPNN POINT)",
+  "applies_uniformly_to": [
+    "M4_RDKIT_MLP_POINT",
+    "M4_RDKIT_XGB_POINT",
+    "M4_CPEMB_MLP_POINT",
+    "M4_CPEMB_XGB_POINT",
+    "M4_GRAPH_DMPNN_POINT",
+    "DS1",
+    "DS2"
+  ],
+  "paired_cluster_bootstrap": {
+    "r2": {
+      "diff": 0.019830848308505233,
+      "ci95_low": 0.010284282538546397,
+      "ci95_high": 0.02827823901469418,
+      "p_two_sided": 0.0
+    },
+    "mae": {
+      "diff": -0.0973961451874541,
+      "ci95_low": -0.129134382508722,
+      "ci95_high": -0.06219078935306922,
+      "p_two_sided": 0.0
+    }
+  },
+  "summary": [
+    {
+      "variant": "train_with_H",
+      "metric": "r2",
+      "fold_mean": 0.83103633384818,
+      "fold_sd": 0.029335524876527717,
+      "oof_point": 0.8379946441800077,
+      "ci95_low": 0.8165652611548029,
+      "ci95_high": 0.8554125317305747
+    },
+    {
+      "variant": "train_with_H",
+      "metric": "mae",
+      "fold_mean": 1.3846104728943123,
+      "fold_sd": 0.09641796334145666,
+      "oof_point": 1.3850845647495056,
+      "ci95_low": 1.3270626958895793,
+      "ci95_high": 1.446394704595641
+    },
+    {
+      "variant": "train_with_H",
+      "metric": "spearman",
+      "fold_mean": 0.8950542817198268,
+      "fold_sd": 0.027757834725249706,
+      "oof_point": 0.8976880514929166,
+      "ci95_low": 0.885595883206243,
+      "ci95_high": 0.9091828000167909
+    },
+    {
+      "variant": "train_without_H",
+      "metric": "r2",
+      "fold_mean": 0.8113947926683194,
+      "fold_sd": 0.037063239421092777,
+      "oof_point": 0.8181637958715025,
+      "ci95_low": 0.7919821975228994,
+      "ci95_high": 0.8420393406014813
+    },
+    {
+      "variant": "train_without_H",
+      "metric": "mae",
+      "fold_mean": 1.4821580451093663,
+      "fold_sd": 0.1479156071320041,
+      "oof_point": 1.4824807099369597,
+      "ci95_low": 1.4080599541004768,
+      "ci95_high": 1.5592514337526462
+    },
+    {
+      "variant": "train_without_H",
+      "metric": "spearman",
+      "fold_mean": 0.8872850482546489,
+      "fold_sd": 0.02377433913481992,
+      "oof_point": 0.887479397795568,
+      "ci95_low": 0.873344101858932,
+      "ci95_high": 0.9022509310076255
+    }
+  ]
+}

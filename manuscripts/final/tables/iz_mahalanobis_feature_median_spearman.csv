@@ -1,0 +1,6 @@
+outer_fold_id,score,spearman_rho,n_rows
+fold0,mahalanobis_feature_median,0.03199894253654914,17705
+fold1,mahalanobis_feature_median,0.1584810885594646,17705
+fold2,mahalanobis_feature_median,0.2347557232911509,17705
+fold3,mahalanobis_feature_median,0.11150861122881303,17705
+fold4,mahalanobis_feature_median,0.09975048714082546,17705

@@ -1,0 +1,12 @@
+score_name,method_name,display_name,definition,fit_partition,orientation,availability
+sigma_total,sigma_total,sigma_total,predictive total uncertainty from the fold-local model,none_model_output,higher_is_greater_risk,all_uq_models
+tanimoto_nn_distance,tanimoto_nn_distance,Tanimoto nearest-neighbor distance,"1 - max Tanimoto similarity to outer-training ligands (Morgan r=2, 2048 bits)",outer_train,higher_is_greater_risk,all_models
+mahalanobis_feature_centroid,rdkit_feature_mahalanobis_centroid,RDKit feature-centroid Mahalanobis,Ledoit-Wolf Mahalanobis distance to the training centroid in fold-local StandardScaled RDKit+metal features. The obsolete label mahalanobis_joint refers to this same centroid score.,outer_train,higher_is_greater_risk,rdkit_feature_space
+chemprop_std_euclidean_nn,chemprop_embedding_euclidean_nn_standardized,Chemprop Euclidean-NN,nearest-neighbor Euclidean distance in train-standardized Chemprop MPN graph embeddings,outer_train,higher_is_greater_risk,chemprop_only
+chemprop_std_euclidean_knn_5,chemprop_embedding_euclidean_knn_mean_standardized_k5,"Chemprop Euclidean-kNN, k=5",mean Euclidean distance to 5 nearest training-fold Chemprop embeddings after training-fold standardization,outer_train,higher_is_greater_risk,chemprop_only
+chemprop_std_euclidean_knn_10,chemprop_embedding_euclidean_knn_mean_standardized_k10,"Chemprop Euclidean-kNN, k=10",mean Euclidean distance to 10 nearest training-fold Chemprop embeddings after training-fold standardization,outer_train,higher_is_greater_risk,chemprop_only
+chemprop_mahalanobis_centroid,chemprop_embedding_mahalanobis_centroid,Chemprop embedding-centroid Mahalanobis,Ledoit-Wolf Mahalanobis distance to the training-embedding centroid after train-fold standardization,outer_train,higher_is_greater_risk,chemprop_only
+chemprop_mahalanobis_nn,chemprop_embedding_mahalanobis_nn,Chemprop embedding Mahalanobis-NN,nearest-embedding Ledoit-Wolf Mahalanobis distance (sensitivity; not the default),outer_train,higher_is_greater_risk,chemprop_only
+chemprop_cosine_nn,chemprop_embedding_cosine_nn,Chemprop cosine-NN,1 - max cosine similarity to training-fold Chemprop embeddings,outer_train,higher_is_greater_risk,chemprop_only
+pair_density_risk,pair_density_risk,pair-density risk,inverse training-ligand support for the species-level metal pair (higher = greater risk),outer_train,higher_is_greater_risk,ds2_workhorse
+random_retention,random_retention,random retention,fold-local repeated random subsets at the same retention fractions,none,not_a_score,baseline

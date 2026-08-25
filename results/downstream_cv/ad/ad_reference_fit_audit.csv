@@ -1,0 +1,6 @@
+dataset,model_id,outer_fold_id,tanimoto_reference_ligand_count,tanimoto_query_count,tanimoto_ref_parse_failures,tanimoto_query_parse_failures,heldout_in_tanimoto_reference,mahalanobis_reference_row_count,pair_density_reference,fit_partition,evaluation_partition,status,failure_reason,artifact_path,fold_id,member_id
+DS2,MLPENS5_EVID,fold0,1750,17705,0,0,False,70820,outer_train_unique_ligands_per_species_pair,outer_train,heldout_fold,pass,,results\downstream_cv\ad,fold0,ALL
+DS2,MLPENS5_EVID,fold1,1750,17705,0,0,False,70820,outer_train_unique_ligands_per_species_pair,outer_train,heldout_fold,pass,,results\downstream_cv\ad,fold1,ALL
+DS2,MLPENS5_EVID,fold2,1750,17705,0,0,False,70820,outer_train_unique_ligands_per_species_pair,outer_train,heldout_fold,pass,,results\downstream_cv\ad,fold2,ALL
+DS2,MLPENS5_EVID,fold3,1749,17705,0,0,False,70820,outer_train_unique_ligands_per_species_pair,outer_train,heldout_fold,pass,,results\downstream_cv\ad,fold3,ALL
+DS2,MLPENS5_EVID,fold4,1749,17705,0,0,False,70820,outer_train_unique_ligands_per_species_pair,outer_train,heldout_fold,pass,,results\downstream_cv\ad,fold4,ALL

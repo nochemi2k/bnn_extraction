@@ -1,0 +1,56 @@
+{
+  "n_pairs_rows": 88525,
+  "n_unique_ligands": 2187,
+  "n_metal_species_pairs": 2503,
+  "n_metal_element_pairs": 1848,
+  "n_metal_pairs": 2503,
+  "fraction_ree_ree_pairs": 0.3025021180457498,
+  "median_candidate_pool_per_metal_pair": 4.0,
+  "mean_pairs_per_ligand": 40.47782350251486,
+  "pair_scope": "metal_metal_only",
+  "grouping_column": "metal_species_pair",
+  "n_metal_H_pairs": 0,
+  "electrolyte_in_X": false,
+  "metal_props_convention": "row_level_cmi",
+  "medium_key": [
+    "ligand_smiles",
+    "temperature_C",
+    "ionic_strength_M",
+    "electrolyte"
+  ],
+  "note": "Electrolyte identity is used for experimental matching and grouping but is excluded from the tabular predictor. Grouping uses metal_species_pair. IE and metal_valence_e are row-level CMI values (same convention as Chemprop).",
+  "medium_key_audit": {
+    "n_medium_keys": 8839,
+    "key": [
+      "ligand_smiles",
+      "temperature_C",
+      "ionic_strength_M",
+      "electrolyte"
+    ],
+    "must_agree": [
+      "solvent_mw",
+      "solvent_density",
+      "ligand_charge",
+      "temperature_C",
+      "ionic_strength_M",
+      "electrolyte"
+    ],
+    "n_keys_disagreeing": {
+      "solvent_mw": 0,
+      "solvent_density": 0,
+      "ligand_charge": 0,
+      "temperature_C": 0,
+      "ionic_strength_M": 0,
+      "electrolyte": 0
+    },
+    "sufficient": true,
+    "may_disagree_n_keys": {
+      "complex_charge": 1430,
+      "metal_oxidation_state": 1430,
+      "IE": 4516,
+      "metal_valence_e": 4077,
+      "metal_el": 4479
+    },
+    "note": "solvent_mw, solvent_density, and ligand_charge are a 1:1 consequence of (ligand, T, I, electrolyte) in this corpus, so they are not added to the matching key. complex_charge, oxidation state, and IE/valence vary by metal and are not matching fields."
+  }
+}

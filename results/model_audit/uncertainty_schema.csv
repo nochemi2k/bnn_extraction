@@ -1,0 +1,11 @@
+family,uncertainty_status,fill_policy,aleatoric,epistemic,interval_method
+POINT_*,unavailable,NaN; never 0 / residual SD / constant floor,unavailable,unavailable,
+MCDROPOUT_MLP,valid,learned global log observation variance; MC var of mu (ddof=0),"exp(s), s=log sigma_a^2 learned globally",Var_t[mu_t] over MC dropout,normal_moment_approximation
+HETERO_MLP,valid,"average variances, never average standard deviations",E_t[exp(s_t(x))],Var_t[mu_t],normal_moment_approximation
+EVID_MLP,valid,NIG moments; not a weight posterior,beta/(alpha-1),beta/(nu (alpha-1)),normal_moment_approximation
+*_MLPENS5,valid,law of total variance; within/between saved separately,mean of member aleatoric variances,within-member + between-member disagreement (ddof=0),normal_moment_approximation
+CHEMPROP_EVIDENTIAL_NATIVE,valid,native Chemprop return_unc_parameters; no residual proxy,beta/(alpha-1),beta/(lambda (alpha-1)); lambda=nu,normal_moment_approximation
+BAYES_FULL,valid,variational posterior samples; aleatoric = exp(log_sigma2_obs),learned homoscedastic exp(s_obs),Var_s[f_theta_s(x)] over weight samples; single-model within=between=0,empirical_posterior_predictive
+SNGP,valid,GP posterior over RFF readout; spectral-normalized backbone is point-estimated,learned homoscedastic exp(s_obs),phi^T Lambda^{-1} phi from training-only precision,gaussian_predictive_moment
+GPR / GPR_SPARSE,valid_when_trained,exact GP if n_train<=2048 else SVGP; variances inverse-scaled by target scale^2,GP observation noise in original units,latent GP variance in original units,gaussian_predictive_moment
+CHEMPROP_MC_DROPOUT,excluded,not trained,n/a,n/a,n/a

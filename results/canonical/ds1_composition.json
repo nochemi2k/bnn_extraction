@@ -1,0 +1,22 @@
+{
+  "dataset": "DS1",
+  "hplus_decision": "train_with_H",
+  "train_policy": "Protonation (H+) records kept in training and in DS1; test metrics remain metal_complex-only. CMI external is not in DS1.",
+  "n_records": 43388,
+  "n_unique_ligands": 4347,
+  "n_metals": 73,
+  "n_species_keys": 21684,
+  "family_breakdown": {
+    "metal_complex": 32029,
+    "protonation": 11359
+  },
+  "cmi_external_excluded": true,
+  "n_external_records": 398,
+  "n_external_ligands": 40,
+  "test_restriction": "metal_complex only for Stage 1b evaluation",
+  "include_solvent_properties": true,
+  "electrolyte_in_X": false,
+  "metal_props_convention": "row_level_cmi",
+  "rdkit_dimension": 203,
+  "rdkit_n_selected": 187
+}

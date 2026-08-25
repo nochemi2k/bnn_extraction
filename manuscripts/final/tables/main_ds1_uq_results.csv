@@ -1,0 +1,13 @@
+display_name,model_id,scope,rmse,r2,picp_90,ace,interval_method,n_valid_folds,uq_status,interval_status,aggregation
+MC-dropout MLP ensemble,DS1_RDKIT_MLPENS5_MCDROPOUT,metal_complex,2.171 ± 0.182,0.840 ± 0.015,0.853 ± 0.029,0.028 ± 0.008,normal_moment,5,complete,ok,fold_mean_plus_sd_ddof1
+MC-dropout MLP,DS1_RDKIT_MLP_MCDROPOUT,metal_complex,2.222 ± 0.181,0.832 ± 0.018,0.829 ± 0.025,0.030 ± 0.010,normal_moment,5,complete,ok,fold_mean_plus_sd_ddof1
+SNGP ensemble,DS1_RDKIT_SNGPENS5,metal_complex,2.348 ± 0.154,0.812 ± 0.022,0.820 ± 0.025,0.040 ± 0.012,gaussian_predictive_moment,5,complete,ok,fold_mean_plus_sd_ddof1
+SNGP,DS1_RDKIT_SNGP,metal_complex,2.369 ± 0.166,0.809 ± 0.020,0.792 ± 0.031,0.043 ± 0.013,gaussian_predictive_moment,5,complete,ok,fold_mean_plus_sd_ddof1
+Evidential MLP ensemble,DS1_RDKIT_MLPENS5_EVID,metal_complex,2.432 ± 0.132,0.796 ± 0.042,0.834 ± 0.018,0.079 ± 0.023,student_t_nig_predictive,5,complete,ok,fold_mean_plus_sd_ddof1
+Evidential MLP,DS1_RDKIT_MLP_EVID,metal_complex,2.470 ± 0.160,0.790 ± 0.040,0.805 ± 0.037,0.100 ± 0.036,student_t_nig_predictive,5,complete,ok,fold_mean_plus_sd_ddof1
+Chemprop evidential,DS1_GRAPH_DMPNN_EVID,metal_complex,2.473 ± 0.204,0.792 ± 0.027,0.732 ± 0.038,0.165 ± 0.020,student_t_nig_predictive,5,complete,ok,fold_mean_plus_sd_ddof1
+Full variational BNN ensemble,DS1_RDKIT_MLPENS5_BAYES_FULL,metal_complex,2.505 ± 0.122,0.787 ± 0.017,NA,NA,empirical_posterior_predictive,0,partial,partial,fold_mean_plus_sd_ddof1
+Heteroscedastic MLP ensemble,DS1_RDKIT_MLPENS5_HETERO,metal_complex,2.540 ± 0.142,0.779 ± 0.038,0.894 ± 0.019,0.023 ± 0.010,normal_moment,5,complete,ok,fold_mean_plus_sd_ddof1
+Full variational BNN,DS1_RDKIT_MLP_BAYES_FULL,metal_complex,2.582 ± 0.137,0.774 ± 0.015,0.776 ± 0.030,0.049 ± 0.033,empirical_posterior_predictive,5,complete,ok,fold_mean_plus_sd_ddof1
+Sparse variational GPR,DS1_RDKIT_GPR_SPARSE,metal_complex,2.595 ± 0.163,0.767 ± 0.057,0.906 ± 0.024,0.093 ± 0.030,gaussian_predictive_moment,5,complete,ok,fold_mean_plus_sd_ddof1
+Heteroscedastic MLP,DS1_RDKIT_MLP_HETERO,metal_complex,2.611 ± 0.180,0.765 ± 0.053,0.876 ± 0.027,0.023 ± 0.005,normal_moment,5,complete,ok,fold_mean_plus_sd_ddof1

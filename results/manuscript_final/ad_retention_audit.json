@@ -1,0 +1,9 @@
+{
+  "audit_utc": "2026-08-20T09:17:08.158704+00:00",
+  "experiment_id": "ad_retention_study",
+  "formal_risk_control": false,
+  "pooled_oof_metrics": false,
+  "source": "results/downstream_cv/ad_retention/leakage_audit.csv",
+  "n_rows": 20,
+  "all_pass": true
+}

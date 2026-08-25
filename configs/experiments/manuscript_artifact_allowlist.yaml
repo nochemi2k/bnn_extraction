@@ -1,0 +1,98 @@
+# Artifacts required for manuscript, SI, and reproduction from stored results.
+allowlist:
+  - artifact_path: configs/active_grid.json
+    description: Active UQ grid
+    status: required
+  - artifact_path: configs/shared_dmpnn.json
+    description: Shared MLP/Chemprop hyperparameters
+    status: required
+  - artifact_path: configs/experiments/active_registry.yaml
+    description: Model/experiment registry
+    status: required
+  - artifact_path: configs/experiments/ad_retention_spec.yaml
+    description: AD retention grid and score definitions
+    status: required
+  - artifact_path: configs/experiments/ad_hoc_selectivity_spec.yaml
+    description: Aligned ad hoc DS1-difference versus direct DS2 selectivity
+    status: required
+  - artifact_path: configs/experiments/pair_acquisition_spec.yaml
+    description: Sigma-only high/low selectivity pair acquisition (n_event>1)
+    status: required
+  - artifact_path: configs/experiments/pair_acquisition_threshold_sensitivity_spec.yaml
+    description: Supporting pair-acquisition event-threshold sensitivity (tau=2 / 0.5)
+    status: required
+  - artifact_path: data/splits/project_folds.json
+    description: DS1 ligand-disjoint folds
+    status: required
+  - artifact_path: data/splits/ds2_project_folds.json
+    description: DS2 ligand-disjoint folds
+    status: required
+  - artifact_path: data/processed/ds1.csv
+    description: DS1 table
+    status: required
+  - artifact_path: data/processed/ds2.csv
+    description: DS2 table
+    status: required
+  - artifact_path: results/cv_metrics/fold_metrics.csv
+    description: Fold-level point/UQ metrics
+    status: required
+  - artifact_path: results/cv_metrics/fold_metric_summary.csv
+    description: Fold mean±SD summaries
+    status: required
+  - artifact_path: results/cv_metrics/chemprop_evidential_status_v2.csv
+    description: Chemprop evidential native-UQ status
+    status: required
+  - artifact_path: results/model_audit/workhorse_selection_rule.json
+    description: Workhorse selection rule
+    status: required
+  - artifact_path: results/downstream_cv/ad_retention/retention_summary.csv
+    description: AD quantile retention summary
+    status: required
+  - artifact_path: results/downstream_cv/ad_retention/retention_50pct.csv
+    description: Canonical 50% retention table
+    status: required
+  - artifact_path: results/downstream_cv/ad_hoc_selectivity/ad_hoc_selectivity_summary.csv
+    description: Aligned ad hoc versus direct selectivity summary
+    status: required
+  - artifact_path: results/downstream_cv/pair_acquisition/pair_acquisition_summary.csv
+    description: Sigma-only pair-acquisition summary
+    status: required
+  - artifact_path: results/downstream_cv/pair_acquisition_tau_2_0p5/pair_acquisition_summary.csv
+    description: Supporting pair-acquisition event-threshold sensitivity summary
+    status: required
+  - artifact_path: results/downstream_cv/ad_distance_error_corr/ad_distance_error_corr_summary.csv
+    description: AD distance versus row-level absolute-residual association
+    status: required
+  - artifact_path: results/canonical/
+    description: Composition and H+ policy JSON
+    status: required
+  - artifact_path: results/cv_metrics/
+    description: Fold-level metrics and summaries
+    status: required
+  - artifact_path: results/downstream_cv/
+    description: AD retention / pair-density / sign-stability / pair acquisition
+    status: required
+  - artifact_path: checkpoints/active/
+    description: Canonical trained weights
+    status: required
+  - artifact_path: src/uq_remake/
+    description: Canonical package
+    status: required
+  - artifact_path: scripts/validate_release.py
+    description: Release validator
+    status: required
+  - artifact_path: src/uq_remake/data/prepare_data.py
+    description: Tables, folds, fold-local features
+    status: required
+  - artifact_path: tests/
+    description: Unit/integration/regression tests
+    status: required
+  - artifact_path: requirements.txt
+    description: CPU environment
+    status: required
+  - artifact_path: requirements-gpu.txt
+    description: GPU environment
+    status: required
+  - artifact_path: README.md
+    description: Reproduction instructions
+    status: required

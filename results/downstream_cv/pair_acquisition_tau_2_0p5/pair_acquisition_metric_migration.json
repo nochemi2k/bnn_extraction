@@ -1,0 +1,20 @@
+{
+  "legacy_column": "hit_rate_at_k",
+  "legacy_displayed_as_through_2026_08_17": "hit@k",
+  "correct_name": "event_precision_at_k",
+  "event_precision_definition": "n_hits / k",
+  "true_hit_column": "any_hit_at_k",
+  "true_hit_displayed_as": "hit@k",
+  "true_hit_definition": "1[sum_{j=1}^k I_j > 0]",
+  "source_fold_metrics_unchanged": true,
+  "ranking_unchanged": true,
+  "ranking_inputs": [
+    "y_pred",
+    "sigma_total"
+  ],
+  "held_out_labels_used_for_ranking": false,
+  "n_fold_metric_rows": 32562,
+  "n_wide_rows": 24,
+  "aggregation": "pair_equal_then_fold_mean_plus_sd",
+  "note": "Legacy hit_rate_at_k remains the machine-readable event-precision field. True hit@k is any_hit_at_k."
+}

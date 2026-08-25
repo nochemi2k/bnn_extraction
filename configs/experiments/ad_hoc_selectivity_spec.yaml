@@ -1,0 +1,62 @@
+# Aligned ad hoc DS1-difference versus direct DS2 selectivity.
+# Frozen before inspecting held-out ad hoc metrics. Not a new model-family benchmark.
+experiment_id: adhoc_differencing
+status: active
+scientific_question: >
+  Under ligand-disjoint validation, is independently predicting absolute log K
+  values and subtracting them an adequate substitute for directly modeling
+  pairwise selectivity?
+estimand: ree_ree_mop_rmse
+not:
+  - universal_invalidity_of_differencing
+  - new_model_family_benchmark
+  - directional_topk_on_ad_hoc_baseline
+  - invented_covariance_propagation
+fold_locality: required
+pooled_oof_metrics: forbidden
+n_folds: 5
+aggregation: fold_mean_plus_sd_ddof1
+alignment: DS2_outer_folds_with_ligand_heldout_DS1_checkpoints
+selectivity_methods:
+  - direct_ds2_selectivity
+  - ad_hoc_ds1_difference
+propagation_method: independent_quadrature_sigma_total
+propagation_formula: sigma_delta = sqrt(sigma_x^2 + sigma_y^2)
+uncertainty_note: >
+  Propagated ad hoc uncertainty is a diagnostic for the difference of two
+  absolute-binding predictions. It is not assumed to be calibrated uncertainty
+  for a directly modeled selectivity target.
+primary_scope: ree_pairs
+secondary_scope: all_pairs
+min_pair_size: 3
+primary_metric: mop_rmse
+supporting_metrics:
+  - mop_r2
+  - sign_accuracy
+  - picp_90
+  - ace
+  - row_rmse
+ds1_uncertainty_models:
+  - DS1_RDKIT_MLP_EVID
+  - DS1_RDKIT_MLPENS5_EVID
+  - DS1_RDKIT_MLP_HETERO
+  - DS1_RDKIT_MLPENS5_HETERO
+  - DS1_RDKIT_MLP_MCDROPOUT
+  - DS1_RDKIT_MLPENS5_MCDROPOUT
+  - DS1_RDKIT_SNGP
+  - DS1_RDKIT_SNGPENS5
+  - DS1_RDKIT_GPR_SPARSE
+  - DS1_RDKIT_MLP_BAYES_FULL
+  - DS1_RDKIT_MLPENS5_BAYES_FULL
+  - DS1_GRAPH_DMPNN_EVID
+optional_point_baselines:
+  - DS1_RDKIT_MLP_POINT
+  - DS1_RDKIT_XGB_POINT
+direct_ds2_workhorse: DS2_RDKIT_MLPENS5_HETERO
+output_dir: results/downstream_cv/ad_hoc_selectivity
+limitations:
+  - DS1 and DS2 fold IDs are not interchangeable
+  - ad hoc uses the DS1 checkpoint that held the ligand out
+  - direct DS2 uses the DS2 fold that held the pair out
+  - no invented covariance
+  - not a directional top-k study

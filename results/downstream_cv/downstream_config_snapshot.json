@@ -1,0 +1,65 @@
+{
+  "dataset": "DS2",
+  "model_id": "MLPENS5_EVID",
+  "canonical_model_id": "DS2_RDKIT_MLPENS5_EVID",
+  "task": "direct_delta_logK",
+  "evaluation_partition": "heldout_fold",
+  "n_outer_folds": 5,
+  "fold_assignment": "ligand_disjoint",
+  "metric_aggregation": "fold_mean_plus_sd",
+  "sd_definition": "ddof_1",
+  "crc": {
+    "class": "A_nested_retrain",
+    "ensemble_members": 5,
+    "hidden_widths": [
+      512,
+      512,
+      256
+    ],
+    "lambda_reg": 0.01,
+    "primary_score": "sigma_total",
+    "secondary_scores": [
+      "sigma_epistemic_total",
+      "sigma_epistemic_within",
+      "sigma_epistemic_between"
+    ],
+    "loss_cap_B": 2.0,
+    "loss_cap_source": "predeclared_fixed",
+    "risk_budgets_alpha": [
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "threshold_rule": "inf_lambda_such_that_R_CRC_le_alpha",
+    "no_feasible_policy": "crc_status=no_feasible_threshold",
+    "inner_cal_frac": 0.2,
+    "inner_val_frac_of_remainder": 0.2,
+    "crc_seed_offset": 130,
+    "do_not_reuse_outer_workhorse_checkpoint": true
+  },
+  "ad": {
+    "class": "B_fold_local_no_retrain",
+    "fingerprint_type": "morgan",
+    "fingerprint_radius": 2,
+    "fingerprint_n_bits": 2048,
+    "tanimoto_orientation": "distance_1_minus_similarity_higher_is_risk",
+    "covariance_estimator": "ledoit_wolf",
+    "mahalanobis_feature_space": "joint_ligand_metal_fold_local_standardscaled",
+    "pair_density_score": "1/(1+n_pair_train_ligands)",
+    "retention_fractions": [
+      1.0,
+      0.9,
+      0.8,
+      0.7,
+      0.5
+    ],
+    "score_selection": "predeclared_comparison_no_winner",
+    "do_not_select_ad_score_from_outer_test": true
+  },
+  "crc_threshold_rule_note": "lambda_hat = inf{lambda : R_CRC(lambda) <= alpha} on the reject-all to accept-all path",
+  "pooled_concatenated_predictions_forbidden": true,
+  "headline_aggregation": "fold_mean_plus_sd_ddof1",
+  "visualization": false,
+  "manuscript_rewrite": false
+}

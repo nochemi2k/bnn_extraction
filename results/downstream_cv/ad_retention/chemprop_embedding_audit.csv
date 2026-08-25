@@ -1,0 +1,11 @@
+dataset,model_id,outer_fold_id,n_train_embeddings,n_query_embeddings,embedding_dim,graph_only,heldout_in_embedding_reference,mahalanobis_default,covariance_estimator,shrinkage,effective_rank,train_cached,test_cached,checkpoint_path
+DS1,DS1_GRAPH_DMPNN_EVID,fold0,17439,8678,300,True,False,centroid,ledoit_wolf,0.001369696283152807,300,False,False,checkpoints\active\DS1_GRAPH_DMPNN_EVID\fold0\member_0
+DS1,DS1_GRAPH_DMPNN_EVID,fold1,17283,8678,300,True,False,centroid,ledoit_wolf,0.0012559674748416326,300,False,False,checkpoints\active\DS1_GRAPH_DMPNN_EVID\fold1\member_0
+DS1,DS1_GRAPH_DMPNN_EVID,fold2,17334,8678,300,True,False,centroid,ledoit_wolf,0.0012418659153242294,300,False,False,checkpoints\active\DS1_GRAPH_DMPNN_EVID\fold2\member_0
+DS1,DS1_GRAPH_DMPNN_EVID,fold3,17377,8677,300,True,False,centroid,ledoit_wolf,0.001247309584536924,300,False,False,checkpoints\active\DS1_GRAPH_DMPNN_EVID\fold3\member_0
+DS1,DS1_GRAPH_DMPNN_EVID,fold4,17303,8677,300,True,False,centroid,ledoit_wolf,0.0013624563312272845,300,False,False,checkpoints\active\DS1_GRAPH_DMPNN_EVID\fold4\member_0
+DS2,DS2_GRAPH_DMPNN_EVID,fold0,1750,17705,300,True,False,centroid,ledoit_wolf,0.01885870846618164,300,True,False,checkpoints\active\DS2_GRAPH_DMPNN_EVID\fold0\member_0
+DS2,DS2_GRAPH_DMPNN_EVID,fold1,1750,17705,300,True,False,centroid,ledoit_wolf,0.019216844031625498,300,False,False,checkpoints\active\DS2_GRAPH_DMPNN_EVID\fold1\member_0
+DS2,DS2_GRAPH_DMPNN_EVID,fold2,1750,17705,300,True,False,centroid,ledoit_wolf,0.016571473901861287,300,False,False,checkpoints\active\DS2_GRAPH_DMPNN_EVID\fold2\member_0
+DS2,DS2_GRAPH_DMPNN_EVID,fold3,1749,17705,300,True,False,centroid,ledoit_wolf,0.021909226976803885,300,False,False,checkpoints\active\DS2_GRAPH_DMPNN_EVID\fold3\member_0
+DS2,DS2_GRAPH_DMPNN_EVID,fold4,1749,17705,300,True,False,centroid,ledoit_wolf,0.022714610691827643,300,False,False,checkpoints\active\DS2_GRAPH_DMPNN_EVID\fold4\member_0

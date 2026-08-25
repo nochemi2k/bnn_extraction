@@ -1,0 +1,24 @@
+{
+  "display": "1.484 \u00b1 0.161",
+  "fold_mean": 1.4839531651864664,
+  "fold_sd": 0.16095363759577772,
+  "n_valid_folds": 5,
+  "fold_values": [
+    1.4314233578027442,
+    1.743001565430411,
+    1.3451571348931395,
+    1.3719851341209597,
+    1.528198633685077
+  ],
+  "n_rows_per_fold": [
+    6250,
+    6372,
+    6396,
+    6473,
+    6538
+  ],
+  "scope": "metal_complex",
+  "model_id": "DS1_GRAPH_DMPNN_POINT",
+  "aggregation": "fold_mean_plus_sd_ddof1",
+  "source": "results/cv_predictions/fold_test_predictions/DS1_GRAPH_DMPNN_POINT/"
+}

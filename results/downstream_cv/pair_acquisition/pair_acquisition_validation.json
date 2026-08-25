@@ -1,0 +1,27 @@
+{
+  "experiment_id": "sigma_pair_acquisition",
+  "pass": true,
+  "computation_status": "complete",
+  "pooled_oof_metrics": false,
+  "global_selection": false,
+  "distance_scores_used": false,
+  "model_id": "DS2_RDKIT_MLPENS5_HETERO",
+  "n_folds": 5,
+  "k_grid": [
+    1,
+    5,
+    10
+  ],
+  "strategies": [
+    "y_pred",
+    "lcb_1sigma",
+    "lcb_2sigma",
+    "lcb_3sigma",
+    "expected_improvement",
+    "random"
+  ],
+  "event_min_exclusive": 1,
+  "threshold": 1.0,
+  "spec_path": "configs\\experiments\\pair_acquisition_spec.yaml",
+  "n_pair_task_rows": 42240
+}

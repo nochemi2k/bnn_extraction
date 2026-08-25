@@ -1,0 +1,24 @@
+# Evaluation-only release paths. Retraining is not required.
+
+grid: configs/active_grid.json
+registry: configs/experiments/active_registry.yaml
+shared_dmpnn: configs/shared_dmpnn.json
+ad_retention_spec: configs/experiments/ad_retention_spec.yaml
+ad_hoc_selectivity_spec: configs/experiments/ad_hoc_selectivity_spec.yaml
+pair_acquisition_spec: configs/experiments/pair_acquisition_spec.yaml
+
+checkpoints: checkpoints/active
+cv_metrics: results/cv_metrics
+workhorse_rule: results/model_audit/workhorse_selection_rule.json
+workhorse_selection: results/manuscript_final/workhorse_selection_accuracy_calibration.csv
+
+ad_retention: results/downstream_cv/ad_retention
+ad_row: results/downstream_cv/ad
+ad_hoc: results/downstream_cv/ad_hoc_selectivity
+pair_acquisition: results/downstream_cv/pair_acquisition
+pair_density: results/downstream_cv/pair_density
+sign_stability: results/downstream_cv/sign_stability
+
+workhorse:
+  ds1: DS1_RDKIT_MLPENS5_EVID
+  ds2: DS2_RDKIT_MLPENS5_HETERO

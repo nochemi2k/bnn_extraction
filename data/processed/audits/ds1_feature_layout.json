@@ -1,0 +1,18 @@
+{
+  "dataset": "DS1",
+  "ok": true,
+  "counts": {
+    "metal_oxidation_state": 1,
+    "metal_oxidation_state_y": 0,
+    "complex_charge": 1,
+    "complex_charge_y": 0,
+    "ligand_charge": 1,
+    "solvent_mw": 1,
+    "solvent_density": 1,
+    "IE": 1,
+    "IE_y": 0,
+    "metal_valence_e": 1,
+    "metal_valence_e_y": 0
+  },
+  "n": 203
+}

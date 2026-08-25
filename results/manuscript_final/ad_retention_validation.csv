@@ -1,0 +1,46 @@
+check,pass,detail
+no_crc_language_main_manuscript.md,True,
+no_crc_language_supplementary_information.md,True,
+no_crc_language_captions.md,True,
+empirical_risk_ordering_framing,True,
+no_coverage_guarantee_claim,True,
+certainty_vs_pair_acquisition,True,
+primary_retention_50,True,
+table3_is_ad_retention,True,
+chemprop_embedding_paragraph,True,
+chemprop_fold_local_embeddings,True,
+random_retention_mentioned,True,
+enrichment_defined,True,
+rmse_enrichment_defined,True,
+error_ordering_diagnostic,True,
+hypotheses_predeclared,True,
+registered_spec_exists,True,
+artifact_retention_summary.csv,True,C:\Users\IVan\Desktop\BNN Extraction\results\downstream_cv\ad_retention\retention_summary.csv
+artifact_fold_retention.csv,True,C:\Users\IVan\Desktop\BNN Extraction\results\downstream_cv\ad_retention\fold_retention.csv
+artifact_retention_50pct.csv,True,C:\Users\IVan\Desktop\BNN Extraction\results\downstream_cv\ad_retention\retention_50pct.csv
+artifact_random_retention_summary.csv,True,C:\Users\IVan\Desktop\BNN Extraction\results\downstream_cv\ad_retention\random_retention_summary.csv
+artifact_random_fold_retention.csv,True,C:\Users\IVan\Desktop\BNN Extraction\results\downstream_cv\ad_retention\random_fold_retention.csv
+artifact_enrichment_summary.csv,True,C:\Users\IVan\Desktop\BNN Extraction\results\downstream_cv\ad_retention\enrichment_summary.csv
+artifact_enrichment_fold.csv,True,C:\Users\IVan\Desktop\BNN Extraction\results\downstream_cv\ad_retention\enrichment_fold.csv
+artifact_retention_aurc.csv,True,C:\Users\IVan\Desktop\BNN Extraction\results\downstream_cv\ad_retention\retention_aurc.csv
+artifact_leakage_audit.csv,True,C:\Users\IVan\Desktop\BNN Extraction\results\downstream_cv\ad_retention\leakage_audit.csv
+artifact_score_definitions.csv,True,C:\Users\IVan\Desktop\BNN Extraction\results\downstream_cv\ad_retention\score_definitions.csv
+artifact_ad_retention_spec_snapshot.json,True,C:\Users\IVan\Desktop\BNN Extraction\results\downstream_cv\ad_retention\ad_retention_spec_snapshot.json
+leakage_audit_nonempty,True,n=20
+all_distances_fold_local,True,{'pass': 20}
+no_heldout_tanimoto_reference,True,
+no_heldout_embedding_reference,True,
+no_chemprop_scores_on_other_models,True,
+five_folds_per_job,True,
+no_pooled_column,True,
+evaluation_partition_heldout,True,
+every_curve_has_five_folds,True,min=5 n_curves=168
+retention_grid_complete,True,missing=[]
+ds1_50pct_pairs_are_na,True,"DS1 pair columns must be NA, not 0"
+rmse_enrichment_in_table,True,['enrichment_10_mop_rmse' 'enrichment_10_rmse']
+no_rank_correlation_in_enrichment,True,
+ds2_mop_respects_pair_support,True,violations=0
+chemprop_only_scores_not_on_workhorse,True,[]
+chemprop_columns_absent_from_non_chemprop_score_tables,True,
+table_50pct_copied,True,
+no_main_crc_table,True,

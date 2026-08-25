@@ -1,0 +1,9 @@
+{
+  "source": "CMI feature CSV columns IE and metal_valence_e (not Exp LgK1 / logK)",
+  "convention": "row_level_cmi",
+  "n_species": 102,
+  "n_species_ie_not_unique": 0,
+  "n_species_valence_not_unique": 0,
+  "oxidation_state_is_separate_feature": true,
+  "note": "IE and valence are unique given (element, oxidation_state) in this corpus, so they cannot be a within-species function of the logK target. Oxidation state is the explanatory input; row-level IE/valence are derived CMI properties."
+}

@@ -1,0 +1,25 @@
+scope,stratum,stratum_label,metric_name,dataset,model_id,experiment_id,fold_mean,fold_sd,n_folds_attempted,n_valid_folds,metric_aggregation,sd_definition,identifiability,display
+all_pairs,metal_medium_seen,seen,mop_rmse,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,2.005900379972074,0.0749532422648964,5,5,fold_mean_plus_sd,ddof_1,identifiable,2.006 ± 0.075
+all_pairs,metal_medium_seen,seen,n_pairs,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,1286.4,114.2816695712834,5,5,fold_mean_plus_sd,ddof_1,identifiable,1286.4 ± 114.3
+all_pairs,metal_medium_seen,seen,n_rows,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,17282.6,143.21242962815762,5,5,fold_mean_plus_sd,ddof_1,identifiable,17282.6 ± 143.2
+all_pairs,metal_medium_seen,seen,picp_90,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,0.8959311455124823,0.0220610923085743,5,5,fold_mean_plus_sd,ddof_1,identifiable,0.896 ± 0.022
+all_pairs,metal_medium_seen,seen,rmse,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,1.9927509237021608,0.1478775457166092,5,5,fold_mean_plus_sd,ddof_1,identifiable,1.993 ± 0.148
+all_pairs,metal_medium_seen,seen,sign_accuracy,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,0.8227207775948784,0.0161998133498689,5,5,fold_mean_plus_sd,ddof_1,identifiable,0.823 ± 0.016
+all_pairs,metal_medium_unseen,unseen,mop_rmse,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,3.4087879764567792,1.7936912537059404,5,4,fold_mean_plus_sd,ddof_1,identifiable,3.409 ± 1.794 (n_valid=4)
+all_pairs,metal_medium_unseen,unseen,n_pairs,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,362.0,102.4084957413202,5,5,fold_mean_plus_sd,ddof_1,identifiable,362.0 ± 102.4
+all_pairs,metal_medium_unseen,unseen,n_rows,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,422.4,143.21242962815762,5,5,fold_mean_plus_sd,ddof_1,identifiable,422.4 ± 143.2
+all_pairs,metal_medium_unseen,unseen,picp_90,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,0.8166578172147148,0.0492156653724066,5,5,fold_mean_plus_sd,ddof_1,identifiable,0.817 ± 0.049
+all_pairs,metal_medium_unseen,unseen,rmse,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,4.333949663541402,1.019958113916766,5,5,fold_mean_plus_sd,ddof_1,identifiable,4.334 ± 1.020
+all_pairs,metal_medium_unseen,unseen,sign_accuracy,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,0.7830035574039934,0.0651256848542151,5,5,fold_mean_plus_sd,ddof_1,identifiable,0.783 ± 0.065
+ree_pairs,metal_medium_seen,seen,mop_rmse,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,0.7110819389191174,0.2707916024043913,5,5,fold_mean_plus_sd,ddof_1,identifiable,0.711 ± 0.271
+ree_pairs,metal_medium_seen,seen,n_pairs,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,135.4,5.128352561983234,5,5,fold_mean_plus_sd,ddof_1,identifiable,135.4 ± 5.1
+ree_pairs,metal_medium_seen,seen,n_rows,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,5336.8,385.5018806698613,5,5,fold_mean_plus_sd,ddof_1,identifiable,5336.8 ± 385.5
+ree_pairs,metal_medium_seen,seen,picp_90,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,0.9119303754095396,0.0200516638707842,5,5,fold_mean_plus_sd,ddof_1,identifiable,0.912 ± 0.020
+ree_pairs,metal_medium_seen,seen,rmse,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,0.692314423961503,0.2832659592446552,5,5,fold_mean_plus_sd,ddof_1,identifiable,0.692 ± 0.283
+ree_pairs,metal_medium_seen,seen,sign_accuracy,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,0.7652277858026355,0.0188442863567625,5,5,fold_mean_plus_sd,ddof_1,identifiable,0.765 ± 0.019
+ree_pairs,metal_medium_unseen,unseen,mop_rmse,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,0.2018324042100231,,5,1,fold_mean_plus_sd,ddof_1,identifiable,0.202 (n_valid=1)
+ree_pairs,metal_medium_unseen,unseen,n_pairs,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,14.8,10.545141061171254,5,5,fold_mean_plus_sd,ddof_1,identifiable,14.8 ± 10.5
+ree_pairs,metal_medium_unseen,unseen,n_rows,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,19.0,12.549900398011133,5,5,fold_mean_plus_sd,ddof_1,identifiable,19.0 ± 12.5
+ree_pairs,metal_medium_unseen,unseen,picp_90,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,0.8304201680672267,0.1991103722287535,5,5,fold_mean_plus_sd,ddof_1,identifiable,0.830 ± 0.199
+ree_pairs,metal_medium_unseen,unseen,rmse,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,1.52053448103167,1.9414258414751808,5,5,fold_mean_plus_sd,ddof_1,identifiable,1.521 ± 1.941
+ree_pairs,metal_medium_unseen,unseen,sign_accuracy,DS2,DS2_RDKIT_MLPENS5_HETERO,metal_medium_strata,0.7926890756302521,0.2008464012304563,5,5,fold_mean_plus_sd,ddof_1,identifiable,0.793 ± 0.201

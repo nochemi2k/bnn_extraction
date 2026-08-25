@@ -1,0 +1,364 @@
+{
+  "grid_id": "shared_ds1_ds2_uq_v3",
+  "workhorse_model_id": "DS2_RDKIT_MLPENS5_HETERO",
+  "workhorse_display": "Heteroscedastic MLP ensemble",
+  "manuscript_accuracy_metrics": "all_pair_mop_rmse primary; displayed all_pair_picp_90/all_pair_ace are MoP; operational screen uses row-level PICP/ACE; all_pair_mop_r2 and all_pair_row_r2 auxiliary; two named ad hoc comparators; ree_mop_rmse usage example",
+  "coded_selection_metric": "operational_interval_usability_screen then RMSE-PICP-ACE Pareto",
+  "primary_metric": "all_pairs mop_rmse after operational interval-usability screen and RMSE-PICP-ACE Pareto selection",
+  "selection_type": "operational_accuracy_calibration_compromise",
+  "r2_role": "auxiliary_diagnostic",
+  "sign_accuracy_role": "directional_diagnostic",
+  "rank_correlation_role": "not_used",
+  "ad_distance_error_corr_role": "si_diagnostic_only",
+  "pair_acquisition_status": "sigma_only_n_event_gt_1",
+  "ad_retention_status": "fold_local empirical error-ordering diagnostic; not ligand-selection evidence",
+  "row_level_metrics_used_for_selection": false,
+  "selection_nested": false,
+  "retraining_performed": false,
+  "selection_rerun": true,
+  "chemprop_rank": "not_operational_candidate_partial_native_uq",
+  "ds1": {
+    "dataset": "DS1",
+    "hplus_decision": "train_with_H",
+    "train_policy": "Protonation (H+) records kept in training and in DS1; test metrics remain metal_complex-only. CMI external is not in DS1.",
+    "n_records": 43388,
+    "n_unique_ligands": 4347,
+    "n_metals": 73,
+    "n_species_keys": 21684,
+    "family_breakdown": {
+      "metal_complex": 32029,
+      "protonation": 11359
+    },
+    "cmi_external_excluded": true,
+    "n_external_records": 398,
+    "n_external_ligands": 40,
+    "test_restriction": "metal_complex only for Stage 1b evaluation",
+    "include_solvent_properties": true,
+    "electrolyte_in_X": false,
+    "metal_props_convention": "row_level_cmi",
+    "rdkit_dimension": 203,
+    "rdkit_n_selected": 187
+  },
+  "ds2": {
+    "n_pairs_rows": 88525,
+    "n_unique_ligands": 2187,
+    "n_metal_species_pairs": 2503,
+    "n_metal_element_pairs": 1848,
+    "n_metal_pairs": 2503,
+    "fraction_ree_ree_pairs": 0.3025021180457498,
+    "median_candidate_pool_per_metal_pair": 4.0,
+    "mean_pairs_per_ligand": 40.47782350251486,
+    "pair_scope": "metal_metal_only",
+    "grouping_column": "metal_species_pair",
+    "n_metal_H_pairs": 0,
+    "electrolyte_in_X": false,
+    "metal_props_convention": "row_level_cmi",
+    "medium_key": [
+      "ligand_smiles",
+      "temperature_C",
+      "ionic_strength_M",
+      "electrolyte"
+    ],
+    "note": "Electrolyte identity is used for experimental matching and grouping but is excluded from the tabular predictor. Grouping uses metal_species_pair. IE and metal_valence_e are row-level CMI values (same convention as Chemprop).",
+    "medium_key_audit": {
+      "n_medium_keys": 8839,
+      "key": [
+        "ligand_smiles",
+        "temperature_C",
+        "ionic_strength_M",
+        "electrolyte"
+      ],
+      "must_agree": [
+        "solvent_mw",
+        "solvent_density",
+        "ligand_charge",
+        "temperature_C",
+        "ionic_strength_M",
+        "electrolyte"
+      ],
+      "n_keys_disagreeing": {
+        "solvent_mw": 0,
+        "solvent_density": 0,
+        "ligand_charge": 0,
+        "temperature_C": 0,
+        "ionic_strength_M": 0,
+        "electrolyte": 0
+      },
+      "sufficient": true,
+      "may_disagree_n_keys": {
+        "complex_charge": 1430,
+        "metal_oxidation_state": 1430,
+        "IE": 4516,
+        "metal_valence_e": 4077,
+        "metal_el": 4479
+      },
+      "note": "solvent_mw, solvent_density, and ligand_charge are a 1:1 consequence of (ligand, T, I, electrolyte) in this corpus, so they are not added to the matching key. complex_charge, oxidation state, and IE/valence vary by metal and are not matching fields."
+    }
+  },
+  "ds2_scope_counts": {
+    "n_rows": 88525,
+    "n_ligands": 2187,
+    "n_species_pairs": 2503,
+    "n_ree_rows": 26779,
+    "n_ree_species_pairs": 159,
+    "n_highsel_rows": 44686,
+    "n_ree_highsel_rows": 3800,
+    "high_selectivity_tau": 1.0,
+    "high_selectivity_rule": "abs(selectivity_logK) > 1.0",
+    "min_pair_n": 3,
+    "pair_id_example": "Fe:2.0--Co:2.0",
+    "status": "canonical_cv_result",
+    "artifact_path": "data/processed/ds2.csv",
+    "note": "REE\u2229high-selectivity row count is a composition diagnostic only; no combined CV scope exists in fold_metric_summary.csv."
+  },
+  "hplus_decision": "train_with_H",
+  "hplus_r2_with": "0.831 \u00b1 0.029",
+  "hplus_r2_without": "0.811 \u00b1 0.037",
+  "rdkit_ds1_dim": 203,
+  "rdkit_ds2_dim": 214,
+  "rdkit_n_selected": 187,
+  "chemprop_ds1_extra": 16,
+  "chemprop_ds2_extra": 27,
+  "mc_samples": 30,
+  "bayes_samples": 30,
+  "ensemble_size": 5,
+  "gpr_inducing": 512,
+  "sngp_rff": 512,
+  "min_pair_n": 3,
+  "high_sel_tau": 1.0,
+  "fold_sd_ddof": 1,
+  "imputation": false,
+  "pca": false,
+  "target_transform": "none_native_units",
+  "ad_primary_scores_workhorse": [
+    "sigma_total",
+    "tanimoto_nn_distance",
+    "mahalanobis_feature_centroid"
+  ],
+  "ad_primary_scores_chemprop": [
+    "sigma_total",
+    "tanimoto_nn_distance",
+    "chemprop_std_euclidean_nn",
+    "chemprop_mahalanobis_centroid"
+  ],
+  "ad_retention_grid": [
+    0.1,
+    0.2,
+    0.25,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "ad_primary_retention": 0.5,
+  "ad_status": "fold-local retention analysis (empirical error ordering); 50% retention is the prespecified RMSE comparison; sigma-only pair acquisition is the primary screening analysis; not a formal coverage or accept/reject guarantee",
+  "not_computed": [
+    "feature_ablations",
+    "source_tag_holdout",
+    "metal_pair_extrapolation",
+    "random_vs_ligand_disjoint",
+    "posthoc_variance_calibration",
+    "restricted_mape_pooled",
+    "ree_highselectivity_combined_scope",
+    "repeated_ligand_disjoint_cv",
+    "tanimoto_stratified_vs_ligand_disjoint",
+    "cmi_competitor_ligand_disjoint_grid",
+    "pair_acquisition_on_pareto_neighbors",
+    "prospective_pair_acquisition_campaign",
+    "gaussian_expected_improvement_integral"
+  ],
+  "not_identifiable": [
+    "replicate_spread",
+    "medium_ligand_medium_strata"
+  ],
+  "excluded": [
+    "exact_GPR",
+    "chemprop_mc_dropout",
+    "BAYES_LASTLAYER",
+    "ranking_aux"
+  ],
+  "workhorse_all_pair_mop_rmse": {
+    "fold_mean": 2.0780008409947173,
+    "fold_sd": 0.1300915433485722,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "workhorse_all_pair_mop_r2": {
+    "fold_mean": -3.632628921290967,
+    "fold_sd": 1.9927282717152248,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "workhorse_all_pair_sign": {
+    "fold_mean": 0.8217791584298221,
+    "fold_sd": 0.0173624225700295,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "workhorse_ree_mop_rmse": {
+    "fold_mean": 0.7037593581781885,
+    "fold_sd": 0.2560919566931065,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "workhorse_ree_mop_r2": {
+    "fold_mean": -1.9381988804915573,
+    "fold_sd": 2.6438701836846734,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "workhorse_ree_row_rmse": {
+    "fold_mean": 0.6959520603128367,
+    "fold_sd": 0.2798509337898545,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "workhorse_ree_row_r2": {
+    "fold_mean": 0.3725726251049984,
+    "fold_sd": 0.3823162960232095,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "workhorse_ree_sign": {
+    "fold_mean": 0.7653678153894099,
+    "fold_sd": 0.0189324324212068,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "workhorse_all_picp": {
+    "fold_mean": 0.8941654899745834,
+    "fold_sd": 0.0224655570166754,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "workhorse_all_ace": {
+    "fold_mean": 0.0508889516457999,
+    "fold_sd": 0.0154847795497503,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "workhorse_all_mop_picp": {
+    "fold_mean": 0.8607648182773764,
+    "fold_sd": 0.0338986858387451,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "workhorse_all_mop_ace": {
+    "fold_mean": 0.1533158710935991,
+    "fold_sd": 0.0091745943108697,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "workhorse_ree_picp": {
+    "fold_mean": 0.9118600576620952,
+    "fold_sd": 0.0202174104826064,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "workhorse_ree_ace": {
+    "fold_mean": 0.0770869703925905,
+    "fold_sd": 0.0258545179415118,
+    "n_folds": 5,
+    "n_valid_folds": 5
+  },
+  "ranked": [
+    "DS2_RDKIT_MLPENS5_HETERO",
+    "DS2_RDKIT_MLPENS5_EVID",
+    "DS2_RDKIT_MLP_HETERO",
+    "DS2_RDKIT_MLP_MCDROPOUT"
+  ],
+  "workhorse_ree_mop_r2_n_pairs_invalid": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "workhorse_ree_mop_r2_n_pairs_valid": [
+    119,
+    120,
+    120,
+    113,
+    122
+  ],
+  "fmt": {
+    "wh_mop_rmse": "2.078 \u00b1 0.130",
+    "wh_mop_r2": "-3.633 \u00b1 1.993",
+    "wh_ree_mop_rmse": "0.704 \u00b1 0.256",
+    "wh_ree_mop_r2": "-1.938 \u00b1 2.644",
+    "wh_row_rmse": "0.696 \u00b1 0.280",
+    "wh_row_r2": "0.373 \u00b1 0.382",
+    "wh_sign": "0.765 \u00b1 0.019",
+    "wh_picp": "0.894 \u00b1 0.022",
+    "wh_ace": "0.051 \u00b1 0.015",
+    "wh_mop_picp": "0.861 \u00b1 0.034",
+    "wh_mop_ace": "0.153 \u00b1 0.009",
+    "wh_ree_picp": "0.912 \u00b1 0.020",
+    "wh_ree_ace": "0.077 \u00b1 0.026",
+    "ds1_chemprop_mae": "1.484 \u00b1 0.161"
+  },
+  "ranked_detail": [
+    {
+      "rank": 1,
+      "model_id": "DS2_RDKIT_MLPENS5_HETERO",
+      "display": "Heteroscedastic MLP ensemble",
+      "fold_mean": 2.0780008409947173,
+      "fold_sd": 0.1300915433485722,
+      "n_folds": 5,
+      "n_valid_folds": 5,
+      "display_value": "2.078 \u00b1 0.130",
+      "picp_90": "0.894 \u00b1 0.022",
+      "ace": "0.051 \u00b1 0.015",
+      "mop_r2": "-3.633 \u00b1 1.993"
+    },
+    {
+      "rank": 2,
+      "model_id": "DS2_RDKIT_MLPENS5_EVID",
+      "display": "Evidential MLP ensemble",
+      "fold_mean": 2.008911931792176,
+      "fold_sd": 0.1116222806422618,
+      "n_folds": 5,
+      "n_valid_folds": 5,
+      "display_value": "2.009 \u00b1 0.112",
+      "picp_90": "0.863 \u00b1 0.030",
+      "ace": "0.053 \u00b1 0.037",
+      "mop_r2": "-3.156 \u00b1 2.142"
+    },
+    {
+      "rank": 3,
+      "model_id": "DS2_RDKIT_MLP_HETERO",
+      "display": "Heteroscedastic MLP",
+      "fold_mean": 2.103786435020365,
+      "fold_sd": 0.0913258334719056,
+      "n_folds": 5,
+      "n_valid_folds": 5,
+      "display_value": "2.104 \u00b1 0.091",
+      "picp_90": "0.872 \u00b1 0.030",
+      "ace": "0.032 \u00b1 0.008",
+      "mop_r2": "-4.004 \u00b1 2.136"
+    },
+    {
+      "rank": 4,
+      "model_id": "DS2_RDKIT_MLP_MCDROPOUT",
+      "display": "MC-dropout MLP",
+      "fold_mean": 1.9988259894795388,
+      "fold_sd": 0.1041613765386459,
+      "n_folds": 5,
+      "n_valid_folds": 5,
+      "display_value": "1.999 \u00b1 0.104",
+      "picp_90": "0.867 \u00b1 0.007",
+      "ace": "0.095 \u00b1 0.013",
+      "mop_r2": "-3.586 \u00b1 1.947"
+    }
+  ],
+  "ds1_chemprop_point_metal_complex_mae": {
+    "fold_mean": 1.4839531651864664,
+    "fold_sd": 0.16095363759577772,
+    "n_valid_folds": 5,
+    "scope": "metal_complex"
+  }
+}

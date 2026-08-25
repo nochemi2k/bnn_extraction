@@ -1,0 +1,16 @@
+{
+  "experiment_id": "adhoc_differencing",
+  "computation_status": "complete",
+  "selectivity_methods": [
+    "direct_ds2_selectivity",
+    "ad_hoc_ds1_difference"
+  ],
+  "propagation_method": "independent_quadrature_sigma_total",
+  "min_pair_size": 3,
+  "alignment": "DS2 outer folds; DS1 checkpoint is the ligand-held-out fold",
+  "pooled_oof_forbidden": true,
+  "comparison_phrase": "did not consistently outperform",
+  "failures": [],
+  "n_fold_rows": 290,
+  "n_summary_rows": 58
+}

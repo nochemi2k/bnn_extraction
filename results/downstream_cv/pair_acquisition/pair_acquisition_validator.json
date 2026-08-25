@@ -1,0 +1,347 @@
+{
+  "pass": true,
+  "n_checks": 68,
+  "n_pass": 68,
+  "checks": [
+    {
+      "check": "artifact_pair_acquisition_fold_metrics.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\pair_acquisition\\pair_acquisition_fold_metrics.csv"
+    },
+    {
+      "check": "artifact_pair_acquisition_summary.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\pair_acquisition\\pair_acquisition_summary.csv"
+    },
+    {
+      "check": "artifact_pair_acquisition_comparison.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\pair_acquisition\\pair_acquisition_comparison.csv"
+    },
+    {
+      "check": "artifact_pair_acquisition_eligibility_summary.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\pair_acquisition\\pair_acquisition_eligibility_summary.csv"
+    },
+    {
+      "check": "artifact_pair_acquisition_calibration_bin_summary.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\pair_acquisition\\pair_acquisition_calibration_bin_summary.csv"
+    },
+    {
+      "check": "artifact_pair_acquisition_calibration_rho_summary.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\pair_acquisition\\pair_acquisition_calibration_rho_summary.csv"
+    },
+    {
+      "check": "artifact_pair_acquisition_hit_and_precision.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\pair_acquisition\\pair_acquisition_hit_and_precision.csv"
+    },
+    {
+      "check": "artifact_pair_acquisition_regret.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\pair_acquisition\\pair_acquisition_regret.csv"
+    },
+    {
+      "check": "artifact_pair_acquisition_regret_fold.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\pair_acquisition\\pair_acquisition_regret_fold.csv"
+    },
+    {
+      "check": "artifact_magnitude_adjusted_risk_summary.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\pair_acquisition\\magnitude_adjusted_risk_summary.csv"
+    },
+    {
+      "check": "artifact_magnitude_adjusted_risk_fold.csv",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\pair_acquisition\\magnitude_adjusted_risk_fold.csv"
+    },
+    {
+      "check": "artifact_pair_acquisition_metric_migration.json",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\pair_acquisition\\pair_acquisition_metric_migration.json"
+    },
+    {
+      "check": "artifact_pair_acquisition_validation.json",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\results\\downstream_cv\\pair_acquisition\\pair_acquisition_validation.json"
+    },
+    {
+      "check": "validation_pass_flag",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "computation_complete",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_pooled_oof",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_global_selection",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_distance_scores",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "workhorse_model",
+      "pass": true,
+      "detail": "DS2_RDKIT_MLPENS5_HETERO"
+    },
+    {
+      "check": "fold_rows_nonempty",
+      "pass": true,
+      "detail": "n=42240"
+    },
+    {
+      "check": "five_outer_folds",
+      "pass": true,
+      "detail": "['fold0', 'fold1', 'fold2', 'fold3', 'fold4']"
+    },
+    {
+      "check": "heldout_folds_only",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "has_high_and_low",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "has_lcb3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "has_random",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "strategies_complete",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_spearman_token",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "no_oof_token",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "has_hit_rate_at_1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "has_any_hit_at_1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "has_regret_at_1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "has_hit_rate_at_5",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "has_any_hit_at_5",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "has_regret_at_5",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "has_hit_rate_at_10",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "has_any_hit_at_10",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "has_regret_at_10",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "regret_at_1_nonnegative",
+      "pass": true,
+      "detail": "min=0.0"
+    },
+    {
+      "check": "regret_at_1_zero_if_contains_optimum",
+      "pass": true,
+      "detail": "n=8431"
+    },
+    {
+      "check": "regret_at_5_nonnegative",
+      "pass": true,
+      "detail": "min=0.0"
+    },
+    {
+      "check": "regret_at_5_zero_if_contains_optimum",
+      "pass": true,
+      "detail": "n=13927"
+    },
+    {
+      "check": "regret_at_10_nonnegative",
+      "pass": true,
+      "detail": "min=0.0"
+    },
+    {
+      "check": "regret_at_10_zero_if_contains_optimum",
+      "pass": true,
+      "detail": "n=11422"
+    },
+    {
+      "check": "task_hit_monotone",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "summary_uses_fold_aggregation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "summary_has_five_folds",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "calibration_rho_complete",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "rho_five_folds",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "magnitude_adjusted_metrics_present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "magnitude_adjusted_five_folds",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "magnitude_adjusted_fold_local",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "magnitude_adjusted_not_pooled",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "manuscript_magnitude_table",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\manuscripts\\final\\tables\\magnitude_adjusted_risk_summary.csv"
+    },
+    {
+      "check": "manuscript_comparison_table",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\manuscripts\\final\\tables\\pair_acquisition_comparison.csv"
+    },
+    {
+      "check": "hit_precision_has_hit_at_1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "hit_precision_has_event_precision_at_1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "legacy_hit_rate_equals_event_precision",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "any_hit_equals_true_hit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "precision_not_conflated_with_hit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "manuscript_hit_precision_table",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\manuscripts\\final\\tables\\pair_acquisition_hit_and_precision.csv"
+    },
+    {
+      "check": "manuscript_regret_table",
+      "pass": true,
+      "detail": "C:\\Users\\IVan\\Desktop\\BNN Extraction\\manuscripts\\final\\tables\\pair_acquisition_regret.csv"
+    },
+    {
+      "check": "regret_has_k1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "regret_has_pool_optimum",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "regret_has_contains_optimum",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "regret_lower_is_better_flag",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "migration_legacy_is_precision",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "migration_true_hit_is_any_hit",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "migration_no_rerank",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

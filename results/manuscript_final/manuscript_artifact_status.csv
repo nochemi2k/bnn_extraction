@@ -1,0 +1,16 @@
+artifact_path,description,status,exists
+results/cv_metrics/fold_metric_summary.csv,Fold mean±SD metrics,canonical_cv_result,True
+results/cv_metrics/fold_metrics.csv,Fold-level metrics,canonical_fold_result,True
+results/cv_metrics/chemprop_evidential_status_v2.csv,Chemprop DS2 evidential v2 status,partial_result,True
+results/downstream_cv/ad_retention/retention_summary.csv,AD quantile retention summary,canonical_fold_result,True
+results/downstream_cv/ad_hoc_selectivity/ad_hoc_selectivity_summary.csv,Aligned ad hoc vs direct selectivity summary,canonical_fold_result,True
+results/downstream_cv/ad_hoc_selectivity/ad_hoc_selectivity_fold_metrics.csv,Aligned ad hoc vs direct fold metrics,canonical_fold_result,True
+results/downstream_cv/ad_retention/retention_50pct.csv,AD 50% retention comparison,canonical_fold_result,True
+results/downstream_cv/ad_retention/retention_auc_summary.csv,Full-grid retention-curve AUC summary,canonical_fold_result,True
+results/downstream_cv/ad/ad_metal_medium_strata_summary.csv,Metal-medium seen/unseen,canonical_fold_result,True
+results/downstream_cv/ad_distance_error_corr/ad_distance_error_corr_summary.csv,Molecular-distance score vs row-level absolute-residual association,canonical_fold_result,True
+results/canonical/ds1_composition.json,DS1 composition,canonical_cv_result,True
+results/canonical/ds2_composition.json,DS2 composition,canonical_cv_result,True
+checkpoints/active/DS1_RDKIT_GPR/fold0/member_0/infeasible.json,Exact GPR infeasible,excluded,True
+results/downstream_cv/replicate_spread,Replicate-spread vs UQ,not_identifiable,False
+results/downstream_cv/ad/ad_medium_identifiability.csv,Medium strata,not_identifiable,True

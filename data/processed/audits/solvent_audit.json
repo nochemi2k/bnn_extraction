@@ -1,0 +1,56 @@
+{
+  "n_rows": 43786,
+  "n_missing_mw": 0,
+  "n_missing_density": 0,
+  "n_unknown_electrolyte": 0,
+  "n_electrolytes": 6,
+  "n_unique_mw_density_pairs": 6,
+  "one_to_one_with_electrolyte": true,
+  "include_solvent_properties": true,
+  "electrolyte_onehot_in_X": false,
+  "prospective": true,
+  "derived_from_target": false,
+  "units": {
+    "solvent_mw": "g/mol (CMI Exact MW of solvent)",
+    "solvent_density": "g cm^-3"
+  },
+  "pairs": [
+    {
+      "electrolyte": "KCl",
+      "solvent_mw_rounded": 73.933,
+      "solvent_density_rounded": 1.98,
+      "n": 7043
+    },
+    {
+      "electrolyte": "KNO3",
+      "solvent_mw_rounded": 100.952,
+      "solvent_density_rounded": 2.1,
+      "n": 13698
+    },
+    {
+      "electrolyte": "Me4NCl",
+      "solvent_mw_rounded": 109.066,
+      "solvent_density_rounded": 1.17,
+      "n": 2608
+    },
+    {
+      "electrolyte": "NaCl",
+      "solvent_mw_rounded": 57.959,
+      "solvent_density_rounded": 2.17,
+      "n": 2436
+    },
+    {
+      "electrolyte": "NaClO4",
+      "solvent_mw_rounded": 121.938,
+      "solvent_density_rounded": 2.0,
+      "n": 13618
+    },
+    {
+      "electrolyte": "NaNO3",
+      "solvent_mw_rounded": 84.978,
+      "solvent_density_rounded": 2.3,
+      "n": 4383
+    }
+  ],
+  "warning": "In this corpus solvent_mw and solvent_density are a perfect 1:1 encoding of electrolyte identity (six discrete media). They are kept as continuous medium features together with T and I. Electrolyte strings are for matching, grouping, reporting, and diagnostics only \u2014 there is no electrolyte one-hot block."
+}

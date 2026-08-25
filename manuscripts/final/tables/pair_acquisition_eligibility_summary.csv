@@ -1,0 +1,5 @@
+cohort,metric_name,fold_mean,fold_sd,n_valid_folds,event_min_exclusive,threshold
+high_canonical,n_eligible_pairs,438.8,18.633303518163384,5,1,1.0
+high_reversed,n_eligible_pairs,506.2,57.9844806823343,5,1,1.0
+low_selectivity,n_eligible_pairs,463.0,56.182737562350944,5,1,1.0
+high_both_orientations,n_eligible_pair_tasks,945.0,66.6295730137902,5,1,1.0

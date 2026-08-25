@@ -1,0 +1,37 @@
+dataset,experiment_id,scope,score_name,bin,metric_name,fold_mean,fold_sd,n_folds_attempted,n_valid_folds,n_fold_bin_observations,metric_aggregation,sd_definition,source_metric_name,count_definition,display
+DS2,pair_density,all_pairs,pair_density_risk,0,mean_sigma_total,4.130124381776388,1.834780949490281,5,5,5,fold_mean_plus_sd,ddof_1,mean_sigma_total,,4.130 ± 1.835
+DS2,pair_density,all_pairs,pair_density_risk,1-5,mean_sigma_total,3.92266731029996,1.415963387877102,5,5,5,fold_mean_plus_sd,ddof_1,mean_sigma_total,,3.923 ± 1.416
+DS2,pair_density,all_pairs,pair_density_risk,6-10,mean_sigma_total,2.7083655350268603,0.4223311953780015,5,5,5,fold_mean_plus_sd,ddof_1,mean_sigma_total,,2.708 ± 0.422
+DS2,pair_density,all_pairs,pair_density_risk,11-25,mean_sigma_total,2.343831978846984,0.2812091275552104,5,5,5,fold_mean_plus_sd,ddof_1,mean_sigma_total,,2.344 ± 0.281
+DS2,pair_density,all_pairs,pair_density_risk,26-50,mean_sigma_total,2.099187308983342,0.2404150474783113,5,5,5,fold_mean_plus_sd,ddof_1,mean_sigma_total,,2.099 ± 0.240
+DS2,pair_density,all_pairs,pair_density_risk,>50,mean_sigma_total,1.2930552958556574,0.2556764541169739,5,5,5,fold_mean_plus_sd,ddof_1,mean_sigma_total,,1.293 ± 0.256
+DS2,pair_density,all_pairs,pair_density_risk,0,mop_rmse,2.156553777674697,2.030523600892135,5,2,2,fold_mean_plus_sd,ddof_1,mop_rmse,,2.157 ± 2.031 (n_valid=2)
+DS2,pair_density,all_pairs,pair_density_risk,1-5,mop_rmse,3.0012947296308843,0.945269649370968,5,5,5,fold_mean_plus_sd,ddof_1,mop_rmse,,3.001 ± 0.945
+DS2,pair_density,all_pairs,pair_density_risk,6-10,mop_rmse,2.7897946741503885,0.574542199485779,5,5,5,fold_mean_plus_sd,ddof_1,mop_rmse,,2.790 ± 0.575
+DS2,pair_density,all_pairs,pair_density_risk,11-25,mop_rmse,2.3176264419300687,0.1406084977003708,5,5,5,fold_mean_plus_sd,ddof_1,mop_rmse,,2.318 ± 0.141
+DS2,pair_density,all_pairs,pair_density_risk,26-50,mop_rmse,2.156145870066714,0.2084055801761617,5,5,5,fold_mean_plus_sd,ddof_1,mop_rmse,,2.156 ± 0.208
+DS2,pair_density,all_pairs,pair_density_risk,>50,mop_rmse,1.417937736011394,0.108183515318265,5,5,5,fold_mean_plus_sd,ddof_1,mop_rmse,,1.418 ± 0.108
+DS2,pair_density,all_pairs,pair_density_risk,0,n_test_pairs,139.4,76.5950390038415,5,5,5,fold_mean_plus_sd,ddof_1,n_pairs,fold mean of test rows or test pairs assigned to each training-density bin; not unique-pair counts pooled across folds; not retained MoP-pair counts,139.4 ± 76.6
+DS2,pair_density,all_pairs,pair_density_risk,1-5,n_test_pairs,490.2,120.21938279661896,5,5,5,fold_mean_plus_sd,ddof_1,n_pairs,fold mean of test rows or test pairs assigned to each training-density bin; not unique-pair counts pooled across folds; not retained MoP-pair counts,490.2 ± 120.2
+DS2,pair_density,all_pairs,pair_density_risk,6-10,n_test_pairs,175.2,15.287249589118376,5,5,5,fold_mean_plus_sd,ddof_1,n_pairs,fold mean of test rows or test pairs assigned to each training-density bin; not unique-pair counts pooled across folds; not retained MoP-pair counts,175.2 ± 15.3
+DS2,pair_density,all_pairs,pair_density_risk,11-25,n_test_pairs,289.4,7.334848328356899,5,5,5,fold_mean_plus_sd,ddof_1,n_pairs,fold mean of test rows or test pairs assigned to each training-density bin; not unique-pair counts pooled across folds; not retained MoP-pair counts,289.4 ± 7.3
+DS2,pair_density,all_pairs,pair_density_risk,26-50,n_test_pairs,153.4,6.4265076052238514,5,5,5,fold_mean_plus_sd,ddof_1,n_pairs,fold mean of test rows or test pairs assigned to each training-density bin; not unique-pair counts pooled across folds; not retained MoP-pair counts,153.4 ± 6.4
+DS2,pair_density,all_pairs,pair_density_risk,>50,n_test_pairs,267.2,3.1937438845342623,5,5,5,fold_mean_plus_sd,ddof_1,n_pairs,fold mean of test rows or test pairs assigned to each training-density bin; not unique-pair counts pooled across folds; not retained MoP-pair counts,267.2 ± 3.2
+DS2,pair_density,all_pairs,pair_density_risk,0,n_test_rows,170.2,115.46514625634872,5,5,5,fold_mean_plus_sd,ddof_1,n_rows,fold mean of test rows or test pairs assigned to each training-density bin; not unique-pair counts pooled across folds; not retained MoP-pair counts,170.2 ± 115.5
+DS2,pair_density,all_pairs,pair_density_risk,1-5,n_test_rows,758.6,241.46801030364253,5,5,5,fold_mean_plus_sd,ddof_1,n_rows,fold mean of test rows or test pairs assigned to each training-density bin; not unique-pair counts pooled across folds; not retained MoP-pair counts,758.6 ± 241.5
+DS2,pair_density,all_pairs,pair_density_risk,6-10,n_test_rows,426.4,77.4616033916159,5,5,5,fold_mean_plus_sd,ddof_1,n_rows,fold mean of test rows or test pairs assigned to each training-density bin; not unique-pair counts pooled across folds; not retained MoP-pair counts,426.4 ± 77.5
+DS2,pair_density,all_pairs,pair_density_risk,11-25,n_test_rows,1449.8,66.84085576950672,5,5,5,fold_mean_plus_sd,ddof_1,n_rows,fold mean of test rows or test pairs assigned to each training-density bin; not unique-pair counts pooled across folds; not retained MoP-pair counts,1449.8 ± 66.8
+DS2,pair_density,all_pairs,pair_density_risk,26-50,n_test_rows,1585.0,129.36189547158003,5,5,5,fold_mean_plus_sd,ddof_1,n_rows,fold mean of test rows or test pairs assigned to each training-density bin; not unique-pair counts pooled across folds; not retained MoP-pair counts,1585.0 ± 129.4
+DS2,pair_density,all_pairs,pair_density_risk,>50,n_test_rows,13315.0,382.4741821352129,5,5,5,fold_mean_plus_sd,ddof_1,n_rows,fold mean of test rows or test pairs assigned to each training-density bin; not unique-pair counts pooled across folds; not retained MoP-pair counts,13315.0 ± 382.5
+DS2,pair_density,all_pairs,pair_density_risk,0,picp_90,0.8031484597477764,0.0361686058748415,5,5,5,fold_mean_plus_sd,ddof_1,picp_90,,0.803 ± 0.036
+DS2,pair_density,all_pairs,pair_density_risk,1-5,picp_90,0.8131288350821484,0.0615711539204284,5,5,5,fold_mean_plus_sd,ddof_1,picp_90,,0.813 ± 0.062
+DS2,pair_density,all_pairs,pair_density_risk,6-10,picp_90,0.8349621303025234,0.0376525840603096,5,5,5,fold_mean_plus_sd,ddof_1,picp_90,,0.835 ± 0.038
+DS2,pair_density,all_pairs,pair_density_risk,11-25,picp_90,0.860046006463449,0.0516359939624021,5,5,5,fold_mean_plus_sd,ddof_1,picp_90,,0.860 ± 0.052
+DS2,pair_density,all_pairs,pair_density_risk,26-50,picp_90,0.8610343087937045,0.0409508726892204,5,5,5,fold_mean_plus_sd,ddof_1,picp_90,,0.861 ± 0.041
+DS2,pair_density,all_pairs,pair_density_risk,>50,picp_90,0.9087625908271012,0.0179851439347354,5,5,5,fold_mean_plus_sd,ddof_1,picp_90,,0.909 ± 0.018
+DS2,pair_density,all_pairs,pair_density_risk,0,rmse,4.905309792062139,1.157379578696897,5,5,5,fold_mean_plus_sd,ddof_1,rmse,,4.905 ± 1.157
+DS2,pair_density,all_pairs,pair_density_risk,1-5,rmse,5.045033398880925,0.9967395716603376,5,5,5,fold_mean_plus_sd,ddof_1,rmse,,5.045 ± 0.997
+DS2,pair_density,all_pairs,pair_density_risk,6-10,rmse,3.534477855711047,0.5841826084641342,5,5,5,fold_mean_plus_sd,ddof_1,rmse,,3.534 ± 0.584
+DS2,pair_density,all_pairs,pair_density_risk,11-25,rmse,2.6425551385370505,0.1703276957875258,5,5,5,fold_mean_plus_sd,ddof_1,rmse,,2.643 ± 0.170
+DS2,pair_density,all_pairs,pair_density_risk,26-50,rmse,2.344866143685695,0.2066115237115325,5,5,5,fold_mean_plus_sd,ddof_1,rmse,,2.345 ± 0.207
+DS2,pair_density,all_pairs,pair_density_risk,>50,rmse,1.481776761046207,0.0793808714728783,5,5,5,fold_mean_plus_sd,ddof_1,rmse,,1.482 ± 0.079

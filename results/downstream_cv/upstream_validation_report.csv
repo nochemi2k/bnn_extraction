@@ -1,0 +1,8 @@
+dataset,model_id,outer_fold_id,status,failure_reason,artifact_path,metric_name,fold_mean,fold_sd,expected_mean,expected_sd
+DS2,MLPENS5_EVID,fold0,pass,,results\active_grid\DS2_RDKIT_MLPENS5_EVID\fold0\test_preds.csv,,,,,
+DS2,MLPENS5_EVID,fold1,pass,,results\active_grid\DS2_RDKIT_MLPENS5_EVID\fold1\test_preds.csv,,,,,
+DS2,MLPENS5_EVID,fold2,pass,,results\active_grid\DS2_RDKIT_MLPENS5_EVID\fold2\test_preds.csv,,,,,
+DS2,MLPENS5_EVID,fold3,pass,,results\active_grid\DS2_RDKIT_MLPENS5_EVID\fold3\test_preds.csv,,,,,
+DS2,MLPENS5_EVID,fold4,pass,,results\active_grid\DS2_RDKIT_MLPENS5_EVID\fold4\test_preds.csv,,,,,
+DS2,MLPENS5_EVID,ALL,pass,,upstream_workhorse_reproduction,mop_mae,0.4219184586414767,0.042548660438741,0.422,0.043
+DS2,MLPENS5_EVID,ALL,pass,,upstream_workhorse_reproduction,sign_accuracy_all,0.7843959244998733,0.018427822196312,0.784,0.018

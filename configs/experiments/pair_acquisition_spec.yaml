@@ -1,0 +1,71 @@
+# Sigma-only within-pair top-k acquisition for high- and low-selectivity events.
+# Frozen before inspecting held-out acquisition metrics.
+# Retrospective held-out simulation of a prospective-style ranking benchmark.
+# Not prospective experimental validation.
+# Distances are excluded from ranking: they are tested novelty scores, not validated error-ordering AD measures on this grid.
+# Legacy CSV field hit_rate_at_k is event precision@k. True hit@k is any_hit_at_k.
+experiment_id: sigma_pair_acquisition
+status: active
+scientific_question: >
+  Using only predicted signed selectivity and total predictive uncertainty, can
+  fold-local top-k ranking recover ligands with observed high selectivity
+  (target-direction Delta log K > 1) and ligands with near-zero selectivity
+  (|Delta log K| < 1) on metal-species pairs that have more than 1 such event
+  in the held-out fold?
+estimand: pair_task_event_precision_at_k_and_hit_at_k
+legacy_hit_rate_is_event_precision: true
+true_hit_metric: any_hit
+not:
+  - prospective_experimental_validation
+  - global_pooled_heldout_selection
+  - distance_based_applicability_domain
+  - modal_physical_condition_slice
+  - full_gaussian_expected_improvement_integral
+  - report_isolated_highsel_or_lowsel_rerun
+fold_locality: required
+pooled_oof_metrics: forbidden
+n_folds: 5
+aggregation: pair_equal_then_fold_mean_plus_sd_ddof1
+random_seed: 0
+random_n_repeats: 20
+model: DS2_RDKIT_MLPENS5_HETERO
+ranking_inputs:
+  - y_pred
+  - sigma_total
+excluded_ranking_inputs:
+  - y_true
+  - tanimoto_distances
+  - feature_space_distances
+  - chemprop_embedding_distances
+  - pair_density_risk
+selectivity_definition: signed_delta_logK_canonical_minus_reverse
+threshold: 1.0
+threshold_rule: strict
+eligibility:
+  unit: metal_species_pair_in_heldout_fold
+  high_selectivity: n_target_direction_events_gt_1_strictly_greater_than_1
+  low_selectivity: n_abs_y_lt_1_strictly_greater_than_1
+  orientations:
+    high_selectivity: [canonical, reversed]
+    low_selectivity: [near_zero]
+k_grid: [1, 5, 10]
+strategies:
+  y_pred: predicted target-direction Delta log K; low-sel uses -|y_hat|
+  lcb_1sigma: y_hat - sigma; low-sel uses -(|y_hat| + sigma)
+  lcb_2sigma: y_hat - 2 sigma; low-sel uses -(|y_hat| + 2 sigma)
+  lcb_3sigma: y_hat - 3 sigma; low-sel uses -(|y_hat| + 3 sigma)
+  expected_improvement: standardized threshold-margin (y_hat - 1)/sigma; low-sel uses (1 - |y_hat|)/sigma
+  random: 20 within-pair permutations, seed 0
+physical_condition: all_heldout_rows
+output_dir: results/downstream_cv/pair_acquisition
+limitations:
+  - pair-aware selection
+  - no prospective experimental validation
+  - pair-tasks with n_event <= 1 are excluded
+  - Precision@k, Hit@k, and regret@k are undefined when a pair-task has fewer than k held-out rows
+  - expected improvement is the specified standardized margin, not the Gaussian integral
+  - observed event support defines eligibility only and is not used to rank ligands
+  - retrospective regret@k is scored after ranking on held-out labels and is not available at ranking time
+complementary_metrics:
+  retrospective_regret_at_k: leftover objective gap to the pair-task pool optimum; scored after ranking; does not change ranking
+  selected_contains_optimum_at_k: pair-task fraction of shortlists that contain a pool-optimal ligand

@@ -1,0 +1,13 @@
+{
+  "metric": "retrospective_regret_at_k",
+  "lower_is_better": true,
+  "high_selectivity": "max_pool target-direction Delta log K minus max_batch",
+  "near_zero": "min_batch |Delta log K| minus min_pool |Delta log K|",
+  "tolerance": 1e-12,
+  "tied_optima_zero_regret": true,
+  "hit_precision_unchanged": true,
+  "ranking_unchanged": true,
+  "n_wide_rows": 24,
+  "n_fold_rows": 270,
+  "aggregation": "pair_equal_then_fold_mean_plus_sd"
+}

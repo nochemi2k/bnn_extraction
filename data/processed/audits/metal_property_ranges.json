@@ -1,0 +1,444 @@
+{
+  "convention": "row_level_cmi",
+  "ranges": {
+    "Atomic_number": {
+      "min": 1.0,
+      "max": 102.0,
+      "mean": 56.32432432432432,
+      "std": 28.346365469920006,
+      "n": 74
+    },
+    "metal_density": {
+      "min": 8.2e-05,
+      "max": 21.5,
+      "mean": 8.616284891891892,
+      "std": 4.937071154823712,
+      "n": 74
+    },
+    "metal_dipole_polarizability": {
+      "min": 4.50711,
+      "max": 400.9,
+      "mean": 121.72540013513515,
+      "std": 76.22955428856424,
+      "n": 74
+    },
+    "metal_vdw_radius": {
+      "min": 110.0,
+      "max": 343.0,
+      "mean": 223.8918918918919,
+      "std": 31.292243908885435,
+      "n": 74
+    },
+    "metal_atomic_weight": {
+      "min": 1.008,
+      "max": 259.0,
+      "mean": 137.80058612,
+      "std": 75.20060416839648,
+      "n": 74
+    },
+    "metal_covalent_radius_by_pyykko": {
+      "min": 32.0,
+      "max": 232.0,
+      "mean": 151.66216216216216,
+      "std": 29.58920412465432,
+      "n": 74
+    },
+    "metal_Sanderson Electronegativity": {
+      "min": 0.048867927,
+      "max": 2.187770766,
+      "mean": 0.6378546415945946,
+      "std": 0.3392500626976321,
+      "n": 74
+    },
+    "IE": {
+      "min": 3.893905548,
+      "max": 68.82704,
+      "mean": 24.09477608309709,
+      "std": 12.652304711282389,
+      "n": 103
+    },
+    "metal_valence_e": {
+      "min": -2.0,
+      "max": 12.0,
+      "mean": 3.3883495145631066,
+      "std": 3.6952685825602782,
+      "n": 103
+    }
+  },
+  "nearest_neighbors": [
+    {
+      "element": "Ac",
+      "nearest_element": "Th",
+      "zscored_l2_invariant7": 0.6186434883822246
+    },
+    {
+      "element": "Ag",
+      "nearest_element": "Ru",
+      "zscored_l2_invariant7": 0.43616062872172806
+    },
+    {
+      "element": "Al",
+      "nearest_element": "Mg",
+      "zscored_l2_invariant7": 0.669812522211231
+    },
+    {
+      "element": "Am",
+      "nearest_element": "Cm",
+      "zscored_l2_invariant7": 0.3579101896100608
+    },
+    {
+      "element": "As",
+      "nearest_element": "Ga",
+      "zscored_l2_invariant7": 0.4352358540230874
+    },
+    {
+      "element": "Au",
+      "nearest_element": "Pt",
+      "zscored_l2_invariant7": 0.4821998075627352
+    },
+    {
+      "element": "Ba",
+      "nearest_element": "La",
+      "zscored_l2_invariant7": 1.3515149403992497
+    },
+    {
+      "element": "Be",
+      "nearest_element": "Al",
+      "zscored_l2_invariant7": 1.4141413403659897
+    },
+    {
+      "element": "Bi",
+      "nearest_element": "Po",
+      "zscored_l2_invariant7": 0.5200728830740493
+    },
+    {
+      "element": "Bk",
+      "nearest_element": "Cf",
+      "zscored_l2_invariant7": 0.10585655025655599
+    },
+    {
+      "element": "Ca",
+      "nearest_element": "Na",
+      "zscored_l2_invariant7": 0.7446303577024946
+    },
+    {
+      "element": "Cd",
+      "nearest_element": "Sn",
+      "zscored_l2_invariant7": 0.3658963169737656
+    },
+    {
+      "element": "Ce",
+      "nearest_element": "Pm",
+      "zscored_l2_invariant7": 0.4599798331650656
+    },
+    {
+      "element": "Cf",
+      "nearest_element": "Bk",
+      "zscored_l2_invariant7": 0.10585655025655599
+    },
+    {
+      "element": "Cm",
+      "nearest_element": "Am",
+      "zscored_l2_invariant7": 0.3579101896100608
+    },
+    {
+      "element": "Co",
+      "nearest_element": "Ni",
+      "zscored_l2_invariant7": 0.20885504042540848
+    },
+    {
+      "element": "Cr",
+      "nearest_element": "Mn",
+      "zscored_l2_invariant7": 0.30827163045142625
+    },
+    {
+      "element": "Cs",
+      "nearest_element": "Rb",
+      "zscored_l2_invariant7": 2.0309754091211865
+    },
+    {
+      "element": "Cu",
+      "nearest_element": "Ni",
+      "zscored_l2_invariant7": 0.1254968151329914
+    },
+    {
+      "element": "Dy",
+      "nearest_element": "Ho",
+      "zscored_l2_invariant7": 0.13074234467758702
+    },
+    {
+      "element": "Er",
+      "nearest_element": "Ho",
+      "zscored_l2_invariant7": 0.12367835378581572
+    },
+    {
+      "element": "Es",
+      "nearest_element": "Fm",
+      "zscored_l2_invariant7": 0.2191436416957368
+    },
+    {
+      "element": "Eu",
+      "nearest_element": "Sm",
+      "zscored_l2_invariant7": 0.5079576598202729
+    },
+    {
+      "element": "Fe",
+      "nearest_element": "Mn",
+      "zscored_l2_invariant7": 0.29168297899678425
+    },
+    {
+      "element": "Fm",
+      "nearest_element": "Es",
+      "zscored_l2_invariant7": 0.2191436416957368
+    },
+    {
+      "element": "Ga",
+      "nearest_element": "As",
+      "zscored_l2_invariant7": 0.4352358540230874
+    },
+    {
+      "element": "Gd",
+      "nearest_element": "Tb",
+      "zscored_l2_invariant7": 0.18605785138395434
+    },
+    {
+      "element": "Ge",
+      "nearest_element": "Zn",
+      "zscored_l2_invariant7": 0.5121856255410281
+    },
+    {
+      "element": "H",
+      "nearest_element": "Ni",
+      "zscored_l2_invariant7": 5.774291317579747
+    },
+    {
+      "element": "Hf",
+      "nearest_element": "Lu",
+      "zscored_l2_invariant7": 0.9804297800252502
+    },
+    {
+      "element": "Hg",
+      "nearest_element": "Pb",
+      "zscored_l2_invariant7": 1.1441296900387095
+    },
+    {
+      "element": "Ho",
+      "nearest_element": "Er",
+      "zscored_l2_invariant7": 0.12367835378581572
+    },
+    {
+      "element": "In",
+      "nearest_element": "Sn",
+      "zscored_l2_invariant7": 0.7994533294110464
+    },
+    {
+      "element": "K",
+      "nearest_element": "Rb",
+      "zscored_l2_invariant7": 1.416527830728556
+    },
+    {
+      "element": "La",
+      "nearest_element": "Pr",
+      "zscored_l2_invariant7": 0.24368761401264505
+    },
+    {
+      "element": "Li",
+      "nearest_element": "Mg",
+      "zscored_l2_invariant7": 1.3843440801916274
+    },
+    {
+      "element": "Lu",
+      "nearest_element": "Tm",
+      "zscored_l2_invariant7": 0.22964529647373172
+    },
+    {
+      "element": "Md",
+      "nearest_element": "No",
+      "zscored_l2_invariant7": 0.1564870260637505
+    },
+    {
+      "element": "Mg",
+      "nearest_element": "Al",
+      "zscored_l2_invariant7": 0.669812522211231
+    },
+    {
+      "element": "Mn",
+      "nearest_element": "Fe",
+      "zscored_l2_invariant7": 0.29168297899678425
+    },
+    {
+      "element": "Mo",
+      "nearest_element": "Cd",
+      "zscored_l2_invariant7": 0.7736965042549814
+    },
+    {
+      "element": "Na",
+      "nearest_element": "Ca",
+      "zscored_l2_invariant7": 0.7446303577024946
+    },
+    {
+      "element": "Nd",
+      "nearest_element": "Pm",
+      "zscored_l2_invariant7": 0.13484003501739358
+    },
+    {
+      "element": "Ni",
+      "nearest_element": "Cu",
+      "zscored_l2_invariant7": 0.1254968151329914
+    },
+    {
+      "element": "No",
+      "nearest_element": "Md",
+      "zscored_l2_invariant7": 0.1564870260637505
+    },
+    {
+      "element": "Np",
+      "nearest_element": "Pu",
+      "zscored_l2_invariant7": 0.31618129668572575
+    },
+    {
+      "element": "Pa",
+      "nearest_element": "Bk",
+      "zscored_l2_invariant7": 0.5228641917207736
+    },
+    {
+      "element": "Pb",
+      "nearest_element": "Tl",
+      "zscored_l2_invariant7": 0.22720905123026033
+    },
+    {
+      "element": "Pd",
+      "nearest_element": "Rh",
+      "zscored_l2_invariant7": 0.7088511183887891
+    },
+    {
+      "element": "Pm",
+      "nearest_element": "Nd",
+      "zscored_l2_invariant7": 0.13484003501739358
+    },
+    {
+      "element": "Po",
+      "nearest_element": "Pb",
+      "zscored_l2_invariant7": 0.46365932442748853
+    },
+    {
+      "element": "Pr",
+      "nearest_element": "Nd",
+      "zscored_l2_invariant7": 0.15831837007135555
+    },
+    {
+      "element": "Pt",
+      "nearest_element": "Au",
+      "zscored_l2_invariant7": 0.4821998075627352
+    },
+    {
+      "element": "Pu",
+      "nearest_element": "U",
+      "zscored_l2_invariant7": 0.1925181010758993
+    },
+    {
+      "element": "Ra",
+      "nearest_element": "Ac",
+      "zscored_l2_invariant7": 1.7350533718398622
+    },
+    {
+      "element": "Rb",
+      "nearest_element": "K",
+      "zscored_l2_invariant7": 1.416527830728556
+    },
+    {
+      "element": "Rh",
+      "nearest_element": "Ru",
+      "zscored_l2_invariant7": 0.15431860822059268
+    },
+    {
+      "element": "Ru",
+      "nearest_element": "Rh",
+      "zscored_l2_invariant7": 0.15431860822059268
+    },
+    {
+      "element": "Sc",
+      "nearest_element": "Ti",
+      "zscored_l2_invariant7": 0.6076378774859394
+    },
+    {
+      "element": "Sm",
+      "nearest_element": "Pm",
+      "zscored_l2_invariant7": 0.16336208174030314
+    },
+    {
+      "element": "Sn",
+      "nearest_element": "Cd",
+      "zscored_l2_invariant7": 0.3658963169737656
+    },
+    {
+      "element": "Sr",
+      "nearest_element": "Y",
+      "zscored_l2_invariant7": 1.1598189451210177
+    },
+    {
+      "element": "Tb",
+      "nearest_element": "Dy",
+      "zscored_l2_invariant7": 0.15138205582676018
+    },
+    {
+      "element": "Th",
+      "nearest_element": "Ac",
+      "zscored_l2_invariant7": 0.6186434883822246
+    },
+    {
+      "element": "Ti",
+      "nearest_element": "V",
+      "zscored_l2_invariant7": 0.39260628668262876
+    },
+    {
+      "element": "Tl",
+      "nearest_element": "Pb",
+      "zscored_l2_invariant7": 0.22720905123026033
+    },
+    {
+      "element": "Tm",
+      "nearest_element": "Er",
+      "zscored_l2_invariant7": 0.1326518673392545
+    },
+    {
+      "element": "U",
+      "nearest_element": "Pu",
+      "zscored_l2_invariant7": 0.1925181010758993
+    },
+    {
+      "element": "V",
+      "nearest_element": "Ti",
+      "zscored_l2_invariant7": 0.39260628668262876
+    },
+    {
+      "element": "W",
+      "nearest_element": "Hg",
+      "zscored_l2_invariant7": 1.3734479100949257
+    },
+    {
+      "element": "Y",
+      "nearest_element": "Zr",
+      "zscored_l2_invariant7": 0.9157319223656838
+    },
+    {
+      "element": "Yb",
+      "nearest_element": "Gd",
+      "zscored_l2_invariant7": 0.510238240828024
+    },
+    {
+      "element": "Zn",
+      "nearest_element": "Fe",
+      "zscored_l2_invariant7": 0.44536889748877406
+    },
+    {
+      "element": "Zr",
+      "nearest_element": "Y",
+      "zscored_l2_invariant7": 0.9157319223656838
+    }
+  ],
+  "n_elements": 74,
+  "n_species": 103,
+  "ie_valence_rule": "row-level CMI IE and metal_valence_e; unique given (element, oxidation_state) in this corpus. Oxidation state remains a separate explanatory feature. Values come from CMI feature CSVs, not from the logK target.",
+  "target_leakage": false
+}
