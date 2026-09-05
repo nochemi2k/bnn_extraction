@@ -16,6 +16,46 @@ if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
 
+def _run_jacs() -> int:
+    """JACS repositioning analyses: reads frozen fold scores / processed data only,
+    writes under manuscripts/jacs/. Does not touch manuscripts/final/ and does not
+    run any part of the JCIM rebuild path above."""
+    from uq_remake.manuscript.within_pair_ordering import main as within_pair_main
+    from uq_remake.manuscript.scale_free_error import main as scale_free_main
+    from uq_remake.manuscript.logk_censoring import main as censoring_main
+    from uq_remake.manuscript.uncertainty_by_regime import main as regime_main
+    from uq_remake.manuscript.sigma_chemical_axes import main as sigma_axes_main
+    from uq_remake.manuscript.coverage_override_grid import main as coverage_grid_main
+    from uq_remake.manuscript.external_set_emulation import main as external_set_main
+    from uq_remake.manuscript.single_pair_campaign import main as single_pair_main
+    from uq_remake.manuscript.validate_jacs_analyses import main as validate_jacs_main
+
+    print("######## jacs: within_pair_ordering (Tasks 1-2) ########", flush=True)
+    within_pair_main()
+    print("######## jacs: scale_free_error (Task 3) ########", flush=True)
+    scale_free_main()
+    print("######## jacs: logk_censoring (Task 4) ########", flush=True)
+    censoring_main()
+    print("######## jacs: uncertainty_by_regime (Task 5) ########", flush=True)
+    regime_main()
+    print("######## jacs: sigma_chemical_axes (Task 6) ########", flush=True)
+    sigma_axes_main()
+    print("######## jacs: coverage_override_grid (Tasks 7-8) ########", flush=True)
+    coverage_grid_main()
+    print("######## jacs: external_set_emulation (Task 9) ########", flush=True)
+    external_set_main()
+    print("######## jacs: single_pair_campaign (Task 10) ########", flush=True)
+    single_pair_main()
+    print("######## jacs: validate_jacs_analyses ########", flush=True)
+    report = validate_jacs_main()
+    print({k: report[k] for k in ("pass", "n_checks", "n_pass")}, flush=True)
+    if not report["pass"]:
+        for row in report["checks"]:
+            if not row["pass"]:
+                print(row)
+    return 0 if report["pass"] else 1
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description="Rebuild manuscript from canonical fold artifacts (no retraining)")
     p.add_argument("--skip-figures", action="store_true")
@@ -25,10 +65,24 @@ def main(argv=None) -> int:
         action="store_true",
         help="Do not run build_final_assets.py; regenerate figures/prose from retained tables.",
     )
+    p.add_argument(
+        "--jacs",
+        action="store_true",
+        help=(
+            "Run the JACS repositioning analyses instead of the JCIM rebuild path: "
+            "within-pair risk ordering/retention, scale-free error, logK censoring, "
+            "uncertainty-by-regime, sigma-vs-chemistry axes, the coverage-override "
+            "grid and its flagged-region composition, and their validator. Writes "
+            "under manuscripts/jacs/ only; does not touch manuscripts/final/."
+        ),
+    )
     args = p.parse_args(argv)
 
     os.environ.setdefault("MPLBACKEND", "Agg")
     os.environ.setdefault("PYTHONUTF8", "1")
+
+    if args.jacs:
+        return _run_jacs()
 
     if not args.skip_tables:
         from uq_remake.manuscript.build_final_assets import main as build_main

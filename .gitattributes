@@ -1,2 +1,69 @@
-# Git LFS: packed archives only. Unpacked trees are gitignored - see artifacts/README.md.
+# ---------------------------------------------------------------------------
+# Line endings
+#
+# Without this the repository reports several hundred files as modified on a
+# Windows checkout, because the index holds LF and the working tree holds CRLF.
+# Normalise on commit, check out LF everywhere, and let the few files that must
+# keep CRLF say so below.
+# ---------------------------------------------------------------------------
+* text=auto eol=lf
+
+*.ps1   text eol=crlf
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+
+# ---------------------------------------------------------------------------
+# Binary: never diffed, never line-ending-converted
+# ---------------------------------------------------------------------------
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.pdf   binary
+*.svg   -text
+*.7z    binary
+*.zip   binary
+*.gz    binary
+*.xz    binary
+*.docx  binary
+*.xlsx  binary
+*.pptx  binary
+*.pt    binary
+*.pth   binary
+*.ckpt  binary
+*.bin   binary
+*.npy   binary
+*.npz   binary
+*.parquet binary
+*.feather binary
+
+# ---------------------------------------------------------------------------
+# Git LFS
+#
+# Only the packed archives under artifacts/. Unpacked trees are gitignored and
+# are restored with scripts/unpack_artifacts.ps1; see artifacts/README.md.
+# Nothing else in this repository is large enough to need LFS: the biggest
+# tracked file is under 6 MB.
+# ---------------------------------------------------------------------------
 artifacts/*.7z filter=lfs diff=lfs merge=lfs -text
+
+# ---------------------------------------------------------------------------
+# Generated content
+#
+# These are emitted by the analysis and figure scripts and are committed only so
+# that the manuscripts can be read without running anything. Marking them
+# generated collapses them in GitHub diffs and keeps them out of the language
+# statistics; they are still ordinary tracked files.
+# ---------------------------------------------------------------------------
+manuscripts/final/tables/**      linguist-generated=true
+manuscripts/final/figures/**     linguist-generated=true
+manuscripts/jacs/tables/**       linguist-generated=true
+manuscripts/jacs/figures/**      linguist-generated=true
+manuscripts/natcompsci/figures/*.png  linguist-generated=true
+manuscripts/natcompsci/figures/*.pdf  linguist-generated=true
+results/**                       linguist-generated=true
+data/processed/audits/**         linguist-generated=true
+
+# Large derived CSVs: keep them in git, but do not try to diff them line by line.
+data/splits/*.json               -diff
+manuscripts/final/tables/iz_mahalanobis_feature_median_scores.csv -diff

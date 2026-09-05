@@ -130,13 +130,22 @@ results/downstream_cv/pair_acquisition_tau_2_0p5/pair_acquisition_fold_metrics.c
 #  into artifacts/data_features.7z rather than committed.)
 
 # Packed archives under artifacts/ (LFS in .gitattributes)
+# The un-ignore rules must be the LAST word on these paths. A bare
+# `artifacts/*.7z` used to sit below them and silently re-ignored every archive,
+# so nothing was ever handed to LFS; do not reintroduce it.
 !artifacts/
 !artifacts/**/*.7z
 !artifacts/**/*.md
 
-# Last-match wins: incomplete 7-Zip/LFS sidecars stay ignored even under artifacts/
+# Incomplete 7-Zip / LFS sidecars stay ignored. These patterns do not match a
+# finished `.7z`, so they cannot undo the rules above.
 *.7z.tmp
 *.7z.tmp.*
 artifacts/*.tmp
 
-artifacts/*.7z
+# --- Working folders that are not part of the record ------------------------
+# Scratch copies delivered during drafting sessions.
+Claude outputs/
+# Anything staged for deletion by a cleanup pass, and the dated quarantine.
+**/_to_delete/
+_quarantine_*/
