@@ -1,0 +1,117 @@
+{
+  "pass": true,
+  "n_checks": 22,
+  "n_pass": 22,
+  "checks": [
+    {
+      "check": "all_scalefree_retention_values_reproduce_to_3dp",
+      "passed": true,
+      "detail": "checked=154 mismatched=0 []"
+    },
+    {
+      "check": "unfiltered_baseline_identical_across_scores",
+      "passed": true,
+      "detail": "spread=0.00e+00"
+    },
+    {
+      "check": "unfiltered_baseline_matches_manuscript_0974",
+      "passed": true,
+      "detail": "recomputed=0.9741 manuscript=0.974"
+    },
+    {
+      "check": "manuscript_value:sigma_total@r=0.5",
+      "passed": true,
+      "detail": "recomputed=0.5161 manuscript=0.516"
+    },
+    {
+      "check": "manuscript_value:euclidean_feature_median@r=0.5",
+      "passed": true,
+      "detail": "recomputed=0.6080 manuscript=0.608"
+    },
+    {
+      "check": "manuscript_value:tanimoto_nn_distance@r=0.5",
+      "passed": true,
+      "detail": "recomputed=0.8588 manuscript=0.859"
+    },
+    {
+      "check": "manuscript_value:random@r=0.5",
+      "passed": true,
+      "detail": "recomputed=0.9280 manuscript=0.928"
+    },
+    {
+      "check": "manuscript_value:yhat_mag@r=0.5",
+      "passed": true,
+      "detail": "recomputed=1.1675 manuscript=1.167"
+    },
+    {
+      "check": "manuscript_value:yhat_mag@r=0.3",
+      "passed": true,
+      "detail": "recomputed=1.3022 manuscript=1.302"
+    },
+    {
+      "check": "manuscript_reduction_is_47pct",
+      "passed": true,
+      "detail": "recomputed=47.0%"
+    },
+    {
+      "check": "pair_density_undefined_in_every_eligible_cell",
+      "passed": true,
+      "detail": "undefined_cells=1124 (manuscript: 1,124)"
+    },
+    {
+      "check": "pair_density_undefined_cell_count_is_1124",
+      "passed": true,
+      "detail": "count=1124"
+    },
+    {
+      "check": "fingerprint_nn_not_better_than_random@r=0.3",
+      "passed": true,
+      "detail": "fingerprint=0.8991 random=0.8913"
+    },
+    {
+      "check": "yhat_worse_than_unfiltered@r=0.5",
+      "passed": true,
+      "detail": "yhat=1.1675 unfiltered=0.9741"
+    },
+    {
+      "check": "yhat_worse_than_unfiltered@r=0.3",
+      "passed": true,
+      "detail": "yhat=1.3022 unfiltered=0.9741"
+    },
+    {
+      "check": "sigma_marginal_monotone_increasing",
+      "passed": true,
+      "detail": "[0.407, 0.509, 0.558, 0.872]"
+    },
+    {
+      "check": "sigma_marginal_span_is_2.1",
+      "passed": true,
+      "detail": "2.14"
+    },
+    {
+      "check": "support_marginal_span_is_1.2",
+      "passed": true,
+      "detail": "1.18"
+    },
+    {
+      "check": "dense_high_sigma_is_1.49x_overall",
+      "passed": true,
+      "detail": "1.487"
+    },
+    {
+      "check": "sparse_low_sigma_is_0.68x_overall",
+      "passed": true,
+      "detail": "0.683"
+    },
+    {
+      "check": "coverage_interaction_low_sigma_halves",
+      "passed": true,
+      "detail": "dense/sparse at low sigma = 0.502 (manuscript: halves)"
+    },
+    {
+      "check": "coverage_interaction_high_sigma_no_benefit",
+      "passed": true,
+      "detail": "dense=0.872 sparse=0.783 at high sigma"
+    }
+  ]
+}

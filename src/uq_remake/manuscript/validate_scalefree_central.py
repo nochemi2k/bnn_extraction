@@ -12,7 +12,7 @@ import pandas as pd
 
 FOLDS = [f"results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{i}.csv"
          for i in range(5)]
-T = "manuscripts/jacs/tables/"
+T = "manuscripts/derived/tables/"
 GRID = [0.10, 0.20, 0.25, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00]
 MIN_N, MIN_DISTINCT, NPERM, SEED = 20, 5, 20, 0
 checks = []

@@ -36,7 +36,7 @@ import pandas as pd
 
 FOLDS = [os.path.join("results", "downstream_cv", "ad_retention", "fold_scores",
                       "DS2_RDKIT_MLPENS5_HETERO", f"fold{i}.csv") for i in range(5)]
-T = os.environ.get("BNN_TABLES", os.path.join("manuscripts", "jacs", "tables")) + os.sep
+T = os.environ.get("BNN_TABLES", os.path.join("manuscripts", "derived", "tables")) + os.sep
 
 GRID = [0.10, 0.20, 0.25, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00]
 MIN_N, MIN_DISTINCT, NPERM, SEED = 20, 5, 20, 0

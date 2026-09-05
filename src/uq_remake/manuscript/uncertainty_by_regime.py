@@ -1,4 +1,4 @@
-"""JACS Task 5: uncertainty composition by selectivity regime.
+"""Analysis task 5: uncertainty composition by selectivity regime.
 
 Splits held-out rows into high-selectivity (|y_true| > 1, the same
 `HIGH_SEL_TAU` threshold used everywhere else in this repo) and near-zero
@@ -14,7 +14,7 @@ This supports the reframing of the near-zero region: not a practical
 retention target, but evidence that the model's uncertainty is dominated by
 irreducible (aleatoric) variance in both regimes.
 
-`manuscripts/jacs/analysis/chemical_sanity_checks.json` gives rough (`~`)
+`manuscripts/derived/analysis/chemical_sanity_checks.json` gives rough (`~`)
 figures for this task (aleatoric share ~0.85 high-selectivity, ~0.87
 near-zero; sigma_total 2.296 vs 0.939) rather than the multi-decimal
 regression targets used elsewhere. sigma_total reproduces to 3 decimals.
@@ -27,7 +27,7 @@ ratio definition tried (row-mean-of-ratios lands at ~0.80/~0.85 instead).
 Reported here rather than silently forced to match; see the validator and
 the task summary for how this is flagged.
 
-Writes `manuscripts/jacs/tables/uncertainty_by_regime.csv`.
+Writes `manuscripts/derived/tables/uncertainty_by_regime.csv`.
 
     python -m uq_remake.manuscript.uncertainty_by_regime
 """
@@ -37,10 +37,10 @@ import numpy as np
 import pandas as pd
 
 from uq_remake.downstream.protocol import FOLDS
-from uq_remake.manuscript.jacs_common import (
+from uq_remake.manuscript.manuscript_common import (
     FOLD_SCORES_DIR,
     HIGH_SEL_TAU,
-    JACS_TABLES,
+    DERIVED_TABLES,
     WORKHORSE,
     fold_mean_sd_row,
     load_all_folds,
@@ -48,7 +48,7 @@ from uq_remake.manuscript.jacs_common import (
     write_provenance,
 )
 
-OUT = JACS_TABLES / "uncertainty_by_regime.csv"
+OUT = DERIVED_TABLES / "uncertainty_by_regime.csv"
 COMPONENT_COLS = ("sigma_aleatoric", "sigma_epistemic_within", "sigma_epistemic_between", "sigma_total")
 
 
@@ -102,7 +102,7 @@ def main() -> dict:
     out = pd.DataFrame(rows)
     out["source"] = f"results/downstream_cv/ad_retention/fold_scores/{WORKHORSE}/fold{{0..4}}.csv"
 
-    JACS_TABLES.mkdir(parents=True, exist_ok=True)
+    DERIVED_TABLES.mkdir(parents=True, exist_ok=True)
     out.to_csv(OUT, index=False)
     write_provenance(
         OUT,

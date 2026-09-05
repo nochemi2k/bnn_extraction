@@ -31,9 +31,9 @@ from matplotlib.colors import LinearSegmentedColormap
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 _REPO = os.path.abspath(os.path.join(OUT, os.pardir, os.pardir, os.pardir))
-# Derived tables live under manuscripts/jacs/tables/ for historical reasons; the
+# Derived tables live under manuscripts/derived/tables/ for historical reasons; the
 # validator modules read the same directory. Override with BNN_TABLES.
-T = os.environ.get("BNN_TABLES", os.path.join(_REPO, "manuscripts", "jacs", "tables")) + os.sep
+T = os.environ.get("BNN_TABLES", os.path.join(_REPO, "manuscripts", "derived", "tables")) + os.sep
 TF = os.environ.get("BNN_TABLES_FINAL",
                     os.path.join(_REPO, "manuscripts", "final", "tables")) + os.sep
 

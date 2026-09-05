@@ -1,6 +1,6 @@
 """Every number quoted in the Nature Computational Science main text, re-derived.
 
-Complements validate_jacs_analyses.py (aggregation conventions, model selection)
+Complements validate_core_analyses.py (aggregation conventions, model selection)
 and validate_scalefree_central.py (the central retention statistic). This module
 closes the remaining gaps: per-score rank associations, the flagged-region
 chemistry, the scale-free half contrast, scale-free partial correlations,
@@ -10,7 +10,7 @@ import json, os, sys
 import numpy as np
 import pandas as pd
 
-T = "manuscripts/jacs/tables/"
+T = "manuscripts/derived/tables/"
 FOLDS = [f"results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{i}.csv"
          for i in range(5)]
 checks = []

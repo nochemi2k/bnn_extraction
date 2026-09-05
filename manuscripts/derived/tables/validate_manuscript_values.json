@@ -1,0 +1,937 @@
+{
+  "pass": true,
+  "n_checks": 186,
+  "n_pass": 186,
+  "checks": [
+    {
+      "check": "dataset_rows_88525",
+      "passed": true,
+      "detail": "88525"
+    },
+    {
+      "check": "dataset_pairs_2503",
+      "passed": true,
+      "detail": "2503"
+    },
+    {
+      "check": "dataset_ligands_2187",
+      "passed": true,
+      "detail": "2187"
+    },
+    {
+      "check": "dataset_endpoints_177050",
+      "passed": true,
+      "detail": "177050"
+    },
+    {
+      "check": "axis_ligand_top10_share_14pct",
+      "passed": true,
+      "detail": "0.1419"
+    },
+    {
+      "check": "axis_electrolyte_six_distinct",
+      "passed": true,
+      "detail": "6"
+    },
+    {
+      "check": "axis_electrolyte_top5_share_97pct",
+      "passed": true,
+      "detail": "0.9717"
+    },
+    {
+      "check": "axis_temperature_top1_share_74pct",
+      "passed": true,
+      "detail": "0.7407"
+    },
+    {
+      "check": "axis_ionic_strength_top5_share_93pct",
+      "passed": true,
+      "detail": "0.9271"
+    },
+    {
+      "check": "rho_quoted:sigma_total",
+      "passed": true,
+      "detail": "rho=0.4363+/-0.0289 manuscript=0.436+/-0.029"
+    },
+    {
+      "check": "rho_quoted:sigma_aleatoric",
+      "passed": true,
+      "detail": "rho=0.4328+/-0.0282 manuscript=0.433+/-0.028"
+    },
+    {
+      "check": "rho_quoted:euclidean_feature_median",
+      "passed": true,
+      "detail": "rho=0.2246+/-0.0597 manuscript=0.225+/-0.06"
+    },
+    {
+      "check": "rho_quoted:tanimoto_nn_distance",
+      "passed": true,
+      "detail": "rho=-0.0926+/-0.0761 manuscript=-0.093+/-0.076"
+    },
+    {
+      "check": "rho_quoted:tanimoto_knn_mean_5",
+      "passed": true,
+      "detail": "rho=-0.1080+/-0.0817 manuscript=-0.108+/-0.082"
+    },
+    {
+      "check": "rho_quoted:tanimoto_knn_mean_10",
+      "passed": true,
+      "detail": "rho=-0.1101+/-0.0950 manuscript=-0.11+/-0.095"
+    },
+    {
+      "check": "all_mahalanobis_variants_between_0.07_and_0.08",
+      "passed": true,
+      "detail": "range 0.073-0.080"
+    },
+    {
+      "check": "all_three_fingerprint_nn_variants_negative",
+      "passed": true,
+      "detail": "[np.float64(-0.093), np.float64(-0.108), np.float64(-0.11)]"
+    },
+    {
+      "check": "flagged_region:dense_support_high_sigma:favoured_logK",
+      "passed": true,
+      "detail": "12.882 vs 12.9"
+    },
+    {
+      "check": "flagged_region:dense_support_low_sigma:favoured_logK",
+      "passed": true,
+      "detail": "2.864 vs 2.9"
+    },
+    {
+      "check": "flagged_region:dense_support_high_sigma:abs_dlogK",
+      "passed": true,
+      "detail": "4.148 vs 4.15"
+    },
+    {
+      "check": "flagged_region:dense_support_low_sigma:abs_dlogK",
+      "passed": true,
+      "detail": "0.430 vs 0.43"
+    },
+    {
+      "check": "flagged_region_overlap_33_of_34",
+      "passed": true,
+      "detail": "33/34"
+    },
+    {
+      "check": "flagged_region_isovalent_both_halves",
+      "passed": true,
+      "detail": "delta oxidation state = 0"
+    },
+    {
+      "check": "scalefree_half_contrast_high_0.87",
+      "passed": true,
+      "detail": "0.872"
+    },
+    {
+      "check": "scalefree_half_contrast_low_0.20",
+      "passed": true,
+      "detail": "0.201"
+    },
+    {
+      "check": "scalefree_partial_sigma_favoured_0.552",
+      "passed": true,
+      "detail": "0.5522+/-0.0536"
+    },
+    {
+      "check": "scalefree_partial_error_support_is_zero",
+      "passed": true,
+      "detail": "-0.0086+/-0.0573 (manuscript -0.009+/-0.057)"
+    },
+    {
+      "check": "censoring_lanthanide_2.41pct",
+      "passed": true,
+      "detail": "2.41"
+    },
+    {
+      "check": "censoring_actinide_24.45pct",
+      "passed": true,
+      "detail": "24.45"
+    },
+    {
+      "check": "censoring_n_endpoints_177050",
+      "passed": true,
+      "detail": "177050"
+    },
+    {
+      "check": "regime:high_selectivity:sigma_total",
+      "passed": true,
+      "detail": "2.2787 vs 2.28"
+    },
+    {
+      "check": "regime:near_zero:sigma_total",
+      "passed": true,
+      "detail": "0.9459 vs 0.95"
+    },
+    {
+      "check": "regime:high_selectivity:aleatoric_variance_share",
+      "passed": true,
+      "detail": "0.8937 vs 0.894"
+    },
+    {
+      "check": "regime:near_zero:aleatoric_variance_share",
+      "passed": true,
+      "detail": "0.9166 vs 0.917"
+    },
+    {
+      "check": "threshold_sensitivity_n20",
+      "passed": true,
+      "detail": "cells=225 unf=0.974 rho_sig=+0.436 rho_fp=-0.093"
+    },
+    {
+      "check": "threshold_sensitivity_n10",
+      "passed": true,
+      "detail": "cells=369 unf=0.920 rho_sig=+0.395 rho_fp=-0.074"
+    },
+    {
+      "check": "threshold_sensitivity_n5",
+      "passed": true,
+      "detail": "cells=588 unf=0.936 rho_sig=+0.355 rho_fp=-0.081"
+    },
+    {
+      "check": "threshold_sensitivity_fingerprint_negative_at_every_threshold",
+      "passed": true,
+      "detail": "[-0.093, -0.074, -0.081]"
+    },
+    {
+      "check": "threshold_sensitivity_sigma_positive_at_every_threshold",
+      "passed": true,
+      "detail": "[0.436, 0.395, 0.355]"
+    },
+    {
+      "check": "model_robustness_four_models_present",
+      "passed": true,
+      "detail": "['DS2_RDKIT_MLPENS5_HETERO', 'DS2_RDKIT_MLP_MCDROPOUT', 'DS2_RDKIT_MLPENS5_EVID', 'DS2_GRAPH_DMPNN_EVID']"
+    },
+    {
+      "check": "model_robustness_skill_range_0.833_to_0.974",
+      "passed": true,
+      "detail": "0.833-0.974"
+    },
+    {
+      "check": "model_robustness_sigma_positive_in_all_models",
+      "passed": true,
+      "detail": "range +0.362 to +0.436"
+    },
+    {
+      "check": "model_robustness_fingerprint_negative_in_all_models",
+      "passed": true,
+      "detail": "{'DS2_RDKIT_MLPENS5_HETERO': -0.093, 'DS2_RDKIT_MLP_MCDROPOUT': -0.088, 'DS2_RDKIT_MLPENS5_EVID': -0.087, 'DS2_GRAPH_DMPNN_EVID': -0.063}"
+    },
+    {
+      "check": "model_robustness_best_model_still_shows_negative_fingerprint",
+      "passed": true,
+      "detail": "best=DS2_RDKIT_MLPENS5_EVID unfiltered=0.833 rho_fp=-0.087"
+    },
+    {
+      "check": "figS1_rows_pooled_over_folds",
+      "passed": true,
+      "detail": "88525"
+    },
+    {
+      "check": "figS1_row_level_rmse_2.096",
+      "passed": true,
+      "detail": "2.096"
+    },
+    {
+      "check": "figS1_row_level_ace_0.049",
+      "passed": true,
+      "detail": "0.049"
+    },
+    {
+      "check": "figS1_row_level_coverage_at_90_is_0.894",
+      "passed": true,
+      "detail": "0.894"
+    },
+    {
+      "check": "figS1_row_level_coverage_inside_screen_band_0.85_0.95",
+      "passed": true,
+      "detail": "0.894"
+    },
+    {
+      "check": "figS1_row_level_ace_inside_screen_limit_0.10",
+      "passed": true,
+      "detail": "0.049"
+    },
+    {
+      "check": "absolute_unfiltered_1.323",
+      "passed": true,
+      "detail": "1.323"
+    },
+    {
+      "check": "absolute_r50_sigma_0.771",
+      "passed": true,
+      "detail": "0.771"
+    },
+    {
+      "check": "absolute_r50_descriptor_euclid_median_0.909",
+      "passed": true,
+      "detail": "0.909"
+    },
+    {
+      "check": "absolute_r50_fingerprint_nn_1.276",
+      "passed": true,
+      "detail": "1.276"
+    },
+    {
+      "check": "absolute_r50_random_1.288",
+      "passed": true,
+      "detail": "1.288"
+    },
+    {
+      "check": "absolute_r50_predicted_magnitude_1.509",
+      "passed": true,
+      "detail": "1.509"
+    },
+    {
+      "check": "absolute_sigma_reduction_is_42pct",
+      "passed": true,
+      "detail": "41.8%"
+    },
+    {
+      "check": "absolute_best_distance_reduction_is_31pct",
+      "passed": true,
+      "detail": "31.3%"
+    },
+    {
+      "check": "contrast_sigma_vs_unfiltered_0.552_ci_excludes_zero",
+      "passed": true,
+      "detail": "-0.552 CI[-0.589,-0.511] win 0.956"
+    },
+    {
+      "check": "contrast_sigma_beats_best_distance_0.138_ci_excludes_zero",
+      "passed": true,
+      "detail": "-0.138 CI[-0.159,-0.114] same_sign=True win 0.755"
+    },
+    {
+      "check": "contrast_descriptor_beats_random_0.380",
+      "passed": true,
+      "detail": "-0.380 win 0.897"
+    },
+    {
+      "check": "contrast_fingerprint_vs_random_is_null_at_r50",
+      "passed": true,
+      "detail": "-0.012 CI[-0.028,+0.016] win 0.472"
+    },
+    {
+      "check": "contrast_fingerprint_worse_than_random_at_r30",
+      "passed": true,
+      "detail": "+0.070 CI[+0.043,+0.111]"
+    },
+    {
+      "check": "contrast_predicted_magnitude_harmful_0.187",
+      "passed": true,
+      "detail": "+0.187 worse in 84% of cells"
+    },
+    {
+      "check": "unit_change_preserves_every_cell_win_fraction",
+      "passed": true,
+      "detail": "22 contrasts, win fractions identical"
+    },
+    {
+      "check": "unit_change_preserves_every_contrast_sign_except_one_null",
+      "passed": true,
+      "detail": "only [('tanimoto_nn_distance', 'unfiltered', 0.3)] flips; absolute value +0.003 with an interval spanning zero"
+    },
+    {
+      "check": "rho_sigma_0.436_ci_excludes_zero",
+      "passed": true,
+      "detail": "+0.436 CI[+0.421,+0.450] negative in 2%"
+    },
+    {
+      "check": "rho_descriptor_euclid_median_0.225_ci_excludes_zero",
+      "passed": true,
+      "detail": "+0.225 CI[+0.212,+0.240] negative in 11%"
+    },
+    {
+      "check": "rho_fingerprint_nn_-0.093_ci_excludes_zero",
+      "passed": true,
+      "detail": "-0.093 CI[-0.104,-0.078] negative in 69%"
+    },
+    {
+      "check": "rho_training_frequency_undefined_within_cell",
+      "passed": true,
+      "detail": "undefined_within_cell"
+    },
+    {
+      "check": "pooled_protocol_reproduces_published_unfiltered_2.078",
+      "passed": true,
+      "detail": "2.078"
+    },
+    {
+      "check": "pooled_protocol_reproduces_published_sigma_0.730",
+      "passed": true,
+      "detail": "0.730"
+    },
+    {
+      "check": "pooled_protocol_reproduces_published_mahalanobis_1.586",
+      "passed": true,
+      "detail": "1.586"
+    },
+    {
+      "check": "pooled_protocol_population_differs_between_scores",
+      "passed": true,
+      "detail": "unfiltered 801.6, sigma 328.2, euclid 530.6"
+    },
+    {
+      "check": "decision_level_population_identical_for_every_score",
+      "passed": true,
+      "detail": "224.8 pairs for all scores"
+    },
+    {
+      "check": "removing_population_selection_improves_distances_and_worsens_sigma",
+      "passed": true,
+      "detail": "descriptor 1.404->0.909, sigma 0.528->0.771"
+    },
+    {
+      "check": "pair_loss_accounting_adds_up_for_every_score",
+      "passed": true,
+      "detail": "8 scores, counted + below-minimum + zero-row = 801.6"
+    },
+    {
+      "check": "pair_loss_pair_density_risk",
+      "passed": true,
+      "detail": "692.2 lose every row, 109.4 counted"
+    },
+    {
+      "check": "pair_loss_sigma_total",
+      "passed": true,
+      "detail": "321.8 lose every row, 328.2 counted"
+    },
+    {
+      "check": "pair_loss_euclidean_feature_median",
+      "passed": true,
+      "detail": "73.6 lose every row, 530.6 counted"
+    },
+    {
+      "check": "pair_loss_tanimoto_nn_distance",
+      "passed": true,
+      "detail": "49.2 lose every row, 606.6 counted"
+    },
+    {
+      "check": "pair_loss_random",
+      "passed": true,
+      "detail": "21.4 lose every row, 563.6 counted"
+    },
+    {
+      "check": "training_frequency_count_is_constant_within_a_pair",
+      "passed": true,
+      "detail": "1.000"
+    },
+    {
+      "check": "sigma_varies_mostly_between_pairs_distances_mostly_within",
+      "passed": true,
+      "detail": "sigma 0.653; distances 0.150, 0.157, 0.156, 0.143"
+    },
+    {
+      "check": "distances_keep_about_half_of_each_pair_sigma_keeps_a_fifth",
+      "passed": true,
+      "detail": "sigma 0.21, euclid 0.49, fp NN 0.53"
+    },
+    {
+      "check": "pooled_unfiltered_2.078_over_801.6_pairs",
+      "passed": true,
+      "detail": "2.078 over 801.6 pairs"
+    },
+    {
+      "check": "pooled_r50_sigma_0.73",
+      "passed": true,
+      "detail": "0.730"
+    },
+    {
+      "check": "pooled_r50_training_frequency_count_0.955",
+      "passed": true,
+      "detail": "0.955"
+    },
+    {
+      "check": "pooled_r50_descriptor_euclid_median_1.404",
+      "passed": true,
+      "detail": "1.404"
+    },
+    {
+      "check": "pooled_r50_descriptor_mahalanobis_centroid_1.586",
+      "passed": true,
+      "detail": "1.586"
+    },
+    {
+      "check": "pooled_r50_random_1.823",
+      "passed": true,
+      "detail": "1.823"
+    },
+    {
+      "check": "pooled_r50_fingerprint_nn_1.888",
+      "passed": true,
+      "detail": "1.888"
+    },
+    {
+      "check": "pooled_r50_predicted_magnitude_2.361",
+      "passed": true,
+      "detail": "2.361"
+    },
+    {
+      "check": "pooled_sigma_reduction_is_65pct",
+      "passed": true,
+      "detail": "64.9%"
+    },
+    {
+      "check": "pooled_best_distance_reduction_is_32pct",
+      "passed": true,
+      "detail": "32.4%"
+    },
+    {
+      "check": "pooled_fingerprint_nn_is_worse_than_random",
+      "passed": true,
+      "detail": "fp NN 1.888 vs random 1.823"
+    },
+    {
+      "check": "pooled_count_beats_every_molecular_distance",
+      "passed": true,
+      "detail": "count 0.955 vs best distance 1.404"
+    },
+    {
+      "check": "pooled_auc_sigma_total_0.835",
+      "passed": true,
+      "detail": "0.835"
+    },
+    {
+      "check": "pooled_auc_mahalanobis_feature_centroid_1.441",
+      "passed": true,
+      "detail": "1.441"
+    },
+    {
+      "check": "pooled_auc_tanimoto_median_distance_1.499",
+      "passed": true,
+      "detail": "1.499"
+    },
+    {
+      "check": "pooled_auc_tanimoto_nn_distance_1.717",
+      "passed": true,
+      "detail": "1.717"
+    },
+    {
+      "check": "matched_population_is_296_pairs",
+      "passed": true,
+      "detail": "296.4"
+    },
+    {
+      "check": "matched_sigma_barely_moves_0.730_to_0.720",
+      "passed": true,
+      "detail": "0.720"
+    },
+    {
+      "check": "matched_distances_improve_sharply",
+      "passed": true,
+      "detail": "euclid 0.843, mahal 1.045, fp NN 1.249"
+    },
+    {
+      "check": "matched_including_count_makes_the_count_the_worst_of_seven",
+      "passed": true,
+      "detail": "count 0.949 is the worst; sigma 0.557 the best, on 109.2 pairs"
+    },
+    {
+      "check": "matched_contrast_sigma_beats_best_distance_0.123",
+      "passed": true,
+      "detail": "-0.123 CI[-0.152,-0.095] pairs won 0.58"
+    },
+    {
+      "check": "matched_contrast_sigma_beats_random_0.527",
+      "passed": true,
+      "detail": "-0.527 pairs won 0.85"
+    },
+    {
+      "check": "matched_contrast_fingerprint_is_null_at_r50",
+      "passed": true,
+      "detail": "+0.001 CI[-0.019,+0.020]"
+    },
+    {
+      "check": "matched_contrast_fingerprint_worse_than_random_at_r30",
+      "passed": true,
+      "detail": "+0.153 CI[+0.130,+0.194]"
+    },
+    {
+      "check": "fig2_sigma_marginal_0.25_to_2.57",
+      "passed": true,
+      "detail": "0.252 / 0.604 / 1.182 / 2.569  span 10.2x"
+    },
+    {
+      "check": "fig2_support_marginal_2.09_to_0.94_not_monotone",
+      "passed": true,
+      "detail": "2.087 / 1.116 / 0.456 / 0.936  (rises again in Q4)"
+    },
+    {
+      "check": "fig2_best_covered_row_0.28_to_1.82",
+      "passed": true,
+      "detail": "0.275 -> 1.817 across sigma quartiles within the densest support quartile"
+    },
+    {
+      "check": "s8_pair_task_counts_945_and_463",
+      "passed": true,
+      "detail": "high 945.0+-66.6, near-zero 463.0+-56.2"
+    },
+    {
+      "check": "fig3_standardised_margin_high_selectivity_0.831_0.716_0.596",
+      "passed": true,
+      "detail": "k=1/5/10 0.831 / 0.716 / 0.596"
+    },
+    {
+      "check": "fig3_standardised_margin_leads_high_selectivity_at_every_k",
+      "passed": true,
+      "detail": "k=1: best is expected_improvement; k=5: best is expected_improvement; k=10: best is expected_improvement"
+    },
+    {
+      "check": "fig3_lower_bound_costs_more_as_penalty_grows_0.795_to_0.669",
+      "passed": true,
+      "detail": "0.795 > 0.732 > 0.669"
+    },
+    {
+      "check": "fig3_near_zero_lower_bounds_lead_0.806_to_0.811_over_value_only_0.748",
+      "passed": true,
+      "detail": "margin 0.799, lcb1 0.806, lcb2 0.811, value 0.748"
+    },
+    {
+      "check": "fig3_margin_within_one_fold_sd_of_best_near_zero",
+      "passed": true,
+      "detail": "gap +0.012 vs fold s.d. 0.029"
+    },
+    {
+      "check": "fig3_random_shortlist_0.639_and_0.569",
+      "passed": true,
+      "detail": "high 0.639, near-zero 0.569, worst rule in both"
+    },
+    {
+      "check": "s8_any_hit_saturates_above_0.95_for_model_rules",
+      "passed": true,
+      "detail": "high margin 0.962 vs random 0.852; near-zero min over model rules 0.976 vs random 0.913"
+    },
+    {
+      "check": "s8_regret_is_won_by_the_value_only_rule",
+      "passed": true,
+      "detail": "value 1.738 < margin 2.508 < random 4.211; pool optimum 7.535"
+    },
+    {
+      "check": "s8_near_zero_regret_follows_event_precision",
+      "passed": true,
+      "detail": "lcb1 0.515, value 0.708, random 1.585"
+    },
+    {
+      "check": "s1_5_near_zero_share_49.21_and_median_1.02",
+      "passed": true,
+      "detail": "49.21% within |dlogK|<1, median 1.022"
+    },
+    {
+      "check": "s1_5_records_per_pair_median_4_iqr_2_21_max_1878_top5_54.2",
+      "passed": true,
+      "detail": "median 4, IQR 2-21, max 1878, top 5% carry 54.2% of rows over 2503 pairs"
+    },
+    {
+      "check": "results_23_scores_and_exactly_10_negative",
+      "passed": true,
+      "detail": "23 scores, 10 negative"
+    },
+    {
+      "check": "results_the_10_negatives_are_the_embeddings_plus_fingerprint_NN_variants",
+      "passed": true,
+      "detail": "['chemprop_cosine_nn', 'chemprop_euclidean_nn', 'chemprop_mahalanobis_centroid', 'chemprop_mahalanobis_nn', 'chemprop_std_euclidean_knn_10', 'chemprop_std_euclidean_knn_5', 'chemprop_std_euclidean_nn', 'tanimoto_knn_mean_10', 'tanimoto_knn_mean_5', 'tanimoto_nn_distance']"
+    },
+    {
+      "check": "results_all_seven_descriptor_distances_positive_0.092_to_0.250",
+      "passed": true,
+      "detail": "7 descriptor scores, min +0.092, max +0.250"
+    },
+    {
+      "check": "results_ten_of_eleven_ligand_only_scores_negative",
+      "passed": true,
+      "detail": "11 ligand-only or learned-representation scores, 10 negative; the exception is ['tanimoto_median_distance']"
+    },
+    {
+      "check": "results_fingerprint_median_0.102_spread_nearly_as_large_as_value",
+      "passed": true,
+      "detail": "+0.102 +- 0.096, ratio 0.94"
+    },
+    {
+      "check": "fig1_median_is_best_aggregation_descriptor_Euclidean",
+      "passed": true,
+      "detail": "rho best euclidean_feature_median (+0.250); retained-error best euclidean_feature_median (1.404); median is +0.250 / 1.404"
+    },
+    {
+      "check": "fig1_median_is_best_aggregation_descriptor_Mahalanobis",
+      "passed": true,
+      "detail": "rho best mahalanobis_feature_median (+0.127); retained-error best mahalanobis_feature_median (1.580); median is +0.127 / 1.580"
+    },
+    {
+      "check": "fig1_median_is_best_aggregation_fingerprint",
+      "passed": true,
+      "detail": "rho best tanimoto_median_distance (+0.102); retained-error best tanimoto_median_distance (1.702); median is +0.102 / 1.702"
+    },
+    {
+      "check": "fig1_nearest_neighbour_is_worst_in_euclidean_and_fingerprint",
+      "passed": true,
+      "detail": "descriptor Euclidean: worst is euclidean_feature_nn; descriptor Mahalanobis: worst is mahalanobis_feature_knn_mean_10; fingerprint: worst is tanimoto_nn_distance"
+    },
+    {
+      "check": "s5_2_mahalanobis_global_aggregations_beat_every_neighbour_based_one",
+      "passed": true,
+      "detail": "median 1.580, centroid 1.586 < NN 1.635, kNN-5 1.637, kNN-10 1.643"
+    },
+    {
+      "check": "s6_1_mahalanobis_median_1.580_on_548.4_pairs_auc_1.439",
+      "passed": true,
+      "detail": "1.580 on 548.4 pairs, AUC 1.439"
+    },
+    {
+      "check": "fig1_six_scores_at_r50_in_the_quoted_order",
+      "passed": true,
+      "detail": "sigma_total 0.730; pair_density_risk 0.955; euclidean_feature_median 1.404; mahalanobis_feature_median 1.580; tanimoto_median_distance 1.702; random 1.823"
+    },
+    {
+      "check": "s7_1_absolute_grid_all_sixteen_cells",
+      "passed": true,
+      "detail": "all sixteen match to three decimals"
+    },
+    {
+      "check": "s7_1_absolute_grid_overall_1.152",
+      "passed": true,
+      "detail": "1.152"
+    },
+    {
+      "check": "fig3_any_hit_near_zero_all_model_rules_above_0.975",
+      "passed": true,
+      "detail": "min 0.976 vs random 0.913"
+    },
+    {
+      "check": "fig3_any_hit_high_selectivity_heavy_penalties_at_or_below_random",
+      "passed": true,
+      "detail": "margin 0.962, lcb2 0.854, lcb3 0.813, random 0.852"
+    },
+    {
+      "check": "s6_6_dmpnn_unfiltered_2.054",
+      "passed": true,
+      "detail": "2.054 +- 0.216"
+    },
+    {
+      "check": "s6_6_dmpnn_sigma_total_0.858",
+      "passed": true,
+      "detail": "0.858 on 359.6 pairs, AUC 0.907"
+    },
+    {
+      "check": "s6_6_dmpnn_euclidean_feature_median_1.404",
+      "passed": true,
+      "detail": "1.404 on 530.6 pairs, AUC 1.301"
+    },
+    {
+      "check": "s6_6_dmpnn_tanimoto_median_distance_1.676",
+      "passed": true,
+      "detail": "1.676 on 562.8 pairs, AUC 1.471"
+    },
+    {
+      "check": "s6_6_dmpnn_random_1.798",
+      "passed": true,
+      "detail": "1.798 on 561.0 pairs, AUC 1.592"
+    },
+    {
+      "check": "s6_6_dmpnn_chemprop_std_euclidean_nn_1.95",
+      "passed": true,
+      "detail": "1.950 on 569.4 pairs, AUC 1.725"
+    },
+    {
+      "check": "s6_6_dmpnn_chemprop_mahalanobis_nn_1.961",
+      "passed": true,
+      "detail": "1.961 on 597.2 pairs, AUC 1.756"
+    },
+    {
+      "check": "s6_6_both_embedding_distances_above_random_from_10_to_80_percent",
+      "passed": true,
+      "detail": "gap over random ranges +0.032 to +0.654 across both scores and r <= 0.80"
+    },
+    {
+      "check": "s6_6_embedding_converges_on_random_at_90_percent",
+      "passed": true,
+      "detail": "chemprop_std_euclidean_nn -0.051; chemprop_mahalanobis_nn -0.045 at r = 0.90, inside the fold s.d."
+    },
+    {
+      "check": "s6_6_dmpnn_ordering_reproduces_the_workhorse",
+      "passed": true,
+      "detail": "sigma < descriptor < fingerprint < random < both embedding distances"
+    },
+    {
+      "check": "s3_4_normalized_sigma_is_indistinguishable_between_regimes",
+      "passed": true,
+      "detail": "1.010 vs 1.009, fold s.d. 0.214"
+    },
+    {
+      "check": "s3_4_normalized_error_still_separates_the_regimes",
+      "passed": true,
+      "detail": "1.120 vs 0.737"
+    },
+    {
+      "check": "s1_5_ligand_axis_2187_top10_14.19_top100_51.87",
+      "passed": true,
+      "detail": "2187 ligands; top 10 carry 14.19%, top 100 carry 51.87%"
+    },
+    {
+      "check": "table1_unfiltered_2.078_on_801.6_pairs",
+      "passed": true,
+      "detail": "2.078 +- 0.130 on 801.6 pairs"
+    },
+    {
+      "check": "table1_every_row_reproduces",
+      "passed": true,
+      "detail": "all seven rows match value, percent change, pairs and area"
+    },
+    {
+      "check": "results_unfiltered_normalized_0.974_barely_beats_the_pair_mean",
+      "passed": true,
+      "detail": "0.974 +- 0.256; predicting each cell's mean gives 1.000"
+    },
+    {
+      "check": "results_published_test_0.599_mae_0.934_r2",
+      "passed": true,
+      "detail": "published MAE 0.599, R2 0.934"
+    },
+    {
+      "check": "results_both_reproductions_recover_the_published_test_error",
+      "passed": true,
+      "detail": "released weights 0.592, retrained 0.595 +- 0.005 vs published 0.599"
+    },
+    {
+      "check": "results_published_split_reuses_1568_of_1670_test_ligands",
+      "passed": true,
+      "detail": "1568 of 1670 ligands (93.9%); 97.5% of test rows"
+    },
+    {
+      "check": "results_external_holdout_is_forty_unseen_ligands_at_0.834",
+      "passed": true,
+      "detail": "40 ligands; published 0.834, released weights 0.834"
+    },
+    {
+      "check": "results_ligand_disjoint_1.484_is_two_and_a_half_times_published",
+      "passed": true,
+      "detail": "1.484 +- 0.161, 2.48x the published 0.599"
+    },
+    {
+      "check": "s3_5_scope_is_all_pairs_twelve_composed_three_point_eleven_direct",
+      "passed": true,
+      "detail": "12 composed, 3 point-only, 11 direct; workhorse is the direct heteroscedastic MLP ensemble"
+    },
+    {
+      "check": "s3_5_every_model_is_named_and_the_point_models_carry_no_interval",
+      "passed": true,
+      "detail": "all 26 rows carry a readable model name; only the point-only rows have empty calibration columns"
+    },
+    {
+      "check": "results_best_point_only_ad_hoc_model_reaches_2.00",
+      "passed": true,
+      "detail": "RDKit MLP 2.002 +- 0.182; the three point models span 2.002-2.109, and the selected model is within its own fold s.d. of the best of them"
+    },
+    {
+      "check": "results_point_accuracy_is_comparable_1.94_2.37_vs_1.93_2.24",
+      "passed": true,
+      "detail": "composed 1.937-2.373, direct 1.933-2.239"
+    },
+    {
+      "check": "results_composed_intervals_are_the_ones_that_fail",
+      "passed": true,
+      "detail": "best composed ACE 0.200; three evidential composed 0.372-0.380 at PICP 0.959-0.969 against a nominal 0.90"
+    },
+    {
+      "check": "results_nine_direct_models_beat_the_best_composed_one_a_tenth_matches_it",
+      "passed": true,
+      "detail": "9 of 11 direct models below the best composed ACE 0.200; the tenth exceeds it by 0.00016 and the eleventh by 0.040; selected model 0.153"
+    },
+    {
+      "check": "results_3048_groups_1234_disagree_368_by_more_than_one_unit",
+      "passed": true,
+      "detail": "3048 multi-record groups of 27409; 1234 disagree by more than 0.20 and 368 by more than one unit"
+    },
+    {
+      "check": "s1_6_within_group_range_median_0.11_and_q90_1.16",
+      "passed": true,
+      "detail": "median range 0.11, 90th percentile 1.163, which exceeds the one-unit selectivity threshold"
+    },
+    {
+      "check": "results_one_wasted_first_experiment_in_three_becomes_one_in_six",
+      "passed": true,
+      "detail": "random wastes 0.361 of first experiments, the margin rule 0.169"
+    },
+    {
+      "check": "results_even_one_sigma_of_penalty_ranks_below_the_value_only_rule",
+      "passed": true,
+      "detail": "1-sigma 0.795 below value-only 0.823, and the penalty series decreases monotonically"
+    },
+    {
+      "check": "results_two_heaviest_penalties_are_below_random_on_any_hit_at_10",
+      "passed": true,
+      "detail": "3-sigma 0.821 and 2-sigma 0.861 against random 0.893"
+    },
+    {
+      "check": "results_top_ten_holds_the_pool_optimum_three_times_in_four",
+      "passed": true,
+      "detail": "pool optimum 7.535; margin 0.739, value-only 0.735, random 0.459"
+    },
+    {
+      "check": "s8_4_thresholds_are_2_and_one_half_with_739_and_346_tasks",
+      "passed": true,
+      "detail": "739 +- 70 high and 346.4 near-zero tasks, both fewer than at the primary threshold"
+    },
+    {
+      "check": "s8_4_every_tabulated_row_reproduces",
+      "passed": true,
+      "detail": "all six rows match event precision@1, any hit@10 and regret@1"
+    },
+    {
+      "check": "s8_4_every_main_text_ordering_survives_the_stricter_threshold",
+      "passed": true,
+      "detail": "margin best on precision at every k; penalties monotone; the two heaviest below random on any hit@10; regret won by the value-only rule; lower bounds lead near zero"
+    },
+    {
+      "check": "s8_4_the_margin_over_random_widens_as_the_objective_tightens",
+      "passed": true,
+      "detail": "pool optimum 8.770 against 7.535; margin over random 0.232 against 0.192"
+    },
+    {
+      "check": "s1_7_inclusive_floor_0.496_rmse_0.241_mae_0.990_r2_ceiling",
+      "passed": true,
+      "detail": "3048 groups, 7668 records: RMSE floor 0.496, MAE floor 0.241, R2 ceiling 0.9897"
+    },
+    {
+      "check": "s1_7_trimmed_floor_0.190_rmse_0.113_mae_on_88_percent_of_groups",
+      "passed": true,
+      "detail": "87.9% of groups: RMSE floor 0.190, MAE floor 0.113, R2 ceiling 0.9985"
+    },
+    {
+      "check": "s1_7_selectivity_floor_scales_by_1.369_to_0.680_and_0.260",
+      "passed": true,
+      "detail": "factor 1.369; dlogK floors 0.680 inclusive, 0.260 trimmed"
+    },
+    {
+      "check": "s1_7_published_0.599_is_two_to_five_times_the_mae_floor",
+      "passed": true,
+      "detail": "0.599 is 2.5x the inclusive and 5.3x the trimmed MAE floor; the published R2 of 0.934 is below the ceiling 0.9897"
+    },
+    {
+      "check": "s1_7_ligand_disjoint_1.484_is_six_to_thirteen_times_the_floor",
+      "passed": true,
+      "detail": "6.2x inclusive and 13.1x trimmed"
+    },
+    {
+      "check": "s1_7_half_retention_0.730_reaches_the_inclusive_selectivity_floor",
+      "passed": true,
+      "detail": "unfiltered 2.078 is 3.1x the inclusive floor; retained 0.730 is 1.07x it and 2.8x the trimmed one"
+    },
+    {
+      "check": "results_row_weighted_r2_0.725_but_mean_of_pairs_r2_is_negative",
+      "passed": true,
+      "detail": "row-weighted R2 0.725 +- 0.031; mean-of-pairs R2 -3.63 +- 1.99, below zero, so the model loses to each pair's own mean"
+    },
+    {
+      "check": "s7_3_sigma_survives_controlling_for_predicted_magnitude_at_0.428",
+      "passed": true,
+      "detail": "rho(sigma) +0.648, rho(|yhat|) +0.541, partial +0.428 +- 0.026, more than half the raw value"
+    },
+    {
+      "check": "results_mahalanobis_centroid_the_external_set_criterion_reaches_only_0.125",
+      "passed": true,
+      "detail": "Mahalanobis centroid +0.125 +- 0.076, 1.65 fold s.d. from zero and 0.50 of the best distance (+0.250)"
+    }
+  ]
+}

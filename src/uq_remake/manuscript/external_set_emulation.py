@@ -1,4 +1,4 @@
-"""JACS Task 9: emulate the benchmark's external-set design on our own
+"""Analysis task 9: emulate the benchmark's external-set design on our own
 ligand-disjoint held-out predictions.
 
 The benchmark (ref 9, SI p. S3) selected its 20-ligand "external set" by:
@@ -62,7 +62,7 @@ the random baseline) and gap_selection = shell - random (what shell
 selection specifically adds on top of just being small), so
 gap(shell) = gap_size + gap_selection identically; same for tail.
 
-Emits `manuscripts/jacs/tables/external_set_emulation.csv`.
+Emits `manuscripts/derived/tables/external_set_emulation.csv`.
 
     python -m uq_remake.manuscript.external_set_emulation
 """
@@ -76,11 +76,11 @@ from sklearn.covariance import LedoitWolf
 from sklearn.decomposition import PCA
 
 from uq_remake.downstream.protocol import FOLDS, PAIR_COLUMN
-from uq_remake.manuscript.jacs_common import FOLD_SCORES_DIR, JACS_TABLES, REMAKE_ROOT, fold_mean_sd_row, load_all_folds, with_abs_residual, write_provenance
+from uq_remake.manuscript.manuscript_common import FOLD_SCORES_DIR, DERIVED_TABLES, REMAKE_ROOT, fold_mean_sd_row, load_all_folds, with_abs_residual, write_provenance
 from uq_remake.metrics.cv_protocol import fold_mean_sd
 from uq_remake.metrics.fold_metrics import mop_block
 
-OUT = JACS_TABLES / "external_set_emulation.csv"
+OUT = DERIVED_TABLES / "external_set_emulation.csv"
 
 DS2_PATH = REMAKE_ROOT / "data" / "processed" / "ds2.csv"
 SPLITS_PATH = REMAKE_ROOT / "data" / "splits" / "ds2_project_folds.json"
@@ -345,7 +345,7 @@ def main() -> dict:
 
     out = pd.concat([geometry_df, summary_df, fold_level_df, decomposition_df, overlap_df], ignore_index=True)
     out["source"] = "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv + data/processed/features/rdkit_ds2/fold{0..4}/arrays.npz + data/splits/ds2_project_folds.json"
-    JACS_TABLES.mkdir(parents=True, exist_ok=True)
+    DERIVED_TABLES.mkdir(parents=True, exist_ok=True)
     out.to_csv(OUT, index=False)
     write_provenance(
         OUT,

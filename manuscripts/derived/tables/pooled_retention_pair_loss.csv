@@ -1,0 +1,9 @@
+score,pairs_eligible_unfiltered,pairs_losing_every_row,pairs_below_mop_minimum,pairs_counted,median_retained_fraction,between_pair_rank_variance_share
+euclidean_feature_median,801.6,73.6,197.4,530.6,0.4914526234942194,0.14972898219140549
+mahalanobis_feature_centroid,801.6,77.2,174.6,549.8,0.5227849927849928,0.157419851588048
+pair_density_risk,801.6,692.2,0.0,109.4,0.0,1.0
+random,801.6,21.4,216.6,563.6,0.5,
+sigma_total,801.6,321.8,151.6,328.2,0.2056852195423624,0.6528650932981248
+tanimoto_median_distance,801.6,50.6,188.2,562.8,0.5195959808602829,0.1563562434700122
+tanimoto_nn_distance,801.6,49.2,145.8,606.6,0.5254835298636661,0.14316013085386
+yhat_mag,801.6,56.2,98.4,647.0,0.7897435897435898,0.6697553677014112

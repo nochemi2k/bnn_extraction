@@ -1,0 +1,224 @@
+{
+  "formation_check": {
+    "n_rows": 88525,
+    "high_sel_n": 44686,
+    "high_sel_median_favoured_logK": 9.82,
+    "high_sel_p01_favoured_logK": 1.38,
+    "high_sel_frac_favoured_le0": 0.000179,
+    "high_sel_frac_favoured_le3": 0.0641,
+    "pathological_rows": 8,
+    "near_zero_n": 43562,
+    "near_zero_median_favoured_logK": 4.35,
+    "near_zero_frac_both_le0": 0.0141,
+    "near_zero_frac_both_le2": 0.1592,
+    "near_zero_frac_both_le3": 0.3307
+  },
+  "multimetal": {
+    "cells": 4516,
+    "frac_cells_ge3": 0.6957,
+    "max_metals_in_cell": 39,
+    "frac_rows_in_ge3_cell": 0.9843,
+    "median_metals_per_cell": 4.0
+  },
+  "axes": {
+    "ligand": 2187,
+    "metal_element": 72,
+    "electrolyte": 6,
+    "temperature": 28,
+    "ionic_strength": 53,
+    "electrolyte_top5_share": 0.9717,
+    "temperature_25C_share": 0.7407,
+    "ionic_strength_top5_share": 0.9271,
+    "ligand_top10_share": 0.1419
+  },
+  "stratified": {
+    "ree_share_overall": 0.3025,
+    "ree_share_at_10pct": 0.9855,
+    "ree_share_at_50pct": 0.5658,
+    "rho_sigma_err_ree": 0.473,
+    "rho_sigma_err_nonree": 0.529,
+    "rho_tanimoto_err_nonree": -0.09,
+    "mop_ree_unfiltered": 0.704,
+    "mop_ree_sigma50": 0.301,
+    "mop_nonree_unfiltered": 2.319,
+    "mop_nonree_sigma50": 1.174,
+    "mop_nonree_tanimoto50": 2.202,
+    "mop_nonree_mahal50": 1.915
+  },
+  "scale_free": {
+    "note": "|error| normalised by within-pair SD of y_true; pairs with n>=10",
+    "mean_rel_err_ree": 0.628,
+    "mean_rel_err_nonree": 0.551,
+    "raw_abs_err_ratio_nonree_over_ree": 3.734,
+    "scale_free_err_ratio_nonree_over_ree": 0.877
+  },
+  "within_pair": {
+    "n_pairs": 647,
+    "sigma_mean_rho": 0.353,
+    "sigma_median_rho": 0.399,
+    "sigma_frac_positive": 0.927,
+    "mahalanobis_mean_rho": 0.111,
+    "mahalanobis_frac_positive": 0.719,
+    "tanimoto_nn_mean_rho": -0.077,
+    "tanimoto_nn_frac_positive": 0.297,
+    "pair_density": "constant within (pair,fold) by construction - zero resolving power"
+  },
+  "censoring": {
+    "frac_endpoint_logK_le0": 0.0171,
+    "frac_le1": 0.0552,
+    "frac_le2": 0.1356,
+    "median_logK": 5.5
+  },
+  "practical_frequency": {
+    "high_sel_and_binding": 0.4724,
+    "near_zero_and_both_binding": 0.3038
+  },
+  "functional_robustness": {
+    "note": "50% retention, pair-equal, three error functionals",
+    "unfiltered": {
+      "RMSE": 2.078,
+      "MAE": 1.627,
+      "medAE": 1.314
+    },
+    "sigma_total": {
+      "RMSE": 0.73,
+      "MAE": 0.552,
+      "medAE": 0.423
+    },
+    "pair_density_risk": {
+      "RMSE": 0.956,
+      "MAE": 0.611,
+      "medAE": 0.39
+    },
+    "mahalanobis_centroid": {
+      "RMSE": 1.586,
+      "MAE": 1.26,
+      "medAE": 1.033
+    },
+    "tanimoto_nn": {
+      "RMSE": 1.891,
+      "MAE": 1.502,
+      "medAE": 1.235
+    },
+    "finding": "sigma robust (-65/-66/-68%). pair-density IMPROVES on robust functionals and overtakes sigma on medAE (0.390 vs 0.423): sigma buys tail control, the count buys typical-case control."
+  },
+  "coverage_override": {
+    "note": "mean |error| in support-quartile x sigma-quartile cells, quartiles taken within fold",
+    "grid": {
+      "Q1sparse": {
+        "S1": 0.58,
+        "S2": 0.82,
+        "S3": 1.44,
+        "S4": 2.98
+      },
+      "Q2": {
+        "S1": 0.27,
+        "S2": 0.64,
+        "S3": 1.33,
+        "S4": 2.52
+      },
+      "Q3": {
+        "S1": 0.22,
+        "S2": 0.52,
+        "S3": 0.93,
+        "S4": 2.22
+      },
+      "Q4dense": {
+        "S1": 0.28,
+        "S2": 0.55,
+        "S3": 0.9,
+        "S4": 1.82
+      }
+    },
+    "overall_mean_abs_err": 1.152,
+    "dense_support_high_sigma": {
+      "mean_abs_err": 1.816,
+      "n": 5189,
+      "ratio_vs_overall": 1.58
+    },
+    "sparse_support_low_sigma": {
+      "mean_abs_err": 0.581,
+      "n": 662,
+      "ratio_vs_overall": 0.5
+    },
+    "support_marginal": {
+      "Q1": 2.088,
+      "Q2": 1.127,
+      "Q3": 0.455,
+      "Q4": 0.937
+    },
+    "sigma_marginal": {
+      "S1": 0.252,
+      "S2": 0.604,
+      "S3": 1.182,
+      "S4": 2.569
+    },
+    "finding": "support marginal is NON-MONOTONIC (Q3 0.455 < Q4 0.937); sigma marginal spans 10x monotonically."
+  },
+  "interaction_strength_axis": {
+    "note": "both cells are the densest support quartile; only sigma differs. Same metal pairs appear in both.",
+    "dense_high_sigma": {
+      "mean_abs_dlogK": 4.134,
+      "mean_favoured_logK": 12.85,
+      "mean_abs_err": 1.816,
+      "top_pairs": [
+        "Cu2-Ni2",
+        "Cu2-Zn2",
+        "Co2-Cu2",
+        "Cd2-Cu2",
+        "Ni2-Zn2",
+        "Co2-Ni2"
+      ]
+    },
+    "dense_low_sigma": {
+      "mean_abs_dlogK": 0.43,
+      "mean_favoured_logK": 2.92,
+      "mean_abs_err": 0.276,
+      "top_pairs": [
+        "Co2-Zn2",
+        "Ca2-Mg2",
+        "La3-Nd3",
+        "Cd2-Zn2",
+        "Ni2-Zn2",
+        "Co2-Ni2"
+      ]
+    },
+    "finding": "sigma partitions WITHIN metal pairs by ligand binding strength, not between pairs. Strong chelators (logK~13) are high-sigma; weak ones (logK~3) are low-sigma. Model never sees logK as an input."
+  },
+  "literature_reproducibility": {
+    "note": "within-condition logK range from DS1 replicate groups, attached to DS2 rows with >=2 independent reports (n=22061, 25% of DS2)",
+    "rho_sigma_total": 0.156,
+    "rho_sigma_aleatoric": 0.158,
+    "rho_sigma_epistemic_between": 0.115,
+    "rho_abs_error": 0.129,
+    "rho_pair_density": 0.022,
+    "rho_tanimoto_nn": -0.106,
+    "quartiles": {
+      "Q1_reproducible": {
+        "median_range": 0.005,
+        "sigma": 1.557,
+        "aleatoric": 1.408,
+        "err": 1.262
+      },
+      "Q2": {
+        "median_range": 0.13,
+        "sigma": 1.484,
+        "aleatoric": 1.345,
+        "err": 1.143
+      },
+      "Q3": {
+        "median_range": 0.42,
+        "sigma": 1.761,
+        "aleatoric": 1.599,
+        "err": 1.284
+      },
+      "Q4_contested": {
+        "median_range": 1.29,
+        "sigma": 1.989,
+        "aleatoric": 1.821,
+        "err": 1.573
+      }
+    },
+    "finding": "aleatoric term tracks literature disagreement (modest, rho 0.16) where no distance or count score does; Tanimoto is negative. Non-monotonic at Q1 (range~0 groups are likely same-compilation duplicates, not independent replication)."
+  }
+}

@@ -273,9 +273,9 @@ Results ยง2 rewritten around the six-score Fig. 1 and the new Fig. S7 pointer; ย
 ## Before deposition
 
 - `scipy` and `scikit-learn` were installed on the working machine during these passes; `requirements.txt` should pin them.
-- `validate_jacs_analyses.py` needs `PYTHONPATH=src` to resolve `uq_remake`.
+- `validate_core_analyses.py` needs `PYTHONPATH=src` to resolve `uq_remake`.
 - `decision_level_statistics.py` and `pooled_risk_ordering.py` each take several minutes.
-- Derived tables live under `manuscripts/jacs/tables/`, which the validators and both figure scripts read; the acquisition tables are read from `manuscripts/final/tables/`, which is never written to.
+- Derived tables live under `manuscripts/derived/tables/`, which the validators and both figure scripts read; the acquisition tables are read from `manuscripts/final/tables/`, which is never written to.
 - Superseded figures were moved to `manuscripts/natcompsci/figures/_to_delete/superseded/` rather than deleted, so you can remove that folder yourself.
 - `.git/index.lock` is stale in the repo and blocks every git command; delete it and the tree is ready to stage. Nothing is committed.
 - `pooled_risk_ordering.py` takes about six minutes, longer than a single bridged command allows, so its tables were computed in the analysis container and written into the repo; the validators reproduce every value from the frozen fold scores on your machine. Please run the module once locally before deposition for a local provenance record.

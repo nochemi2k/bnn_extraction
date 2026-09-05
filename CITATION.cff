@@ -1,22 +1,25 @@
 cff-version: 1.2.0
 message: If you use this repository, please cite the manuscript.
-title: "Uncertainty-Based Risk Ordering and Objective-Specific Ligand Ranking for Metal–Ligand Selectivity"
+title: "Applicability domains as testable claims: predictive uncertainty against molecular similarity for metal–ligand selectivity"
 authors:
   - family-names: TBD
     given-names: TBD
 type: article
 license: TBD
-repository-code: TBD
+repository-code: "https://github.com/nochemi2k/bnn_extraction"
 abstract: >
-  Direct ligand-disjoint modelling of metal-metal selectivity (DS2) alongside
-  absolute stability constants (DS1). A heteroscedastic MLP ensemble workhorse
-  provides predictive uncertainty that orders held-out error far more effectively
-  than fingerprint, descriptor-space, learned-representation, or pair-support
-  distances, and objective-specific pair-acquisition ranking shows that the best
-  shortlist rule depends on the experimental objective.
+  An applicability domain is usually drawn as a region of resemblance to the
+  training set, computed from the molecule alone, and the same notion decides how
+  benchmarks are split. This work recasts it as a testable claim: a criterion earns
+  standing only when the predictions it calls safe prove more accurate than an
+  equally sized random selection, judged on a population the criterion did not
+  itself choose. Applied to metal-ligand selectivity under ligand-disjoint
+  validation, the standard similarity criteria fail that test while the model's own
+  predictive uncertainty passes it, cutting held-out error by two thirds at half
+  retention and raising the yield of a one-ligand experiment from 64% to 83%.
 preferred-citation:
   type: article
-  title: "Uncertainty-Based Risk Ordering and Objective-Specific Ligand Ranking for Metal–Ligand Selectivity"
+  title: "Applicability domains as testable claims: predictive uncertainty against molecular similarity for metal–ligand selectivity"
   authors:
     - family-names: TBD
       given-names: TBD

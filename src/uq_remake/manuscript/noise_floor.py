@@ -38,7 +38,7 @@ import subprocess
 import numpy as np
 import pandas as pd
 
-T = os.environ.get("BNN_TABLES", os.path.join("manuscripts", "jacs", "tables")) + os.sep
+T = os.environ.get("BNN_TABLES", os.path.join("manuscripts", "derived", "tables")) + os.sep
 DS1 = os.path.join("data", "processed", "ds1.csv")
 
 TRIM_RANGE = 1.0     # a group wider than this is treated as a probable data error

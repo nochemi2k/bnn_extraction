@@ -83,7 +83,7 @@ for mod in MODELS[1:]:
 
 df = pd.DataFrame(rows)
 df["source"] = ROOT + "{model}/fold{0..4}.csv"
-df.to_csv("manuscripts/jacs/tables/robustness_threshold_and_model.csv", index=False)
+df.to_csv("manuscripts/derived/tables/robustness_threshold_and_model.csv", index=False)
 try: c = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
 except Exception: c = "unavailable"
 json.dump(dict(git_commit=c, note=(
@@ -92,4 +92,4 @@ json.dump(dict(git_commit=c, note=(
     "DS2_RDKIT_MLP_MCDROPOUT, which the calibration screen excluded despite lower "
     "point error, and DS2_GRAPH_DMPNN_EVID on an unrelated graph representation. "
     "Scale-free statistic throughout; 20 random permutations per cell, seed 0. No retraining.")),
-    open("manuscripts/jacs/tables/robustness_threshold_and_model.csv.provenance.json", "w"), indent=2)
+    open("manuscripts/derived/tables/robustness_threshold_and_model.csv.provenance.json", "w"), indent=2)

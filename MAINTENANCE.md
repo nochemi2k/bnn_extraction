@@ -1,87 +1,89 @@
-# Getting this repository pushed
+# Repository maintenance notes
 
-Written 5 September 2026, after the Nature Computational Science rework. Follow
-the steps in order; each one says what it is for and how to tell it worked.
+**The Nature Computational Science submission was pushed to `main` on 5 September 2026.**
+These notes were written to get that push done; they are kept because three of the findings
+are standing conditions rather than one-off steps, and because the reproduction paths in
+them are still the ones to follow.
 
-Everything below is run from the repository root, `C:\Users\IVan\Desktop\BNN Extraction`.
+## Still live
 
-**Which shell you are in matters for a handful of these commands.** If your
-prompt looks like `C:\Users\IVan\Desktop\BNN Extraction>` you are in Command
-Prompt; if it starts with `PS ` you are in PowerShell. Every `git` command below
-is identical in both. Where a command is not, both versions are given, marked
-**cmd** and **PowerShell**. If you would rather have one set, type `powershell`
-and press Enter to switch the current window, then use the PowerShell lines
-throughout.
-
----
-
-## What state the repository is actually in
-
-Worth reading before you start, because three of these were not obvious.
-
-| | |
-|---|---|
-| Working tree | 475 tracked files, **48 MB**. Largest tracked file 5.9 MB. Nothing here is near GitHub's 100 MB blob limit. |
-| `.git/objects` | **3.5 GB**, none of it packed: 3,575 loose objects and 1.43 GiB the garbage collector has already flagged. This repository has never been `gc`'d. |
-| `.git/lfs/objects` | **62 GB** in 644 objects, many of them 600–840 MB. These are superseded versions of the packed archives, kept in the local cache. Local only; `git lfs prune` clears them. |
-| `artifacts/*.7z` | 1.5 GB in nine archives. All nine have been committed before, so their LFS objects should already exist on the remote and re-committing unchanged bytes uploads nothing. |
-| Branch state | `HEAD` is level with `origin/main` (0 ahead, 0 behind). Nothing local is waiting to go out. |
-| Untracked | `manuscripts/natcompsci/`, `manuscripts/jacs/`, and 20 new modules under `src/uq_remake/manuscript/`. This is the whole of the new work. |
-
-**Three problems were found and two are already fixed.**
-
-1. **`.gitignore` silently disabled Git LFS.** The un-ignore rules for
-   `artifacts/**/*.7z` were followed, forty lines later, by a bare
-   `artifacts/*.7z`. Last match wins, so every archive was ignored and none was
-   ever handed to LFS. *Fixed* — the stray line is gone and a comment says why it
-   must not come back. `git check-ignore -v artifacts/checkpoints.7z` now reports
-   the un-ignore rule instead of the ignore rule.
-
-2. **369 files reported as modified when nothing had changed.** `.gitattributes`
-   had no `text` rule, so the index held LF and the Windows working tree held
-   CRLF. `git diff --ignore-all-space` on any of them was empty. *Fixed* —
-   `.gitattributes` now starts with `* text=auto eol=lf`, with `eol=crlf` kept
-   for `.ps1`, `.bat` and `.cmd`. Step 2 below makes the fix take effect.
-
-3. **`.git/index.lock` is stale** and is blocking every write operation. I could
-   not remove it from here; the bridge is not permitted to delete files. **You
-   have to do this one first.**
-
----
-
-## Written before the last manuscript pass, still current
-
-These instructions were drafted before the supplementary information was
-reorganised (Methods moved to S1, everything renumbered, cross-references
-audited). That pass changed three files inside `manuscripts/natcompsci/` and
-`src/uq_remake/manuscript/validate_manuscript_values.py`, all of which Step 4
-adds wholesale, so nothing below needs adjusting. The validator counts in Step 5
-are unchanged at 56, 22 and 186.
-
----
-
-## Step 0 — clear the stale lock
-
-**cmd**
+**Git LFS filters are not configured in this clone.** `git config --get filter.lfs.clean`
+returns nothing, locally and globally, so the smudge and clean filters never run. The
+symptom is that all nine `artifacts/*.7z` show as modified in `git status` when nothing has
+changed: HEAD holds a 132-byte pointer, the working tree holds the real archive, and without
+the clean filter git compares the two directly. **Do not `git add` those archives in this
+state** — you would commit an 840 MB blob and GitHub would reject the push at its 100 MB
+limit. Fix it once with:
 
 ```bat
-del ".git\index.lock"
-git status
+git lfs install
+git checkout -- artifacts
+git status --short
 ```
 
-**PowerShell**
+The last line should then be silent for `artifacts/`.
 
-```powershell
-Remove-Item .git\index.lock
-git status
-```
+**The LFS quota question is unresolved.** The nine archives total 1.4 GiB against a free
+allowance of 1 GiB storage and 1 GiB bandwidth a month, and `checkpoints.7z` alone is
+801 MiB. The recommendation below still stands.
 
-`git status` should now run without complaining. If it says the lock exists
-again, a Git process is genuinely running: close VS Code and any Git GUI first.
+**Local disk.** `.git` was about 66 GB, of which 62 GB is the LFS object cache and 1.43 GiB
+is collectable garbage. `git lfs prune` and `git gc --prune=now` reclaim nearly all of it and
+touch nothing on the remote.
 
 ---
 
-## Step 1 — confirm LFS is installed and see where you stand on quota
+## Committing the 5 September documentation pass
+
+The pass that followed the submission push moved the derived tables out of the JCIM-era
+folder, renamed two modules, and rewrote the repository documentation. 51 files modified,
+3 deleted, 4 new.
+
+**Install the LFS filters first.** Until this is done the nine `artifacts/*.7z` show as
+modified when nothing has changed, and a blanket `git add -A` would stage an 840 MB blob
+that GitHub rejects.
+
+```bat
+git lfs install
+git status --short | findstr artifacts
+```
+
+If that prints only `M artifacts/README.md`, the filters are working. If the `.7z` lines are
+still there, leave them alone — the staging below never touches them.
+
+**Stage by path, not with a blanket `-A`.**
+
+```bat
+git add -A manuscripts src
+git add README.md REPO_COMPOSITION.md CITATION.cff MAINTENANCE.md artifacts/README.md
+git add -A PUSH_INSTRUCTIONS.md
+```
+
+The third line stages the removal of the retired file. Then confirm no archive slipped in —
+this must print nothing:
+
+```bat
+git diff --cached --name-only | findstr ".7z"
+```
+
+**Commit and push.**
+
+```bat
+git commit -m "Point the repository at the Nature Computational Science submission" -m "Moves the derived tables from manuscripts/jacs/tables to manuscripts/derived/tables, so a fresh clone can rebuild every figure and run every validator. Renames jacs_common.py to manuscript_common.py and validate_jacs_analyses.py to validate_core_analyses.py and repoints the 23 modules that referenced them. Rewrites README, REPO_COMPOSITION and CITATION.cff around the current submission; retires PUSH_INSTRUCTIONS.md in favour of MAINTENANCE.md. Validation unchanged: 56 + 22 + 186 checks pass."
+
+git push
+```
+
+You are on `main` and level with `origin/main`, so this is a fast-forward with no branch or
+pull request needed.
+
+**Two things in `git status` that are not problems.** The figure `.pdf` files are listed as
+modified while the matching `.png` files are not, because matplotlib stamps a creation date
+into PDF metadata; the drawn content is identical. And `manuscripts/jacs/` is now an empty
+directory — git does not track empty directories, so it will not be committed, but it is
+still on your disk and `rmdir manuscripts\jacs` clears it.
+
+## Git LFS: what is stored and what it costs
 
 ```bat
 git lfs version
@@ -132,43 +134,11 @@ archives (247 MiB) in LFS, which fits the free allowance comfortably. If you
 would rather keep everything in LFS, one data pack at $5/month covers 50 GiB of
 storage and bandwidth and settles it.
 
-Whichever you choose, do it *before* Step 4, since it changes what gets added.
+Decide this before the archives are committed, since it changes what belongs in the repository.
 
 ---
 
-## Step 2 — make the line-ending fix take effect, as its own commit
-
-Do this on its own so the whitespace churn never mixes with content.
-
-```bat
-git add --renormalize .
-git commit -m "Normalise line endings; add .gitattributes text and binary rules"
-```
-
-Before committing, count the staged files — expect roughly 370. **cmd**:
-
-```bat
-git status --short | find /c /v ""
-```
-
-**PowerShell**:
-
-```powershell
-git status --short | Measure-Object -Line
-```
-
-Sanity check before you commit — this should print nothing at all:
-
-```powershell
-git diff --cached --ignore-all-space --stat
-```
-
-If it prints file names, something other than line endings changed and you
-should look at it before committing.
-
----
-
-## Step 3 — reclaim the 65 GB of local disk
+## Reclaiming local disk
 
 Local housekeeping only. Nothing here changes history or affects the remote.
 
@@ -188,36 +158,7 @@ anything referenced by a recent commit, so nothing you might still need goes.
 
 ---
 
-## Step 4 — add the new work
-
-```bat
-git checkout -b natcompsci-submission
-
-git add manuscripts/natcompsci
-git add src/uq_remake/manuscript
-git add .gitignore .gitattributes PUSH_INSTRUCTIONS.md
-git add manuscripts/jacs
-git add artifacts
-```
-
-The last two lines are optional: `manuscripts/jacs` only if you want the JCIM
-draft in the record, and `artifacts` only for the archives you decided in Step 1
-to keep in LFS.
-
-Then check that LFS actually caught the archives, which is the thing that was
-broken:
-
-```bat
-git lfs status
-git diff --cached --stat -- artifacts
-```
-
-Each archive should appear as a small pointer, not as megabytes of content. If
-`git lfs status` lists nothing under artifacts, stop and re-check `.gitattributes`.
-
----
-
-## Step 5 — verify before committing
+## Verifying a checkout
 
 **Nothing oversized slipped in.** Git itself will refuse anything over 100 MB
 that is not an LFS pointer, but check the staged sizes yourself — this works in
@@ -271,29 +212,7 @@ All three validators should exit 0, with 56, 22 and 186 checks.
 
 ---
 
-## Step 6 — commit and push
-
-A multi-line message inside one pair of quotes works in PowerShell but not in
-Command Prompt, so use one `-m` per paragraph. This form works in **both**:
-
-```bat
-git commit -m "Nature Computational Science submission: manuscript, SI, figures and analysis modules" -m "Adds the reframed manuscript and supplementary information, ten supplementary figures, and the modules behind the new analyses (noise floor, benchmark context, embedding retention). Validation: 264 assertions across three modules." -m "Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_01GsbWuPErNXVmG65n8gNwQY"
-
-git push -u origin natcompsci-submission
-```
-
-Watch the LFS upload line. If it starts pushing hundreds of megabytes you did
-not expect, cancel with Ctrl-C, and re-check which archives you staged in Step 4.
-
-Then open the pull request:
-
-```bat
-gh pr create --fill --base main
-```
-
----
-
-## Step 7 — what to delete once you are satisfied
+## What is safe to delete
 
 I moved things rather than deleting them, because the bridge cannot delete and
 because you should look before anything goes. All of it is already gitignored,
@@ -309,7 +228,8 @@ so none of it can reach the push either way.
 | `manuscripts/natcompsci/figures/_to_delete/` | empty | Left behind because the bridge could not remove the directory. |
 | `.git/index.lock` | 0 bytes | Handled in Step 0. |
 
-That is **6.7 MB** in total. Delete the lot with:
+Plus `_quarantine_20260905/jacs_prose_draft/` and `renamed_modules/`, added when the JCIM
+material was retired. Delete the lot with:
 
 **cmd**
 
@@ -355,17 +275,16 @@ Remove-Item -Recurse -Force _quarantine_20260905, manuscripts\natcompsci\figures
 
 ---
 
-## If the push fails
+## If a future push fails
 
-**`this exceeds GitHub's file size limit of 100.00 MB`** — an archive was
-committed as a real blob instead of an LFS pointer, which means `.gitattributes`
-was not in place when it was staged. Fix with
+**`this exceeds GitHub's file size limit of 100.00 MB`** — an archive was committed as a
+real blob instead of an LFS pointer, which is what happens when the LFS filters are not
+installed (see **Still live**). Fix with
 `git rm --cached artifacts\<name>.7z`, confirm `.gitattributes` is committed,
 then re-add.
 
 **`batch response: This repository is over its data quota`** — the LFS storage
 ceiling. Go back to the Zenodo option in Step 1, or buy a data pack.
 
-**The push hangs partway through an LFS upload** — resume with
-`git lfs push --all origin natcompsci-submission`, which skips objects the
-server already holds.
+**The push hangs partway through an LFS upload** — resume with `git lfs push --all origin main`,
+which skips objects the server already holds.

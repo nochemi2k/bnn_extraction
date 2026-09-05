@@ -1,4 +1,4 @@
-"""JACS Task 10: the single-pair prospective demonstration.
+"""Analysis task 10: the single-pair prospective demonstration.
 
 For the three most frequent held-out species pairs -- Cu:2.0--Ni:2.0 (1,878
 rows / 1,230 ligands, the primary demo pair: a real hydrometallurgical
@@ -27,7 +27,7 @@ state whether Cu/Ni was cherry-picked) -- reports, per fold:
   10.4 A cross-pair comparison flagging whether Cu/Ni is unusually favourable
        relative to Cu/Zn and Ni/Zn (it must not be silently cherry-picked).
 
-Emits `manuscripts/jacs/tables/single_pair_campaign.csv`.
+Emits `manuscripts/derived/tables/single_pair_campaign.csv`.
 
     python -m uq_remake.manuscript.single_pair_campaign
 """
@@ -45,10 +45,10 @@ from uq_remake.downstream.pair_acquisition import (
     resolved_event_thresholds,
 )
 from uq_remake.downstream.protocol import FOLDS, PAIR_ACQ_RANDOM_SEED, PAIR_COLUMN, RETENTION_FRACTIONS
-from uq_remake.manuscript.jacs_common import CANDIDATE_SCORES, FOLD_SCORES_DIR, JACS_TABLES, MIN_CELL_N, fold_mean_sd_row, load_all_folds, write_provenance
+from uq_remake.manuscript.manuscript_common import CANDIDATE_SCORES, FOLD_SCORES_DIR, DERIVED_TABLES, MIN_CELL_N, fold_mean_sd_row, load_all_folds, write_provenance
 from uq_remake.manuscript.within_pair_ordering import _cell_retained_rmse
 
-OUT = JACS_TABLES / "single_pair_campaign.csv"
+OUT = DERIVED_TABLES / "single_pair_campaign.csv"
 
 PAIRS_IN_FREQUENCY_ORDER = ("Cu:2.0--Ni:2.0", "Cu:2.0--Zn:2.0", "Ni:2.0--Zn:2.0")
 PRIMARY_PAIR = PAIRS_IN_FREQUENCY_ORDER[0]
@@ -285,7 +285,7 @@ def main() -> dict:
 
     out = pd.concat([campaign_df, campaign_fold_df, topk_df, retention_df, comp_df], ignore_index=True)
     out["source"] = "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv"
-    JACS_TABLES.mkdir(parents=True, exist_ok=True)
+    DERIVED_TABLES.mkdir(parents=True, exist_ok=True)
     out.to_csv(OUT, index=False)
     write_provenance(
         OUT,

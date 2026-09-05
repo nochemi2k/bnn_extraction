@@ -1,8 +1,8 @@
-"""Validate the JACS repositioning analyses (Tasks 1-10).
+"""Validate the derived-table analyses (tasks 1-10).
 
 Re-derives headline numbers independently from the frozen fold scores /
 processed datasets and asserts they agree with what the analysis modules
-wrote to `manuscripts/jacs/tables/*.csv`. Also checks the structural claims
+wrote to `manuscripts/derived/tables/*.csv`. Also checks the structural claims
 from the task specs (`pair_density_risk` constant within every (pair, fold)
 cell; no table presents a pooled-row statistic as a headline; coverage-grid
 cell counts partition each fold exactly; the two coverage-override bootstrap
@@ -13,11 +13,11 @@ its fold's training ligands; the Task 9 gap decomposition identity holds;
 Task 10's per-fold pair row counts match the fold scores and every
 acquisition metric is bounded in [0, 1]) and, for Task 1, that the
 within-pair Spearman values reproduce the prototype figures in
-`manuscripts/jacs/analysis/chemical_sanity_checks.json` to +/-0.01.
+`manuscripts/derived/analysis/chemical_sanity_checks.json` to +/-0.01.
 
 Exits non-zero and prints every failing check on failure.
 
-    python -m uq_remake.manuscript.validate_jacs_analyses
+    python -m uq_remake.manuscript.validate_core_analyses
 """
 from __future__ import annotations
 
@@ -35,9 +35,9 @@ try:  # optional: only needed when the Task 9 table is present
         _score_rows, _shell_window)
 except ModuleNotFoundError:
     WORKHORSE_EXPECTED_MOP_RMSE = None
-from uq_remake.manuscript.jacs_common import (
+from uq_remake.manuscript.manuscript_common import (
     DS2_PATH,
-    JACS_TABLES,
+    DERIVED_TABLES,
     PROTOTYPE_JSON,
     assert_pair_density_constant_within_cells,
     concat_folds,
@@ -80,7 +80,7 @@ def check_pair_density_constant(rows, fold_frames) -> None:
 
 
 def check_within_pair_ordering(rows, fold_frames) -> None:
-    path = JACS_TABLES / "within_pair_score_residual.csv"
+    path = DERIVED_TABLES / "within_pair_score_residual.csv"
     if not path.exists():
         add(rows, "within_pair_score_residual_exists", False, str(path))
         return
@@ -129,7 +129,7 @@ def check_within_pair_ordering(rows, fold_frames) -> None:
 
 
 def check_scale_free_error(rows, fold_frames) -> None:
-    path = JACS_TABLES / "scale_free_error.csv"
+    path = DERIVED_TABLES / "scale_free_error.csv"
     if not path.exists():
         add(rows, "scale_free_error_exists", False, str(path))
         return
@@ -183,7 +183,7 @@ def check_scale_free_error(rows, fold_frames) -> None:
 
 
 def check_logk_censoring(rows) -> None:
-    path = JACS_TABLES / "logk_censoring.csv"
+    path = DERIVED_TABLES / "logk_censoring.csv"
     if not path.exists():
         add(rows, "logk_censoring_exists", False, str(path))
         return
@@ -214,8 +214,8 @@ def check_logk_censoring(rows) -> None:
 
 
 def check_no_pooled_headline(rows) -> None:
-    ret_path = JACS_TABLES / "within_pair_retention.csv"
-    reg_path = JACS_TABLES / "uncertainty_by_regime.csv"
+    ret_path = DERIVED_TABLES / "within_pair_retention.csv"
+    reg_path = DERIVED_TABLES / "uncertainty_by_regime.csv"
     for path in (ret_path, reg_path):
         if not path.exists():
             add(rows, f"fold_aggregated_present:{path.name}", False, str(path))
@@ -227,7 +227,7 @@ def check_no_pooled_headline(rows) -> None:
             n5 = int((pd.to_numeric(table.n_valid_folds, errors="coerce") == 5).sum())
             add(rows, f"fold_aggregated_mostly_5_folds:{path.name}", n5 >= 0.9 * len(table), f"n_valid_folds==5 for {n5}/{len(table)} rows")
 
-    sf_path = JACS_TABLES / "scale_free_error.csv"
+    sf_path = DERIVED_TABLES / "scale_free_error.csv"
     if sf_path.exists():
         table = pd.read_csv(sf_path)
         pooled_rows = table[table.table_section.isin(["ree_comparison", "pooled_correlations"])]
@@ -247,7 +247,7 @@ def _joined_fold_frames(fold_frames: dict[str, pd.DataFrame]) -> dict[str, pd.Da
 
 
 def check_sigma_chemical_axes(rows, fold_frames) -> None:
-    path = JACS_TABLES / "sigma_chemical_axes.csv"
+    path = DERIVED_TABLES / "sigma_chemical_axes.csv"
     if not path.exists():
         add(rows, "sigma_chemical_axes_exists", False, str(path))
         return
@@ -308,8 +308,8 @@ def check_sigma_chemical_axes(rows, fold_frames) -> None:
 
 
 def check_coverage_override_grid(rows, fold_frames) -> None:
-    grid_path = JACS_TABLES / "coverage_override_grid.csv"
-    fold_level_path = JACS_TABLES / "coverage_override_grid_fold_level.csv"
+    grid_path = DERIVED_TABLES / "coverage_override_grid.csv"
+    fold_level_path = DERIVED_TABLES / "coverage_override_grid_fold_level.csv"
     if not (grid_path.exists() and fold_level_path.exists()):
         add(rows, "coverage_override_grid_exists", False, f"{grid_path} / {fold_level_path}")
         return
@@ -368,7 +368,7 @@ def check_coverage_override_grid(rows, fold_frames) -> None:
 
 
 def check_flagged_region_composition(rows, fold_frames) -> None:
-    path = JACS_TABLES / "flagged_region_composition.csv"
+    path = DERIVED_TABLES / "flagged_region_composition.csv"
     if not path.exists():
         add(rows, "flagged_region_composition_exists", False, str(path))
         return
@@ -413,7 +413,7 @@ def check_flagged_region_composition(rows, fold_frames) -> None:
 
 
 def check_external_set_emulation(rows, fold_frames) -> None:
-    path = JACS_TABLES / "external_set_emulation.csv"
+    path = DERIVED_TABLES / "external_set_emulation.csv"
     if not path.exists():
         # Task 9 was not carried into the submitted manuscript; its table is absent
         # by design. Skip rather than fail so the validator reflects the paper as
@@ -485,7 +485,7 @@ def check_external_set_emulation(rows, fold_frames) -> None:
 
 
 def check_single_pair_campaign(rows, fold_frames) -> None:
-    path = JACS_TABLES / "single_pair_campaign.csv"
+    path = DERIVED_TABLES / "single_pair_campaign.csv"
     if not path.exists():
         # Task 10 was not carried into the submitted manuscript (Supplementary S8.3).
         return
@@ -544,7 +544,7 @@ def main() -> dict:
         "n_pass": int(sum(r["pass"] for r in rows)),
         "checks": rows,
     }
-    out_path = JACS_TABLES / "validate_jacs_analyses.json"
+    out_path = DERIVED_TABLES / "validate_core_analyses.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(report, indent=2, default=str), encoding="utf-8")
     return report

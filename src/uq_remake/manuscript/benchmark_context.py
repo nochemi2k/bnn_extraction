@@ -31,7 +31,7 @@ import subprocess
 
 import pandas as pd
 
-T = os.environ.get("BNN_TABLES", os.path.join("manuscripts", "jacs", "tables")) + os.sep
+T = os.environ.get("BNN_TABLES", os.path.join("manuscripts", "derived", "tables")) + os.sep
 REPRO = os.path.join("results", "stage1", "cmi_reproduction_results.json")
 OVERLAP = os.path.join("results", "canonical", "cmi_split_ligand_overlap.json")
 DISJOINT = os.path.join("results", "canonical", "ds1_chemprop_ligand_disjoint_mae.json")

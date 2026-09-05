@@ -1,0 +1,25 @@
+{
+  "table": "pooled_retention_pair_loss.csv",
+  "inputs": [
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold0.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold1.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold2.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold3.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold4.csv"
+  ],
+  "git_commit": "d9245bb57ec715a4d0290df64b104918c22199c0",
+  "cell_rule": {
+    "min_ligands": 20,
+    "min_distinct_score_values": 5,
+    "requires_nonzero_target_sd": true
+  },
+  "aggregation": "cell-equal mean within fold, then fold mean +/- s.d. (ddof=1)",
+  "random_baseline_permutations": 20,
+  "random_seed": 0,
+  "cluster_bootstrap": {
+    "resamples": 2000,
+    "unit": "metal pair",
+    "seed": 1
+  },
+  "note": "how pooled 50% retention changes the pair population, and why"
+}

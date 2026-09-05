@@ -1,0 +1,15 @@
+{
+  "table": "manuscripts/jacs/tables/uncertainty_by_regime.csv",
+  "module": "uncertainty_by_regime.main",
+  "git_commit": "d9245bb57ec715a4d0290df64b104918c22199c0",
+  "inputs": [
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold0.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold1.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold2.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold3.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold4.csv"
+  ],
+  "generated_by": "manuscripts/jacs analysis pipeline (--jacs)",
+  "aleatoric_share_definition": "ratio of fold-pooled sigma_aleatoric^2 to fold-pooled sigma_total^2",
+  "prototype_reproduction": "sigma_total exact; aleatoric share directional only (see module docstring)"
+}

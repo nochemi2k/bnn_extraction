@@ -1,0 +1,21 @@
+{
+  "table": "manuscripts/jacs/tables/scale_free_error.csv",
+  "module": "scale_free_error.main",
+  "git_commit": "d9245bb57ec715a4d0290df64b104918c22199c0",
+  "inputs": [
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold0.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold1.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold2.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold3.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold4.csv"
+  ],
+  "generated_by": "manuscripts/jacs analysis pipeline (--jacs)",
+  "e_norm_eligibility": {
+    "n_rows_total": 88525,
+    "n_rows_dropped": 4932,
+    "n_rows_used": 83593,
+    "n_pairs_total": 2503,
+    "n_pairs_used": 846,
+    "min_pair_n": 10
+  }
+}

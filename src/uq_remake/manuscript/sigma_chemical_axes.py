@@ -1,4 +1,4 @@
-"""JACS Task 6: does sigma track interaction strength after controlling for coverage?
+"""Analysis task 6: does sigma track interaction strength after controlling for coverage?
 
 Joins the frozen DS2_RDKIT_MLPENS5_HETERO fold scores to `data/processed/ds2.csv`.
 
@@ -35,7 +35,7 @@ Four analyses, run for response = sigma_total and again for response = |error|
        (rank-then-z-score) coefficients, fold mean +/- SD, plus VIFs (computed once,
        response-independent -- collinearity is a property of the predictor set).
 
-Writes `manuscripts/jacs/tables/sigma_chemical_axes.csv`.
+Writes `manuscripts/derived/tables/sigma_chemical_axes.csv`.
 
     python -m uq_remake.manuscript.sigma_chemical_axes
 """
@@ -47,10 +47,10 @@ from scipy.stats import rankdata
 
 from uq_remake.downstream.magnitude_adjusted_risk import partial_spearman, spearman
 from uq_remake.downstream.protocol import FOLDS, PAIR_COLUMN
-from uq_remake.manuscript.jacs_common import (
+from uq_remake.manuscript.manuscript_common import (
     DS2_PATH,
     FOLD_SCORES_DIR,
-    JACS_TABLES,
+    DERIVED_TABLES,
     MIN_CELL_DISTINCT,
     MIN_CELL_N,
     concat_folds,
@@ -62,7 +62,7 @@ from uq_remake.manuscript.jacs_common import (
     write_provenance,
 )
 
-OUT = JACS_TABLES / "sigma_chemical_axes.csv"
+OUT = DERIVED_TABLES / "sigma_chemical_axes.csv"
 
 PREDICTORS = ("favoured_logK", "d_electronegativity", "d_covalent_radius", "d_oxidation_state", "log1p_support")
 RESPONSES = ("sigma_total", "abs_error")
@@ -246,7 +246,7 @@ def main() -> dict:
 
     out = pd.DataFrame(rows)
     out["source"] = "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv + data/processed/ds2.csv"
-    JACS_TABLES.mkdir(parents=True, exist_ok=True)
+    DERIVED_TABLES.mkdir(parents=True, exist_ok=True)
     out.to_csv(OUT, index=False)
     write_provenance(
         OUT,

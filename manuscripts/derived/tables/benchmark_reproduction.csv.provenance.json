@@ -1,0 +1,10 @@
+{
+  "table": "benchmark_reproduction.csv",
+  "inputs": [
+    "results/stage1/cmi_reproduction_results.json",
+    "results/canonical/cmi_split_ligand_overlap.json",
+    "results/canonical/ds1_chemprop_ligand_disjoint_mae.json"
+  ],
+  "git_commit": "d9245bb57ec715a4d0290df64b104918c22199c0",
+  "note": "what the published split measures, and the same architecture under ligand-disjoint validation"
+}

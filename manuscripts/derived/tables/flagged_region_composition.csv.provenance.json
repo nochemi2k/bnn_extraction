@@ -1,0 +1,25 @@
+{
+  "table": "manuscripts/jacs/tables/flagged_region_composition.csv",
+  "module": "coverage_override_grid.build_composition",
+  "git_commit": "d9245bb57ec715a4d0290df64b104918c22199c0",
+  "inputs": [
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold0.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold1.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold2.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold3.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold4.csv",
+    "data/processed/ds2.csv"
+  ],
+  "generated_by": "manuscripts/jacs analysis pipeline (--jacs)",
+  "cells": {
+    "dense_support_high_sigma": [
+      4,
+      4
+    ],
+    "dense_support_low_sigma": [
+      4,
+      1
+    ]
+  },
+  "top_n_pairs": 15
+}

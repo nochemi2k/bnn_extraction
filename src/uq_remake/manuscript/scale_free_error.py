@@ -1,4 +1,4 @@
-"""JACS Task 3: scale-free error companions for every retention/error claim.
+"""Analysis task 3: scale-free error companions for every retention/error claim.
 
 `e_norm = |y_true - y_pred| / SD_p(y_true)`, where `SD_p` is the standard
 deviation (ddof=1) of the observed target for one species pair, pooled across
@@ -8,15 +8,15 @@ is the reading that reproduces the prototype ratios below). Pairs with
 pooled n < 10 or SD_p == 0 are dropped from every scale-free statistic; the
 count dropped is reported.
 
-Reproduces, from `manuscripts/jacs/analysis/chemical_sanity_checks.json`:
+Reproduces, from `manuscripts/derived/analysis/chemical_sanity_checks.json`:
   raw |error| ratio (non-REE / REE)          ~ 3.734
   scale-free e_norm ratio (non-REE / REE)    ~ 0.877   (the reversal is the point)
   pooled rho(sigma_total, e_norm)            ~ +0.271
   pooled rho(sigma_total / SD_p, e_norm)     ~ +0.410
 
-Writes `manuscripts/jacs/tables/scale_free_error.csv` (REE comparison +
+Writes `manuscripts/derived/tables/scale_free_error.csv` (REE comparison +
 pooled diagnostics + retention-on-e_norm for the primary scores) and
-`manuscripts/jacs/tables/per_pair_difficulty.csv` (one row per pair with
+`manuscripts/derived/tables/per_pair_difficulty.csv` (one row per pair with
 n >= 10: SD_p, mean |error|, mean e_norm, mean sigma_total).
 
     python -m uq_remake.manuscript.scale_free_error
@@ -29,9 +29,9 @@ from scipy.stats import spearmanr
 
 from uq_remake.downstream.analyses import deterministic_rank, k_at_retention
 from uq_remake.downstream.protocol import FOLDS, PAIR_COLUMN, RETENTION_FRACTIONS
-from uq_remake.manuscript.jacs_common import (
+from uq_remake.manuscript.manuscript_common import (
     FOLD_SCORES_DIR,
-    JACS_TABLES,
+    DERIVED_TABLES,
     MIN_CELL_N,
     MIN_PAIR_N_SCALE_FREE,
     PRIMARY_SCORES,
@@ -43,8 +43,8 @@ from uq_remake.manuscript.jacs_common import (
     write_provenance,
 )
 
-OUT_SCALE_FREE = JACS_TABLES / "scale_free_error.csv"
-OUT_PER_PAIR = JACS_TABLES / "per_pair_difficulty.csv"
+OUT_SCALE_FREE = DERIVED_TABLES / "scale_free_error.csv"
+OUT_PER_PAIR = DERIVED_TABLES / "per_pair_difficulty.csv"
 
 
 def _nan() -> float:
@@ -207,7 +207,7 @@ def main() -> dict:
     combined["min_pair_n"] = MIN_PAIR_N_SCALE_FREE
     combined["n_rows_dropped_insufficient_n_or_zero_sd"] = diag["n_rows_dropped"]
 
-    JACS_TABLES.mkdir(parents=True, exist_ok=True)
+    DERIVED_TABLES.mkdir(parents=True, exist_ok=True)
     combined.to_csv(OUT_SCALE_FREE, index=False)
     write_provenance(
         OUT_SCALE_FREE,

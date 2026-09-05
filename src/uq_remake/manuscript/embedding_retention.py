@@ -34,7 +34,7 @@ import subprocess
 import numpy as np
 import pandas as pd
 
-T = os.environ.get("BNN_TABLES", os.path.join("manuscripts", "jacs", "tables")) + os.sep
+T = os.environ.get("BNN_TABLES", os.path.join("manuscripts", "derived", "tables")) + os.sep
 _FS = os.path.join("results", "downstream_cv", "ad_retention", "fold_scores")
 DMPNN = [os.path.join(_FS, "DS2_GRAPH_DMPNN_EVID", f"fold{i}.csv") for i in range(5)]
 WORKHORSE = [os.path.join(_FS, "DS2_RDKIT_MLPENS5_HETERO", f"fold{i}.csv")

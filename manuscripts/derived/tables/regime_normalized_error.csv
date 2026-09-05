@@ -1,0 +1,7 @@
+regime,regime_definition,metric_name,fold_mean,fold_sd,n_valid_folds,cell_min_n,regime_min_rows
+high_selectivity,|y_true| > 1.0,normalized_error,1.1196456990438781,0.10135023195607201,5,20,5
+high_selectivity,|y_true| > 1.0,normalized_sigma_total,1.010420258770023,0.21438238135131846,5,20,5
+high_selectivity,|y_true| > 1.0,cells,173.2,8.983317872590282,5,20,5
+near_zero,|y_true| < 1.0,normalized_error,0.737400152228757,0.31010019422194585,5,20,5
+near_zero,|y_true| < 1.0,normalized_sigma_total,1.009164666748616,0.466888304537224,5,20,5
+near_zero,|y_true| < 1.0,cells,206.2,17.935997323817823,5,20,5

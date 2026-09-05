@@ -1,15 +1,15 @@
-"""JACS Task 1 & 2: within-pair risk ordering and within-pair retention curves.
+"""Analysis task 1 & 2: within-pair risk ordering and within-pair retention curves.
 
 Task 1. For every candidate risk score, Spearman(score, |y_true - y_pred|)
 computed on one pair's held-out rows pooled across all five folds (see
-`jacs_common` module docstring for why pooling-across-folds, not per-(pair,
+`manuscript_common` module docstring for why pooling-across-folds, not per-(pair,
 fold) cells, is the unit that reproduces the prototype numbers). Aggregated
 two ways, both kept:
 
   (a) "distribution_over_pairs" -- one Spearman rho per eligible pair, then
       mean/median/IQR/p10/p90/frac_positive over that distribution. This is
       the reading that reproduces the prototype figures in
-      `manuscripts/jacs/analysis/chemical_sanity_checks.json`.
+      `manuscripts/derived/analysis/chemical_sanity_checks.json`.
   (b) "fold_mean_plus_sd" -- true (pair, fold) cells (this fold's held-out
       rows for this pair only), pair-equal mean within each fold, then
       fold mean +/- SD (ddof=1) across the 5 folds. Genuinely fold-local.
@@ -29,8 +29,8 @@ y_pred-magnitude comparator (score = -|y_pred|).
 
 Reads only frozen fold scores under
 `results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/`.
-Writes `manuscripts/jacs/tables/within_pair_score_residual.csv` and
-`manuscripts/jacs/tables/within_pair_retention.csv` plus provenance sidecars.
+Writes `manuscripts/derived/tables/within_pair_score_residual.csv` and
+`manuscripts/derived/tables/within_pair_retention.csv` plus provenance sidecars.
 
     python -m uq_remake.manuscript.within_pair_ordering
 """
@@ -42,11 +42,11 @@ from scipy.stats import spearmanr
 
 from uq_remake.downstream.analyses import deterministic_rank, k_at_retention
 from uq_remake.downstream.protocol import FOLDS, PAIR_COLUMN, RANDOM_N_REPEATS, RANDOM_SEED, RETENTION_FRACTIONS
-from uq_remake.manuscript.jacs_common import (
+from uq_remake.manuscript.manuscript_common import (
     CANDIDATE_SCORES,
     CONSTANT_WITHIN_CELL_SCORES,
     FOLD_SCORES_DIR,
-    JACS_TABLES,
+    DERIVED_TABLES,
     MIN_CELL_DISTINCT,
     MIN_CELL_N,
     WORKHORSE,
@@ -58,8 +58,8 @@ from uq_remake.manuscript.jacs_common import (
     write_provenance,
 )
 
-OUT_ORDERING = JACS_TABLES / "within_pair_score_residual.csv"
-OUT_RETENTION = JACS_TABLES / "within_pair_retention.csv"
+OUT_ORDERING = DERIVED_TABLES / "within_pair_score_residual.csv"
+OUT_RETENTION = DERIVED_TABLES / "within_pair_retention.csv"
 MAG_SCORE_NAME = "abs_yhat_magnitude_comparator"
 RANDOM_SCORE_NAME = "random_retention"
 
@@ -342,7 +342,7 @@ def main() -> dict:
 
     ordering = within_pair_score_residual(fold_frames)
     ordering["source"] = f"results/downstream_cv/ad_retention/fold_scores/{WORKHORSE}/fold{{0..4}}.csv"
-    JACS_TABLES.mkdir(parents=True, exist_ok=True)
+    DERIVED_TABLES.mkdir(parents=True, exist_ok=True)
     ordering.to_csv(OUT_ORDERING, index=False)
     write_provenance(
         OUT_ORDERING,

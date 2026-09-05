@@ -1,0 +1,27 @@
+{
+  "table": "pooled_contrasts.csv",
+  "inputs": [
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold0.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold1.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold2.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold3.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold4.csv"
+  ],
+  "git_commit": "unavailable",
+  "protocol": "pooled retention within a fold, mean-of-pairs over pairs keeping >= 3 rows",
+  "random_baseline_permutations": 20,
+  "random_seed": 0,
+  "cluster_bootstrap": {
+    "resamples": 2000,
+    "unit": "metal pair",
+    "seed": 1
+  },
+  "matched_set": [
+    "sigma_total",
+    "euclidean_feature_median",
+    "mahalanobis_feature_centroid",
+    "tanimoto_median_distance",
+    "tanimoto_nn_distance"
+  ],
+  "note": "paired on the shared population"
+}

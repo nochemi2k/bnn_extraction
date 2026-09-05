@@ -1,0 +1,17 @@
+{
+  "table": "manuscripts/jacs/tables/within_pair_score_residual.csv",
+  "module": "within_pair_ordering.within_pair_score_residual",
+  "git_commit": "d9245bb57ec715a4d0290df64b104918c22199c0",
+  "inputs": [
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold0.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold1.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold2.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold3.csv",
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold4.csv"
+  ],
+  "generated_by": "manuscripts/jacs analysis pipeline (--jacs)",
+  "pair_density_risk_cell_check": {
+    "n_cells_total": 7574,
+    "n_violations": 0
+  }
+}

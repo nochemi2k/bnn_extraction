@@ -1,4 +1,4 @@
-"""JACS Task 7 & 8: the coverage-override grid, productionised, and the chemical
+"""Analysis task 7 & 8: the coverage-override grid, productionised, and the chemical
 composition of its flagged cells.
 
 Support-quartile x sigma-quartile 4x4 grid of mean |error|. Quartiles are
@@ -32,11 +32,11 @@ reports the species-pair overlap between the two cells (needed for the
 "sigma partitions within pairs" claim).
 
 Reads: frozen `DS2_RDKIT_MLPENS5_HETERO` fold scores, joined to
-`data/processed/ds2.csv` via `jacs_common.load_ds2_chemical_axes` (same
+`data/processed/ds2.csv` via `manuscript_common.load_ds2_chemical_axes` (same
 join-key fix as `sigma_chemical_axes.py` -- see that module's docstring).
 
-Writes `manuscripts/jacs/tables/coverage_override_grid.csv` and
-`manuscripts/jacs/tables/flagged_region_composition.csv`.
+Writes `manuscripts/derived/tables/coverage_override_grid.csv` and
+`manuscripts/derived/tables/flagged_region_composition.csv`.
 
     python -m uq_remake.manuscript.coverage_override_grid
 """
@@ -46,10 +46,10 @@ import numpy as np
 import pandas as pd
 
 from uq_remake.downstream.protocol import FOLDS, PAIR_COLUMN
-from uq_remake.manuscript.jacs_common import (
+from uq_remake.manuscript.manuscript_common import (
     DS2_PATH,
     FOLD_SCORES_DIR,
-    JACS_TABLES,
+    DERIVED_TABLES,
     concat_folds,
     fold_mean_sd_row,
     join_ds2_chemical_axes,
@@ -59,8 +59,8 @@ from uq_remake.manuscript.jacs_common import (
     write_provenance,
 )
 
-OUT_GRID = JACS_TABLES / "coverage_override_grid.csv"
-OUT_COMPOSITION = JACS_TABLES / "flagged_region_composition.csv"
+OUT_GRID = DERIVED_TABLES / "coverage_override_grid.csv"
+OUT_COMPOSITION = DERIVED_TABLES / "flagged_region_composition.csv"
 
 N_QUANTILES = 4
 QUARTILE_LABELS = [1, 2, 3, 4]
@@ -348,9 +348,9 @@ def main() -> dict:
 
     grid_df, fold_level_df = build_grid(fold_frames)
     grid_df["source"] = "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv"
-    JACS_TABLES.mkdir(parents=True, exist_ok=True)
+    DERIVED_TABLES.mkdir(parents=True, exist_ok=True)
     grid_df.to_csv(OUT_GRID, index=False)
-    fold_level_path = JACS_TABLES / "coverage_override_grid_fold_level.csv"
+    fold_level_path = DERIVED_TABLES / "coverage_override_grid_fold_level.csv"
     fold_level_df.to_csv(fold_level_path, index=False)
     write_provenance(
         OUT_GRID,

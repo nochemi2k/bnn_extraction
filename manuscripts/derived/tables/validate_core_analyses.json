@@ -1,0 +1,287 @@
+{
+  "pass": true,
+  "n_checks": 56,
+  "n_pass": 56,
+  "checks": [
+    {
+      "check": "pair_density_risk_constant_in_all_cells",
+      "pass": true,
+      "detail": "{'n_cells_total': 7574, 'n_violations': 0}"
+    },
+    {
+      "check": "within_pair_score_residual_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "within_pair_n_pairs_matches:sigma_total",
+      "pass": true,
+      "detail": "csv=647 recomputed=647"
+    },
+    {
+      "check": "within_pair_mean_rho_matches_csv:sigma_total",
+      "pass": true,
+      "detail": "csv=0.3531662465982447 recomputed=0.3531662465982447"
+    },
+    {
+      "check": "within_pair_mean_rho_matches_prototype:sigma_total",
+      "pass": true,
+      "detail": "prototype=0.353 recomputed=0.3531662465982447"
+    },
+    {
+      "check": "within_pair_median_rho_matches_prototype:sigma_total",
+      "pass": true,
+      "detail": "prototype=0.399 recomputed=0.3994784257942152"
+    },
+    {
+      "check": "within_pair_frac_positive_matches_prototype:sigma_total",
+      "pass": true,
+      "detail": "prototype=0.927 recomputed=0.9273570324574961"
+    },
+    {
+      "check": "within_pair_n_pairs_matches:mahalanobis_feature_centroid",
+      "pass": true,
+      "detail": "csv=647 recomputed=647"
+    },
+    {
+      "check": "within_pair_mean_rho_matches_csv:mahalanobis_feature_centroid",
+      "pass": true,
+      "detail": "csv=0.1110084407465369 recomputed=0.11100844074653696"
+    },
+    {
+      "check": "within_pair_mean_rho_matches_prototype:mahalanobis_feature_centroid",
+      "pass": true,
+      "detail": "prototype=0.111 recomputed=0.11100844074653696"
+    },
+    {
+      "check": "within_pair_frac_positive_matches_prototype:mahalanobis_feature_centroid",
+      "pass": true,
+      "detail": "prototype=0.719 recomputed=0.7187017001545595"
+    },
+    {
+      "check": "within_pair_n_pairs_matches:tanimoto_nn_distance",
+      "pass": true,
+      "detail": "csv=647 recomputed=647"
+    },
+    {
+      "check": "within_pair_mean_rho_matches_csv:tanimoto_nn_distance",
+      "pass": true,
+      "detail": "csv=-0.0772193677958925 recomputed=-0.07721936779589259"
+    },
+    {
+      "check": "within_pair_mean_rho_matches_prototype:tanimoto_nn_distance",
+      "pass": true,
+      "detail": "prototype=-0.077 recomputed=-0.07721936779589259"
+    },
+    {
+      "check": "within_pair_frac_positive_matches_prototype:tanimoto_nn_distance",
+      "pass": true,
+      "detail": "prototype=0.297 recomputed=0.29675425038639874"
+    },
+    {
+      "check": "pair_density_risk_reported_undefined_not_zero",
+      "pass": true,
+      "detail": "0"
+    },
+    {
+      "check": "scale_free_error_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "raw_abs_error_ratio_matches_prototype",
+      "pass": true,
+      "detail": "prototype=3.734 recomputed=3.7337090370142803"
+    },
+    {
+      "check": "scale_free_error_ratio_matches_prototype",
+      "pass": true,
+      "detail": "prototype=0.877 recomputed=0.8774756856075527"
+    },
+    {
+      "check": "scale_free_csv_raw_ratio_matches_recompute",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "scale_free_csv_sf_ratio_matches_recompute",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "pooled_rho_sigma_vs_enorm_matches_prototype",
+      "pass": true,
+      "detail": "csv=0.2714765407175219"
+    },
+    {
+      "check": "pooled_rho_sigma_over_sd_vs_enorm_matches_prototype",
+      "pass": true,
+      "detail": "csv=0.4095837629903338"
+    },
+    {
+      "check": "pooled_correlation_rows_tagged_si_diagnostic",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "logk_censoring_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "logk_censoring_ds2_frac_le_0_matches_recompute",
+      "pass": true,
+      "detail": "csv=0.0170573284382942 recomputed=0.017057328438294266"
+    },
+    {
+      "check": "logk_censoring_ds2_frac_le_1_matches_recompute",
+      "pass": true,
+      "detail": "csv=0.0552103925444789 recomputed=0.05521039254447896"
+    },
+    {
+      "check": "logk_censoring_ds2_frac_le_2_matches_recompute",
+      "pass": true,
+      "detail": "csv=0.1355718723524428 recomputed=0.1355718723524428"
+    },
+    {
+      "check": "logk_censoring_ds2_median_matches_recompute",
+      "pass": true,
+      "detail": "csv=5.5 recomputed=5.5"
+    },
+    {
+      "check": "logk_censoring_ds2_minimum_matches_recompute",
+      "pass": true,
+      "detail": "csv=-2.65 recomputed=-2.65"
+    },
+    {
+      "check": "logk_censoring_frac_le0_matches_prototype",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "logk_censoring_frac_le1_matches_prototype",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "logk_censoring_frac_le2_matches_prototype",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "logk_censoring_median_matches_prototype",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "fold_aggregated_columns_present:within_pair_retention.csv",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "fold_aggregated_mostly_5_folds:within_pair_retention.csv",
+      "pass": true,
+      "detail": "n_valid_folds==5 for 187/187 rows"
+    },
+    {
+      "check": "fold_aggregated_columns_present:uncertainty_by_regime.csv",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "fold_aggregated_mostly_5_folds:uncertainty_by_regime.csv",
+      "pass": true,
+      "detail": "n_valid_folds==5 for 12/12 rows"
+    },
+    {
+      "check": "scale_free_pooled_rows_confined_to_labeled_sections",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "scale_free_headline_retention_is_fold_aggregated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sigma_chemical_axes_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "sigma_chemical_axes_all_coefficients_reproduce_to_3dp",
+      "pass": true,
+      "detail": "checked=23 mismatched=0"
+    },
+    {
+      "check": "favouredlogK_partial_corr_exceeds_support_partial_corr:sigma_total",
+      "pass": true,
+      "detail": "favouredlogK=0.5405612420493288 support=-0.2205434515949795"
+    },
+    {
+      "check": "favouredlogK_partial_corr_exceeds_support_partial_corr:abs_error",
+      "pass": true,
+      "detail": "favouredlogK=0.3823371473171576 support=-0.2284071627327311"
+    },
+    {
+      "check": "sigma_overweights_favouredlogK_relative_to_error_CAVEAT",
+      "pass": true,
+      "detail": "sigma_rho=0.5405612420493288 error_rho=0.3823371473171576 sigma_tracks_favouredlogK_more_strongly=True"
+    },
+    {
+      "check": "coverage_override_grid_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "coverage_grid_cell_counts_sum_to_fold_row_count",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "check": "coverage_grid_all_cells_reproduce_to_3dp",
+      "pass": true,
+      "detail": "checked=0 mismatched=0"
+    },
+    {
+      "check": "bootstrap_ci_excludes_overall_mean:sparse_support_low_sigma",
+      "pass": true,
+      "detail": "ci=[0.5258,0.6411] overall_mean=1.1520 EXCLUDED (supported)"
+    },
+    {
+      "check": "bootstrap_ci_reproduces_stored_csv:sparse_support_low_sigma",
+      "pass": true,
+      "detail": "csv=[0.5258360180449105,0.641122028588787] recomputed=[0.5258360180449105,0.641122028588787]"
+    },
+    {
+      "check": "bootstrap_ci_excludes_overall_mean:dense_support_high_sigma",
+      "pass": true,
+      "detail": "ci=[1.6939,1.9213] overall_mean=1.1520 EXCLUDED (supported)"
+    },
+    {
+      "check": "bootstrap_ci_reproduces_stored_csv:dense_support_high_sigma",
+      "pass": true,
+      "detail": "csv=[1.6938822191441054,1.921345224124518] recomputed=[1.6938822191441054,1.9213452241245181]"
+    },
+    {
+      "check": "flagged_region_composition_exists",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "task8_overlap_reported",
+      "pass": true,
+      "detail": "n_rows=1"
+    },
+    {
+      "check": "task8_overlap_is_non_trivial",
+      "pass": true,
+      "detail": "n_pairs_overlap=33 min_fraction_of_cell_rows_from_overlap_pairs=0.9668 (supports 'sigma partitions within pairs')"
+    },
+    {
+      "check": "task8_overlap_counts_reproduce",
+      "pass": true,
+      "detail": "checked=5 mismatched=0"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "inputs": [
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv + data/processed/ds2.csv"
+  ],
+  "git_commit": "d9245bb57ec715a4d0290df64b104918c22199c0",
+  "note": "Scale-free companions. e_norm = |y_true-y_pred| / SD_p(y_true), SD_p the within-pair SD of the observed target on that fold, pairs with n<10 or SD=0 dropped. sigma_norm = sigma_total / SD_p. Fold-level first, then fold mean +/- SD (ddof=1). Frozen fold scores only; no retraining. NOTE: the eligible subsample differs from the unnormalised tables because of the n>=10 / SD>0 filter."
+}

@@ -1,20 +1,20 @@
-"""JACS Task 4: reporting-censoring analysis for DS1, DS2, and the CMI external file.
+"""Analysis task 4: reporting-censoring analysis for DS1, DS2, and the CMI external file.
 
 The literature records a stability constant when a complex forms; non-binding
 is not reported as a number, so the training distribution is censored toward
 higher logK. Quantified here as a histogram, cumulative fractions <=0/1/2/3,
 median, minimum -- pooled and split by periodic-table block (s / 3d / 4d-5d /
-4f / 5f / p_block, from atomic number; see `jacs_common.block_from_atomic_number`).
+4f / 5f / p_block, from atomic number; see `manuscript_common.block_from_atomic_number`).
 
 Reproduces, for DS2 endpoints pooled (logK_x, logK_y), from
-`manuscripts/jacs/analysis/chemical_sanity_checks.json`:
+`manuscripts/derived/analysis/chemical_sanity_checks.json`:
   frac <= 0   ~ 1.71%
   frac <= 1   ~ 5.52%
   frac <= 2   ~ 13.56%
   median      ~ 5.50
   minimum     ~ -2.65
 
-Writes `manuscripts/jacs/tables/logk_censoring.csv`.
+Writes `manuscripts/derived/tables/logk_censoring.csv`.
 
     python -m uq_remake.manuscript.logk_censoring
 """
@@ -23,16 +23,16 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from uq_remake.manuscript.jacs_common import (
+from uq_remake.manuscript.manuscript_common import (
     CMI_EXTERNAL_PATH,
     DS1_PATH,
     DS2_PATH,
-    JACS_TABLES,
+    DERIVED_TABLES,
     block_from_atomic_number,
     write_provenance,
 )
 
-OUT = JACS_TABLES / "logk_censoring.csv"
+OUT = DERIVED_TABLES / "logk_censoring.csv"
 
 BIN_EDGES = [-np.inf, -1, 0, 1, 2, 3, 5, 10, 20, np.inf]
 BIN_LABELS = [
@@ -103,7 +103,7 @@ def main() -> dict:
     out.loc[out.dataset == "CMI_external", "source"] = "data/processed/m4_external.csv (logK, Atomic_number)"
     out.loc[out.dataset == "DS2_endpoints_pooled", "source"] = "data/processed/ds2.csv (logK_x, logK_y, Atomic_number_x, Atomic_number_y pooled)"
 
-    JACS_TABLES.mkdir(parents=True, exist_ok=True)
+    DERIVED_TABLES.mkdir(parents=True, exist_ok=True)
     out.to_csv(OUT, index=False)
     write_provenance(
         OUT,

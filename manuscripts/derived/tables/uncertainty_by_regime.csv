@@ -1,0 +1,13 @@
+regime,regime_definition,metric_name,fold_mean,fold_sd,n_valid_folds,n_rows_per_fold,source
+high_selectivity,|y_true| > 1.0,sigma_aleatoric,2.0764859476504176,0.3440881921692475,5,"[9659, 8854, 8077, 9248, 8848]",results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv
+high_selectivity,|y_true| > 1.0,sigma_epistemic_within,0.7678525195257495,0.0698684254897226,5,"[9659, 8854, 8077, 9248, 8848]",results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv
+high_selectivity,|y_true| > 1.0,sigma_epistemic_between,0.4153605635192806,0.03600048554572921,5,"[9659, 8854, 8077, 9248, 8848]",results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv
+high_selectivity,|y_true| > 1.0,sigma_total,2.278661595502206,0.35411647345524755,5,"[9659, 8854, 8077, 9248, 8848]",results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv
+high_selectivity,|y_true| > 1.0,abs_error,1.7623698407554909,0.12154498365710285,5,"[9659, 8854, 8077, 9248, 8848]",results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv
+high_selectivity,|y_true| > 1.0,aleatoric_variance_share,0.8936971370223592,0.03800953807703867,5,"[9659, 8854, 8077, 9248, 8848]",results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv
+near_zero,|y_true| < 1.0,sigma_aleatoric,0.8741943232613769,0.2624955418308622,5,"[7982, 8792, 9568, 8416, 8804]",results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv
+near_zero,|y_true| < 1.0,sigma_epistemic_within,0.27391990950282724,0.03964209665382059,5,"[7982, 8792, 9568, 8416, 8804]",results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv
+near_zero,|y_true| < 1.0,sigma_epistemic_between,0.18603008891096143,0.05057396159295417,5,"[7982, 8792, 9568, 8416, 8804]",results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv
+near_zero,|y_true| < 1.0,sigma_total,0.9458616179548702,0.2728845573826856,5,"[7982, 8792, 9568, 8416, 8804]",results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv
+near_zero,|y_true| < 1.0,abs_error,0.52836258583192,0.0627889138330732,5,"[7982, 8792, 9568, 8416, 8804]",results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv
+near_zero,|y_true| < 1.0,aleatoric_variance_share,0.9166207919022009,0.03368568746143049,5,"[7982, 8792, 9568, 8416, 8804]",results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv

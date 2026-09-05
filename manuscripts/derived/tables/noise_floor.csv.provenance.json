@@ -1,0 +1,10 @@
+{
+  "table": "noise_floor.csv",
+  "inputs": [
+    "data/processed/ds1.csv"
+  ],
+  "git_commit": "d9245bb57ec715a4d0290df64b104918c22199c0",
+  "note": "repeatability of the compilation, and the error floor it sets for absolute log K and for the pairwise selectivity target",
+  "trim_range": 1.0,
+  "min_replicates": 2
+}

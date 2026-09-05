@@ -1,0 +1,21 @@
+{
+  "inputs": [
+    "results/downstream_cv/ad_retention/fold_scores/DS2_RDKIT_MLPENS5_HETERO/fold{0..4}.csv"
+  ],
+  "git_commit": "d9245bb57ec715a4d0290df64b104918c22199c0",
+  "cell_rule": "n>=20 held-out rows and >=5 distinct score values, SD(y_true)>0 - identical to within_pair_score_residual.csv",
+  "note": "THE PAPER'S CENTRAL STATISTIC. Within each (metal pair, fold) cell, candidate ligands are ranked by each score (safest first), the lowest-risk fraction r retained, and the RMSE of the retained rows divided by that cell's SD(y_true). Cells averaged with equal weight, then folds (mean +/- SD, ddof=1). Because SD is constant inside a cell the retained subset and every rank statistic are identical with or without normalisation; normalisation changes only the cross-pair aggregation weight and the units. A score constant within a cell is UNDEFINED, not zero. random = one permutation per cell, seed 0. yhat_mag = -|y_pred| as risk. No retraining.",
+  "canonical_grid": [
+    0.1,
+    0.2,
+    0.25,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ]
+}

@@ -1,0 +1,4 @@
+regime,ligand_overlap_note,published_mae,published_r2,released_weights_mae,released_weights_r2,retrained_mae,retrained_r2,retrained_mae_fold_sd,n_train_ligands,scope
+"published split, test partition",1568 of 1670 test ligands also in training (93.9%); 97.5% of test rows,0.599,0.934,0.591701846215219,0.9430916682944371,0.5946900675535871,0.9421593141115714,0.005133715257639306,4245,"metal-complex records, absolute log K"
+"published split, external holdout",none; 40 ligands absent from training,0.834,0.942,0.8336876546971707,0.941852685921195,0.8806233886924911,0.9345960784467455,,4245,"metal-complex records, absolute log K"
+ligand-disjoint cross-validation,"none by construction, in every fold",,,,,1.4839531651864664,,0.16095363759577772,4245,"metal-complex records, absolute log K"

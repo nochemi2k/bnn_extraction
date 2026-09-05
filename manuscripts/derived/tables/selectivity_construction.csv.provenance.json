@@ -1,0 +1,9 @@
+{
+  "table": "selectivity_construction.csv",
+  "inputs": [
+    "results/downstream_cv/ad_hoc_selectivity/ad_hoc_selectivity_comparison.csv",
+    "results/cv_metrics/fold_metric_summary.csv"
+  ],
+  "git_commit": "d9245bb57ec715a4d0290df64b104918c22199c0",
+  "note": "composing selectivity from two absolute predictions versus modelling the pairwise target directly, all-pair scope"
+}

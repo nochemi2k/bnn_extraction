@@ -1,9 +1,9 @@
-"""Shared constants and helpers for the JACS repositioning analyses.
+"""Shared constants and helpers for the derived-table analyses.
 
 Everything here reads frozen artifacts under ``results/`` and ``data/processed/``.
-Nothing retrains, rescores, or writes outside ``manuscripts/jacs/``. See
-``manuscripts/jacs/CODE_PROMPT_analyses.md`` for the task specification and
-``manuscripts/jacs/analysis/chemical_sanity_checks.json`` for the prototype
+Nothing retrains, rescores, or writes outside ``manuscripts/derived/``. See
+``the analysis specification (retired)`` for the task specification and
+``manuscripts/derived/analysis/chemical_sanity_checks.json`` for the prototype
 numbers each analysis module is a regression test against.
 
 Pair-pooled-across-folds vs. (pair, fold) cells
@@ -55,10 +55,10 @@ from uq_remake.downstream.protocol import (
 )
 from uq_remake.metrics.cv_protocol import EVALUATION_PARTITION, FOLD_SD_DDOF, assert_single_heldout_fold, fold_mean_sd
 
-JACS_ROOT = REMAKE_ROOT / "manuscripts" / "jacs"
-JACS_TABLES = JACS_ROOT / "tables"
-JACS_ANALYSIS = JACS_ROOT / "analysis"
-PROTOTYPE_JSON = JACS_ANALYSIS / "chemical_sanity_checks.json"
+DERIVED_ROOT = REMAKE_ROOT / "manuscripts" / "derived"
+DERIVED_TABLES = DERIVED_ROOT / "tables"
+DERIVED_ANALYSIS = DERIVED_ROOT / "analysis"
+PROTOTYPE_JSON = DERIVED_ANALYSIS / "chemical_sanity_checks.json"
 
 WORKHORSE = DS2_WORKHORSE
 FOLD_SCORES_DIR = AD_RETENTION_DIR / "fold_scores" / WORKHORSE
@@ -126,7 +126,7 @@ def write_provenance(out_csv: Path, *, module: str, inputs: list[Path | str], no
         "module": module,
         "git_commit": git_commit(),
         "inputs": [rel(p) for p in inputs],
-        "generated_by": "manuscripts/jacs analysis pipeline (--jacs)",
+        "generated_by": "manuscripts/derived analysis pipeline (--derived)",
     }
     if notes:
         payload.update(notes)
@@ -141,7 +141,7 @@ def load_fold(fold: str) -> pd.DataFrame:
     if not path.exists():
         raise FileNotFoundError(f"missing frozen fold scores: {path}")
     df = pd.read_csv(path)
-    assert_single_heldout_fold(df, context=f"jacs:{fold}")
+    assert_single_heldout_fold(df, context=f"derived:{fold}")
     part = df["evaluation_partition"].astype(str)
     if not part.eq(EVALUATION_PARTITION).all():
         raise RuntimeError(f"{fold}: expected evaluation_partition={EVALUATION_PARTITION}")

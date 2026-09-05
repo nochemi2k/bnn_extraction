@@ -1,0 +1,4 @@
+{
+  "git_commit": "d9245bb57ec715a4d0290df64b104918c22199c0",
+  "note": "Robustness. (A) cell-threshold sensitivity at n>=20/10/5 on the workhorse. (B) the same analysis on three further frozen DS2 models, including DS2_RDKIT_MLP_MCDROPOUT, which the calibration screen excluded despite lower point error, and DS2_GRAPH_DMPNN_EVID on an unrelated graph representation. Scale-free statistic throughout; 20 random permutations per cell, seed 0. No retraining."
+}
