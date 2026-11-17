@@ -1,0 +1,53 @@
+{
+  "n_train_rows": 39050,
+  "n_test_rows": 4338,
+  "n_ext_rows": 398,
+  "n_train_ligands": 4245,
+  "n_test_ligands": 1670,
+  "n_ext_ligands": 40,
+  "n_ligands_shared_train_test": 1568,
+  "frac_test_ligands_seen_in_train": 0.9389221556886228,
+  "n_test_rows_with_train_ligand": 4228,
+  "frac_test_rows_with_train_ligand": 0.9746426924850161,
+  "n_train_rows_with_test_ligand": 30415,
+  "n_ligands_shared_train_ext": 0,
+  "n_ligands_shared_test_ext": 0,
+  "ligand_disjoint_project_folds": {
+    "fold0": {
+      "train_test": 0,
+      "train_val": 0,
+      "val_test": 0,
+      "n_test_ligands": 869,
+      "n_test_rows": 8678
+    },
+    "fold1": {
+      "train_test": 0,
+      "train_val": 0,
+      "val_test": 0,
+      "n_test_ligands": 870,
+      "n_test_rows": 8678
+    },
+    "fold2": {
+      "train_test": 0,
+      "train_val": 0,
+      "val_test": 0,
+      "n_test_ligands": 870,
+      "n_test_rows": 8678
+    },
+    "fold3": {
+      "train_test": 0,
+      "train_val": 0,
+      "val_test": 0,
+      "n_test_ligands": 869,
+      "n_test_rows": 8677
+    },
+    "fold4": {
+      "train_test": 0,
+      "train_val": 0,
+      "val_test": 0,
+      "n_test_ligands": 869,
+      "n_test_rows": 8677
+    }
+  },
+  "note": "Official CMI train/test assignment is a random row split after a small ligand-held-out external set. Shared ligands mean the same ligand appears with other metals or conditions on both sides of the split."
+}

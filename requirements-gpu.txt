@@ -1,0 +1,12 @@
+# GPU stack for NVIDIA CUDA 12.8 (tested: RTX 5060 Ti / Blackwell sm_120).
+#
+#   py -3.11 -m venv .venv311
+#   .\.venv311\Scripts\Activate.ps1
+#   python -m pip install --upgrade pip
+#   python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+#   python -m pip install -r requirements-gpu.txt
+#
+# Full retrain: python scripts/run_pipeline.py
+# Manuscript rebuild only: python -m uq_remake.manuscript.run_manuscript_rebuild
+
+-r requirements.txt

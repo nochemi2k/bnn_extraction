@@ -1,0 +1,7 @@
+family,stratum,n_experiment_keys
+protonation,agree,1183
+protonation,soft_disagreement,400
+protonation,hard_disagreement,46
+metal_complex,agree,1814
+metal_complex,soft_disagreement,866
+metal_complex,hard_disagreement,368

@@ -1,0 +1,30 @@
+# Remake pipeline (CPU-friendly pins).
+# Python 3.11 recommended. Package root: set PYTHONPATH=src
+#
+#   py -3.11 -m venv .venv311
+#   .\.venv311\Scripts\Activate.ps1   # Windows
+#   python -m pip install --upgrade pip
+#   python -m pip install -r requirements.txt
+#
+# For NVIDIA CUDA training / Chemprop graph UQ, prefer requirements-gpu.txt
+# (installs the same stack after a CUDA build of torch).
+
+numpy>=1.26,<2
+pandas>=2.0,<2.2
+scipy>=1.11
+scikit-learn==1.3.2
+xgboost>=2.0
+matplotlib>=3.7
+rdkit==2023.9.6
+torch>=2.1
+chemprop==1.6.1
+typed-argument-parser
+descriptastorus
+# Chemprop depends on pandas-flavor -> xarray. Pin so pip does not backtrack
+# for a long time against pandas<2.2.
+xarray>=2023.6,<2025.7
+
+# Optional extras used by tables / PDF tooling
+openpyxl>=3.1
+tabulate>=0.9
+pymupdf>=1.24

@@ -1,0 +1,33 @@
+model_id,dataset,family,eligible,chemprop_native_evidential_eligible,variational_bnn_eligible,sngp_eligible,gpr_sparse_eligible,exact_gpr_eligible,reason
+DS1_RDKIT_MLP_POINT,DS1,POINT_MLP,False,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS1_RDKIT_XGB_POINT,DS1,POINT_XGB,False,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS1_GRAPH_DMPNN_POINT,DS1,CHEMPROP_POINT_NATIVE,False,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS1_RDKIT_MLP_EVID,DS1,EVID_MLP,True,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS1_RDKIT_MLPENS5_EVID,DS1,EVID_MLPENS5,True,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS1_RDKIT_MLP_HETERO,DS1,HETERO_MLP,True,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS1_RDKIT_MLPENS5_HETERO,DS1,HETERO_MLPENS5,True,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS1_RDKIT_MLP_MCDROPOUT,DS1,MCDROPOUT_MLP,True,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS1_RDKIT_MLPENS5_MCDROPOUT,DS1,MCDROPOUT_MLPENS5,True,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS1_RDKIT_MLP_BAYES_FULL,DS1,BAYES_FULL,True,False,True,False,False,False,active shared grid; winner not computed until five folds are complete
+DS1_RDKIT_MLPENS5_BAYES_FULL,DS1,BAYES_FULLENS5,True,False,True,False,False,False,active shared grid; winner not computed until five folds are complete
+DS1_RDKIT_SNGP,DS1,SNGP,True,False,False,True,False,False,active shared grid; winner not computed until five folds are complete
+DS1_RDKIT_SNGPENS5,DS1,SNGPENS5,True,False,False,True,False,False,active shared grid; winner not computed until five folds are complete
+DS1_RDKIT_GPR,DS1,GPR,False,False,False,False,False,False,exact GPR infeasible at DS1/DS2 n_train; use GPR_SPARSE
+DS1_RDKIT_GPR_SPARSE,DS1,GPR_SPARSE,True,False,False,False,True,False,active shared grid; winner not computed until five folds are complete
+DS1_GRAPH_DMPNN_EVID,DS1,CHEMPROP_EVIDENTIAL_NATIVE,True,True,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS2_RDKIT_MLP_POINT,DS2,POINT_MLP,False,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS2_RDKIT_XGB_POINT,DS2,POINT_XGB,False,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS2_GRAPH_DMPNN_POINT,DS2,CHEMPROP_POINT_NATIVE,False,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS2_RDKIT_MLP_EVID,DS2,EVID_MLP,True,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS2_RDKIT_MLPENS5_EVID,DS2,EVID_MLPENS5,True,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS2_RDKIT_MLP_HETERO,DS2,HETERO_MLP,True,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS2_RDKIT_MLPENS5_HETERO,DS2,HETERO_MLPENS5,True,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS2_RDKIT_MLP_MCDROPOUT,DS2,MCDROPOUT_MLP,True,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS2_RDKIT_MLPENS5_MCDROPOUT,DS2,MCDROPOUT_MLPENS5,True,False,False,False,False,False,active shared grid; winner not computed until five folds are complete
+DS2_RDKIT_MLP_BAYES_FULL,DS2,BAYES_FULL,True,False,True,False,False,False,active shared grid; winner not computed until five folds are complete
+DS2_RDKIT_MLPENS5_BAYES_FULL,DS2,BAYES_FULLENS5,True,False,True,False,False,False,active shared grid; winner not computed until five folds are complete
+DS2_RDKIT_SNGP,DS2,SNGP,True,False,False,True,False,False,active shared grid; winner not computed until five folds are complete
+DS2_RDKIT_SNGPENS5,DS2,SNGPENS5,True,False,False,True,False,False,active shared grid; winner not computed until five folds are complete
+DS2_RDKIT_GPR,DS2,GPR,False,False,False,False,False,False,exact GPR infeasible at DS1/DS2 n_train; use GPR_SPARSE
+DS2_RDKIT_GPR_SPARSE,DS2,GPR_SPARSE,True,False,False,False,True,False,active shared grid; winner not computed until five folds are complete
+DS2_GRAPH_DMPNN_EVID,DS2,CHEMPROP_EVIDENTIAL_NATIVE,True,True,False,False,False,False,active shared grid; winner not computed until five folds are complete

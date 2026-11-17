@@ -1,0 +1,52 @@
+{
+  "experiment_id": "ad_retention_study",
+  "spec_path": "configs\\experiments\\ad_retention_spec.yaml",
+  "retention_grid": [
+    0.1,
+    0.2,
+    0.25,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "primary_retention": 0.5,
+  "random_n_repeats": 20,
+  "random_seed": 0,
+  "chemprop_mahalanobis_default": "centroid",
+  "pooled_oof_forbidden": true,
+  "formal_risk_control": false,
+  "ds2_primary_error_ordering": "all_pair_mop_rmse",
+  "ds1_primary_error_ordering": "row_rmse",
+  "enrichment_10": "RMSE_random_10 / RMSE_score_10",
+  "ranking_k": "floor(r n)",
+  "tie_break": "score_asc_then_record_id",
+  "mahalanobis_feature_centroid_alias": "mahalanobis_joint",
+  "interpretation": "fixed_retention_rmse_is_error_ordering_diagnostic_not_screening_utility",
+  "jobs": [
+    {
+      "dataset": "DS1",
+      "model_id": "DS1_RDKIT_MLPENS5_EVID",
+      "ad_family": "workhorse"
+    },
+    {
+      "dataset": "DS2",
+      "model_id": "DS2_RDKIT_MLPENS5_HETERO",
+      "ad_family": "workhorse"
+    },
+    {
+      "dataset": "DS1",
+      "model_id": "DS1_GRAPH_DMPNN_EVID",
+      "ad_family": "chemprop"
+    },
+    {
+      "dataset": "DS2",
+      "model_id": "DS2_GRAPH_DMPNN_EVID",
+      "ad_family": "chemprop"
+    }
+  ]
+}

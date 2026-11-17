@@ -1,0 +1,13 @@
+# Evaluation-only release paths. Retraining is not required.
+
+grid: configs/active_grid.json
+registry: configs/experiments/active_registry.yaml
+shared_dmpnn: configs/shared_dmpnn.json
+
+checkpoints: checkpoints/active
+cv_metrics: results/cv_metrics
+workhorse_rule: results/model_audit/workhorse_selection_rule.json
+
+workhorse:
+  ds1: DS1_RDKIT_MLPENS5_EVID
+  ds2: DS2_RDKIT_MLPENS5_HETERO

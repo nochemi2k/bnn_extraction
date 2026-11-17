@@ -1,0 +1,13 @@
+{
+  "github": "https://github.com/Critical-Materials-Institute/stabilityconstant-ml-models",
+  "ref": "main",
+  "relative": "models/stability_constan_protonation_constant_model_M4/best_model",
+  "n_folds": 5,
+  "files": [
+    "checkpoints/cmi_published/M4_best_model/fold_0/model_0/model.pt",
+    "checkpoints/cmi_published/M4_best_model/fold_1/model_0/model.pt",
+    "checkpoints/cmi_published/M4_best_model/fold_2/model_0/model.pt",
+    "checkpoints/cmi_published/M4_best_model/fold_3/model_0/model.pt",
+    "checkpoints/cmi_published/M4_best_model/fold_4/model_0/model.pt"
+  ]
+}

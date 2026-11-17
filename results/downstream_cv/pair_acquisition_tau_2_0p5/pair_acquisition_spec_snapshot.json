@@ -1,0 +1,41 @@
+{
+  "experiment_id": "pair_acquisition_threshold_2_half",
+  "status": "active",
+  "scientific_question": "Using the same stored fold-local scores as the primary pair-acquisition study, does sigma-only top-k ranking recover ligands with observed high selectivity (target-direction Delta log K > 2) and ligands with near-zero selectivity (|Delta log K| < 0.5) on metal-species pairs that have more than 1 such event in the held-out fold?\n",
+  "estimand": "pair_task_event_precision_at_k_and_hit_at_k_threshold_sensitivity",
+  "replaces_primary": false,
+  "legacy_hit_rate_is_event_precision": true,
+  "true_hit_metric": "any_hit",
+  "high_threshold": 2.0,
+  "low_threshold": 0.5,
+  "not": [
+    "prospective_experimental_validation",
+    "replacement_of_figure_5_or_table_4",
+    "global_pooled_heldout_selection",
+    "distance_based_applicability_domain"
+  ],
+  "fold_locality": "required",
+  "pooled_oof_metrics": "forbidden",
+  "n_folds": 5,
+  "aggregation": "pair_equal_then_fold_mean_plus_sd_ddof1",
+  "random_seed": 0,
+  "random_n_repeats": 20,
+  "model": "DS2_RDKIT_MLPENS5_HETERO",
+  "ranking_inputs": [
+    "y_pred",
+    "sigma_total"
+  ],
+  "k_grid": [
+    1,
+    5,
+    10
+  ],
+  "output_dir": "results/downstream_cv/pair_acquisition_tau_2_0p5",
+  "limitations": [
+    "supporting sensitivity only",
+    "eligibility and event labels change with the threshold",
+    "threshold-margin ranking uses the same event thresholds",
+    "y_pred and LCB rankings do not use the event threshold except through changed pair-task pools",
+    "retrospective ranking, not prospective validation"
+  ]
+}

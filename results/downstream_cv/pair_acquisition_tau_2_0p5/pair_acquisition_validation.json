@@ -1,0 +1,31 @@
+{
+  "experiment_id": "pair_acquisition_threshold_2_half",
+  "pass": true,
+  "computation_status": "complete",
+  "pooled_oof_metrics": false,
+  "global_selection": false,
+  "distance_scores_used": false,
+  "model_id": "DS2_RDKIT_MLPENS5_HETERO",
+  "n_folds": 5,
+  "k_grid": [
+    1,
+    5,
+    10
+  ],
+  "strategies": [
+    "y_pred",
+    "lcb_1sigma",
+    "lcb_2sigma",
+    "lcb_3sigma",
+    "expected_improvement",
+    "random"
+  ],
+  "event_min_exclusive": 1,
+  "threshold": null,
+  "high_threshold": 2.0,
+  "low_threshold": 0.5,
+  "spec_path": "configs\\experiments\\pair_acquisition_threshold_sensitivity_spec.yaml",
+  "output_dir": "results\\downstream_cv\\pair_acquisition_tau_2_0p5",
+  "n_pair_task_rows": 32562,
+  "primary_pair_acquisition_unchanged": true
+}

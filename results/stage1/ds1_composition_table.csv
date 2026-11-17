@@ -1,0 +1,2 @@
+dataset,hplus_decision,train_policy,n_records,n_unique_ligands,n_metals,n_species_keys,family_breakdown,cmi_external_excluded,n_external_records,n_external_ligands,test_restriction,include_solvent_properties,electrolyte_in_X,metal_props_convention,rdkit_dimension,rdkit_n_selected
+DS1,train_with_H,Protonation (H+) records kept in training and in DS1; test metrics remain metal_complex-only. CMI external is not in DS1.,43388,4347,73,21684,"{'metal_complex': 32029, 'protonation': 11359}",True,398,40,metal_complex only for Stage 1b evaluation,True,False,row_level_cmi,203,187

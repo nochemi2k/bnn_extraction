@@ -1,0 +1,10 @@
+{
+  "experiment_id": "context_diagnostics",
+  "model_id": "DS2_RDKIT_MLPENS5_HETERO",
+  "computation_status": "complete",
+  "source": "results\\downstream_cv\\ad_retention\\fold_scores\\DS2_RDKIT_MLPENS5_HETERO",
+  "n_pair_fold_rows": 350,
+  "n_sign_fold_rows": 105,
+  "rank_correlation_used": false,
+  "pooled_oof_metrics": false
+}

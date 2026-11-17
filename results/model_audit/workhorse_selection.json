@@ -1,0 +1,64 @@
+{
+  "selection_type": "operational_accuracy_calibration_compromise",
+  "primary_accuracy_metric": "all_pair_mop_rmse",
+  "secondary_usage_metric": "ree_mop_rmse",
+  "calibration_metrics": [
+    "all_pair_picp_90",
+    "all_pair_ace"
+  ],
+  "calibration_screen": {
+    "name": "operational_calibration_usability_screen",
+    "picp_lower": 0.85,
+    "picp_upper": 0.95,
+    "ace_upper": 0.1,
+    "n_valid_folds_required": 5,
+    "formal_hypothesis_test": false
+  },
+  "pareto_objectives": [
+    "all_pair_mop_rmse",
+    "abs_picp_90_minus_0.90",
+    "all_pair_ace"
+  ],
+  "pareto_normalization": "minmax_among_pareto_set",
+  "pareto_selection": "closest_euclidean_to_ideal",
+  "r2_role": "auxiliary_diagnostic",
+  "sign_accuracy_role": "directional_diagnostic",
+  "row_level_metrics_used_for_selection": false,
+  "retraining_performed": false,
+  "selection_nested": false,
+  "composite_calibration_score_used": false,
+  "calibration_deviation_plot_is_visualization_aid_only": true,
+  "tie_breakers": [
+    "higher_all_pair_sign_accuracy",
+    "higher_all_pair_mop_r2",
+    "operational_simplicity"
+  ],
+  "risk_ordering_used": false,
+  "risk_ordering_reason": "Fold-local retention-curve AUC is not a grid-wide selection metric and is not used as a hidden selection key.",
+  "require_complete_native_uq_for_operational_eligibility": true,
+  "chemprop_native_evidential_scientific_comparator": true,
+  "chemprop_native_evidential_operational_candidate": false,
+  "chemprop_invalid_nig_rows": 13,
+  "partial_uq_picp_ace_conditional_on_valid_rows": true,
+  "selected": "DS2_RDKIT_MLPENS5_HETERO",
+  "ranked": [
+    "DS2_RDKIT_MLPENS5_HETERO",
+    "DS2_RDKIT_MLPENS5_EVID",
+    "DS2_RDKIT_MLP_HETERO",
+    "DS2_RDKIT_MLP_MCDROPOUT"
+  ],
+  "pareto_front": [
+    "DS2_RDKIT_MLPENS5_EVID",
+    "DS2_RDKIT_MLPENS5_HETERO",
+    "DS2_RDKIT_MLP_HETERO",
+    "DS2_RDKIT_MLP_MCDROPOUT"
+  ],
+  "skipped": [],
+  "winner_computed": true,
+  "input": "fold_metric_summary_only",
+  "description": "the best operational compromise among the evaluated models under the declared all-pair interval-usability screen and the RMSE\u2013PICP\u2013ACE Pareto rule",
+  "not_a_statistical_test": true,
+  "not_universal_superiority": true,
+  "rerun_after_metric_corrections": true,
+  "rerun_utc": "2026-08-20T09:17:07.097254+00:00"
+}

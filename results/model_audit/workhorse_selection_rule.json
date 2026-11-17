@@ -1,0 +1,56 @@
+{
+  "selection_type": "operational_accuracy_calibration_compromise",
+  "primary_accuracy_metric": "all_pair_mop_rmse",
+  "primary_metric": "all_pairs_mean_of_pairs_RMSE",
+  "secondary_usage_metric": "ree_mop_rmse",
+  "primary_aggregation": "fold_mean",
+  "evaluation_units": "heldout_fold",
+  "ranking_aggregation": "mean_of_pairs",
+  "calibration_metrics": [
+    "all_pair_picp_90",
+    "all_pair_ace"
+  ],
+  "calibration_screen": {
+    "name": "operational_calibration_usability_screen",
+    "picp_lower": 0.85,
+    "picp_upper": 0.95,
+    "ace_upper": 0.1,
+    "n_valid_folds_required": 5,
+    "formal_hypothesis_test": false
+  },
+  "r2_role": "auxiliary_diagnostic",
+  "sign_accuracy_role": "directional_diagnostic",
+  "row_level_metrics_used_for_selection": false,
+  "retraining_performed": false,
+  "selection_nested": false,
+  "pooled_concatenation_forbidden": true,
+  "pareto_objectives": [
+    "all_pair_mop_rmse",
+    "abs_picp_90_minus_0.90",
+    "all_pair_ace"
+  ],
+  "pareto_normalization": "minmax_among_pareto_set",
+  "pareto_selection": "closest_euclidean_to_ideal",
+  "tie_breakers": [
+    "higher_all_pair_sign_accuracy",
+    "higher_all_pair_MoP_R2",
+    "operational_simplicity"
+  ],
+  "chemprop_native_evidential_eligible": true,
+  "chemprop_native_evidential_operational_candidate": false,
+  "chemprop_mc_dropout_eligible": false,
+  "variational_bnn_eligible": true,
+  "sngp_eligible": true,
+  "gpr_sparse_eligible": true,
+  "exact_gpr_eligible": false,
+  "require_complete_native_uq_for_operational_eligibility": true,
+  "pair_balanced_global_primary": false,
+  "composite_calibration_score_used": false,
+  "picp_gate_070_obsolete": true,
+  "selection_input": "fold_metrics_only",
+  "forbidden_fields": [
+    "concatenated_cv_value",
+    "pooled_heldout_value"
+  ],
+  "note": "The DS2 workhorse is selected as an operational accuracy\u2013interval-usability compromise. Candidate models must have complete five-fold all-pair MoP accuracy metrics and usable all-pair predictive-interval calibration. Among candidates satisfying the operational interval-usability screen (0.85 \u2264 row-level PICP@90 \u2264 0.95 and row-level ACE \u2264 0.10, n_valid_folds=5), the Pareto front is formed on all-pair MoP RMSE (lower better), |row-level PICP@90-0.90| (lower better), and row-level ACE (lower better). A model dominates another if it is no worse on all three objectives and strictly better on at least one. The selected model is the front member closest to the ideal point after min-max normalization among the Pareto set, using Euclidean distance. Restricted rare-earth-element pair MoP RMSE is a chemically focused usage example and does not determine selection. MoP R2 is an auxiliary diagnostic; sign accuracy is a directional diagnostic used only for remaining distance ties. This is not a formal statistical test. Row-level RMSE and R2 are not used for selection. PICP and ACE used by the screen and Pareto rule are row-level (marginal) coverage metrics. Chemprop partial native-UQ status is preserved; complete native UQ is required for operational workhorse eligibility. Selection is not nested."
+}

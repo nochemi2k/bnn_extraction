@@ -1,0 +1,55 @@
+{
+  "model_id": "M4_GRAPH_DMPNN_POINT_cmisplit",
+  "split": "cmi_official_split",
+  "evaluations": {
+    "cmi_test": {
+      "all_records": {
+        "r2": 0.9183880757990588,
+        "mae": 0.8024281036591542,
+        "spearman": 0.9555407632633669,
+        "n": 4338.0
+      },
+      "metal_complex_only": {
+        "r2": 0.9175236724471242,
+        "mae": 0.8938424327503547,
+        "spearman": 0.9533294768057557,
+        "n": 3124.0
+      }
+    },
+    "cmi_ext": {
+      "all_records": {
+        "r2": 0.8943908387990993,
+        "mae": 1.2781604045589303,
+        "spearman": 0.9356816180827472,
+        "n": 398.0
+      },
+      "metal_complex_only": {
+        "r2": 0.903295831725293,
+        "mae": 1.2773623017344207,
+        "spearman": 0.9400568209460348,
+        "n": 341.0
+      },
+      "feature_note": "CMI validation/ext medium features contain NaNs; imputed with train-split column medians before predict."
+    }
+  },
+  "cmi_published": {
+    "cmi_published_m4_test_mae": 0.599,
+    "cmi_published_m4_test_r2": 0.934,
+    "cmi_published_m4_ext_mae": 0.834,
+    "cmi_published_m4_ext_r2": 0.942,
+    "note": "Karunaratne et al. JCIM 2025 Table 1: 'test' metrics are 5-fold CV averages (\u00b1); 'ext' metrics are external-set ensemble predictions. Our cmisplit run is a single from-scratch retrain on the published train assignment; compare especially to ext (validation file, 398 rows) and to test file (4338 rows) as open observations."
+  },
+  "comparison": {
+    "vs_published_ext_r2": {
+      "ours": 0.8943908387990993,
+      "published": 0.942,
+      "diff_ours_minus_published": -0.04760916120090064
+    },
+    "vs_published_ext_mae": {
+      "ours": 1.2781604045589303,
+      "published": 0.834,
+      "diff_ours_minus_published": 0.44416040455893036
+    },
+    "vs_published_test_r2_note": "Published test R2 is a 5-fold CV mean; our single-split test-file R2 is 0.9184 vs published 0.934"
+  }
+}

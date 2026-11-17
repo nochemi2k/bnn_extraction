@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: If you use this repository, please cite the manuscript.
+title: "Applicability domains as testable claims: predictive uncertainty against molecular similarity for metal–ligand selectivity"
+authors:
+  - family-names: TBD
+    given-names: TBD
+type: article
+license: TBD
+repository-code: "https://github.com/nochemi2k/bnn_extraction"
+abstract: >
+  An applicability domain is usually drawn as a region of resemblance to the
+  training set, computed from the molecule alone, and the same notion decides how
+  benchmarks are split. This work recasts it as a testable claim: a criterion earns
+  standing only when the predictions it calls safe prove more accurate than an
+  equally sized random selection, judged on a population the criterion did not
+  itself choose. Applied to metal-ligand selectivity under ligand-disjoint
+  validation, the standard similarity criteria fail that test while the model's own
+  predictive uncertainty passes it, cutting held-out error by two thirds at half
+  retention and raising the yield of a one-ligand experiment from 64% to 83%.
+preferred-citation:
+  type: article
+  title: "Applicability domains as testable claims: predictive uncertainty against molecular similarity for metal–ligand selectivity"
+  authors:
+    - family-names: TBD
+      given-names: TBD
+  year: 2026
+  notes: Citation placeholder pending journal assignment.

@@ -1,0 +1,9 @@
+score_name,definition,fit_partition,orientation
+sigma_total,sqrt(var_aleatoric + var_epistemic_within + var_epistemic_between) from audited workhorse,none_model_output,higher_is_greater_risk
+sigma_epistemic_within,within-member evidential epistemic sigma,none_model_output,higher_is_greater_risk
+sigma_epistemic_between,between-member disagreement sigma (ddof=0),none_model_output,higher_is_greater_risk
+sigma_aleatoric,aleatoric sigma from NIG ensemble mean,none_model_output,higher_is_greater_risk
+tanimoto_nn_distance,"1 - max Tanimoto similarity to outer-training ligands (Morgan r=2, 2048 bits)",outer_train,higher_is_greater_risk
+tanimoto_median_distance,"median_z (1 - Tanimoto(x,z)) over outer-training ligands",outer_train,higher_is_greater_risk
+mahalanobis_joint,sqrt((x-mu)^T Sigma^{-1}(x-mu)) Ledoit-Wolf on outer-train scaled features,outer_train,higher_is_greater_risk
+pair_density_risk,1/(1+n_training_ligands_for_species_pair),outer_train,higher_is_greater_risk

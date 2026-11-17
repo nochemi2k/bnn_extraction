@@ -1,0 +1,55 @@
+{
+  "experiment_id": "ad_distance_error_corr",
+  "model_id": [
+    "DS2_RDKIT_MLPENS5_HETERO",
+    "DS2_GRAPH_DMPNN_EVID"
+  ],
+  "computation_status": "complete",
+  "source": [
+    "results\\downstream_cv\\ad_retention\\fold_scores\\DS2_RDKIT_MLPENS5_HETERO",
+    "results\\downstream_cv\\ad_retention\\fold_scores\\DS2_GRAPH_DMPNN_EVID"
+  ],
+  "n_fold_rows": 540,
+  "error_definition": "row_level_absolute_residual",
+  "score_names": {
+    "DS2_RDKIT_MLPENS5_HETERO": [
+      "tanimoto_nn_distance",
+      "mahalanobis_feature_centroid",
+      "tanimoto_median_distance",
+      "tanimoto_knn_mean_5",
+      "tanimoto_knn_mean_10",
+      "mahalanobis_feature_nn",
+      "mahalanobis_feature_knn_mean_5",
+      "mahalanobis_feature_knn_mean_10",
+      "euclidean_feature_nn",
+      "euclidean_feature_median"
+    ],
+    "DS2_GRAPH_DMPNN_EVID": [
+      "tanimoto_nn_distance",
+      "mahalanobis_feature_centroid",
+      "tanimoto_median_distance",
+      "tanimoto_knn_mean_5",
+      "tanimoto_knn_mean_10",
+      "mahalanobis_feature_nn",
+      "mahalanobis_feature_knn_mean_5",
+      "mahalanobis_feature_knn_mean_10",
+      "euclidean_feature_nn",
+      "euclidean_feature_median",
+      "chemprop_std_euclidean_nn",
+      "chemprop_std_euclidean_knn_5",
+      "chemprop_std_euclidean_knn_10",
+      "chemprop_euclidean_nn",
+      "chemprop_cosine_nn",
+      "chemprop_mahalanobis_centroid",
+      "chemprop_mahalanobis_nn"
+    ]
+  },
+  "scopes": [
+    "all_pairs",
+    "ree_pairs"
+  ],
+  "min_n": 10,
+  "used_for_selection": false,
+  "rank_correlation_role": "si_diagnostic_only",
+  "pooled_oof_metrics": false
+}

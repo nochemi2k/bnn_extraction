@@ -1,0 +1,30 @@
+{
+  "n_records": 43388,
+  "n_unique_ligands": 4347,
+  "n_metals": 73,
+  "n_species_keys": 21684,
+  "n_experiment_keys": 35645,
+  "n_multi_replicate_keys": 4677,
+  "replicate_spread_median_multi": 0.08999999999999986,
+  "replicate_spread_mean_multi": 0.326574941201625,
+  "stratum_counts_keys": {
+    "agree": 2997,
+    "soft_disagreement": 1266,
+    "hard_disagreement": 414
+  },
+  "hard_disagreement_rate_by_family": {
+    "protonation": 0.028238182934315532,
+    "metal_complex": 0.12073490813648294
+  },
+  "family_counts": {
+    "metal_complex": 32029,
+    "protonation": 11359
+  },
+  "cmi_external_excluded": true,
+  "aleatoric_noise_floor": 0.04171930009000611,
+  "aleatoric_noise_floor_mean_std": 0.10130936015127355,
+  "replicate_spread_median_agree": 0.019999999999999574,
+  "metal_complex_logK_variance": 30.138103749545166,
+  "r2_ceiling_from_noise_floor": 0.9999422491867948,
+  "hard_disagreement_key_fraction": 0.0885182809493265
+}

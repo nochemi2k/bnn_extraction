@@ -1,0 +1,12 @@
+experiment_id,dataset,status,failure_reason,artifact_path,model_id,outer_fold_id,fold_id,member_id
+upstream_workhorse,DS2,pass,,results\downstream_cv\upstream_manifest.csv,MLPENS5_EVID,ALL,ALL,ALL
+nested_crc,DS2,not_computed,obsolete_experiment_removed,,MLPENS5_EVID,ALL,ALL,ALL
+ad_risk_ordering,DS2,pass,,results\downstream_cv\ad,MLPENS5_EVID,ALL,ALL,ALL
+ad_score_selection,DS2,pass,predeclared_comparison_no_winner,results\downstream_cv\ad\ad_score_definitions.csv,MLPENS5_EVID,ALL,ALL,ALL
+pair_density,DS2,pass,,results\downstream_cv\pair_density,MLPENS5_EVID,ALL,ALL,ALL
+sign_stability,DS2,pass,,results\downstream_cv\sign_stability,MLPENS5_EVID,ALL,ALL,ALL
+replicate_spread,DS2,not_applicable,not_identifiable_under_ligand_disjoint_split,results\downstream_cv\replicate_spread,MLPENS5_EVID,ALL,ALL,ALL
+ligand_only_mahalanobis,DS2,not_applicable,optional_score_not_selected_predeclared_joint_space_only,results\downstream_cv\ad,MLPENS5_EVID,ALL,ALL,ALL
+medium_strata_electrolyte_seen,DS2,not_applicable,non_identifiable_under_current_split,results\downstream_cv\ad\ad_medium_identifiability.csv,MLPENS5_EVID,ALL,ALL,ALL
+medium_strata_ligand_medium_seen,DS2,not_applicable,non_identifiable_under_current_split,results\downstream_cv\ad\ad_medium_identifiability.csv,MLPENS5_EVID,ALL,ALL,ALL
+medium_strata_metal_medium_seen,DS2,pass,,results\downstream_cv\ad\ad_medium_identifiability.csv,MLPENS5_EVID,ALL,ALL,ALL
