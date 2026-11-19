@@ -126,6 +126,8 @@ results/downstream_cv/pair_acquisition_tau_2_0p5/pair_acquisition_fold_metrics.c
 *.npy
 *.parquet
 *.feather
+# External-validation checkpoints are the curated, verified release artifacts.
+!external_validation/weights/**/*.pt
 # (The rdkit_ds1/rdkit_ds2 npz un-ignore rules were removed: those trees are now packed
 #  into artifacts/data_features.7z rather than committed.)
 

@@ -1,0 +1,195 @@
+{
+  "status": "complete",
+  "dataset": "lanthanide log separation factor",
+  "model_training_performed": false,
+  "tanimoto": "1 minus maximum ligand-ECFP Tanimoto similarity to any outer-training ligand",
+  "mahalanobis": "training-centroid Ledoit-Wolf distance in standardized joint ligand-RDKit + 21 condition + both-metal descriptor block; ECFP excluded",
+  "half_retention": {
+    "mahalanobis": {
+      "n_folds": 5,
+      "row_rmse_fold_mean": 0.6573481045821025,
+      "row_mae_fold_mean": 0.45019361631162375,
+      "metal_pair_balanced_rmse_fold_mean": 0.5839664018361629,
+      "condition_id_balanced_rmse_fold_mean": 0.47883060596823795,
+      "ligand_id_balanced_rmse_fold_mean": 0.4902661537753831,
+      "row_rmse_fold_sd": 0.35604047924470383,
+      "row_mae_fold_sd": 0.1947146151337745,
+      "metal_pair_balanced_rmse_fold_sd": 0.27162184337890527,
+      "condition_id_balanced_rmse_fold_sd": 0.15726965124103987,
+      "ligand_id_balanced_rmse_fold_sd": 0.19939198249579962
+    },
+    "random": {
+      "n_folds": 5,
+      "row_rmse_fold_mean": 0.7525364538113932,
+      "row_mae_fold_mean": 0.5089404568438989,
+      "metal_pair_balanced_rmse_fold_mean": 0.6565495738100753,
+      "condition_id_balanced_rmse_fold_mean": 0.6188167957767261,
+      "ligand_id_balanced_rmse_fold_mean": 0.5934097839593226,
+      "row_rmse_fold_sd": 0.1369824258459838,
+      "row_mae_fold_sd": 0.055297581286221,
+      "metal_pair_balanced_rmse_fold_sd": 0.09516072686677687,
+      "condition_id_balanced_rmse_fold_sd": 0.12561965982722062,
+      "ligand_id_balanced_rmse_fold_sd": 0.14952516172068842
+    },
+    "tanimoto": {
+      "n_folds": 5,
+      "row_rmse_fold_mean": 0.7296269279352734,
+      "row_mae_fold_mean": 0.5135233363143541,
+      "metal_pair_balanced_rmse_fold_mean": 0.6339556704132805,
+      "condition_id_balanced_rmse_fold_mean": 0.5358185990901894,
+      "ligand_id_balanced_rmse_fold_mean": 0.5429205847263074,
+      "row_rmse_fold_sd": 0.31437589356224094,
+      "row_mae_fold_sd": 0.16383661487602683,
+      "metal_pair_balanced_rmse_fold_sd": 0.20947883643874007,
+      "condition_id_balanced_rmse_fold_sd": 0.18856893006342226,
+      "ligand_id_balanced_rmse_fold_sd": 0.20618015412982957
+    },
+    "uncertainty": {
+      "n_folds": 5,
+      "row_rmse_fold_mean": 0.5073854533493626,
+      "row_mae_fold_mean": 0.34351566808307454,
+      "metal_pair_balanced_rmse_fold_mean": 0.45992625441597373,
+      "condition_id_balanced_rmse_fold_mean": 0.3982507265070272,
+      "ligand_id_balanced_rmse_fold_mean": 0.4198477054779066,
+      "row_rmse_fold_sd": 0.1243034769620754,
+      "row_mae_fold_sd": 0.04490434477340533,
+      "metal_pair_balanced_rmse_fold_sd": 0.07820382241615267,
+      "condition_id_balanced_rmse_fold_sd": 0.05351016239513148,
+      "ligand_id_balanced_rmse_fold_sd": 0.08603544611358604
+    }
+  },
+  "bootstrap": [
+    {
+      "retention": 0.25,
+      "cluster": "condition_id",
+      "comparator": "random",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 1,
+      "point_uncertainty_minus_comparator_rmse": -0.3676261082251447,
+      "ci95_low": -0.4723603870412811,
+      "ci95_high": -0.2644888283402509,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.25,
+      "cluster": "ligand_id",
+      "comparator": "random",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 1,
+      "point_uncertainty_minus_comparator_rmse": -0.3676261082251447,
+      "ci95_low": -0.47838919931454205,
+      "ci95_high": -0.2543191977405287,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.25,
+      "cluster": "condition_id",
+      "comparator": "tanimoto",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 12,
+      "point_uncertainty_minus_comparator_rmse": -0.3576524845870205,
+      "ci95_low": -0.5232003266564961,
+      "ci95_high": -0.20231533580931377,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.25,
+      "cluster": "condition_id",
+      "comparator": "mahalanobis",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 28,
+      "point_uncertainty_minus_comparator_rmse": -0.2682095238608334,
+      "ci95_low": -0.42036357690361337,
+      "ci95_high": -0.07061889809135055,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.5,
+      "cluster": "condition_id",
+      "comparator": "random",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 0,
+      "point_uncertainty_minus_comparator_rmse": -0.24515100046203062,
+      "ci95_low": -0.3319523267566416,
+      "ci95_high": -0.16324255292755183,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.5,
+      "cluster": "ligand_id",
+      "comparator": "random",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 0,
+      "point_uncertainty_minus_comparator_rmse": -0.24515100046203067,
+      "ci95_low": -0.3383816888952162,
+      "ci95_high": -0.15906510258889883,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.5,
+      "cluster": "condition_id",
+      "comparator": "tanimoto",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 0,
+      "point_uncertainty_minus_comparator_rmse": -0.22224147458591084,
+      "ci95_low": -0.3102708252801917,
+      "ci95_high": -0.12584775617149654,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.5,
+      "cluster": "condition_id",
+      "comparator": "mahalanobis",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 0,
+      "point_uncertainty_minus_comparator_rmse": -0.1499626512327399,
+      "ci95_low": -0.25982358260653615,
+      "ci95_high": -0.021222480077195027,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.75,
+      "cluster": "condition_id",
+      "comparator": "random",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 0,
+      "point_uncertainty_minus_comparator_rmse": -0.14714207332238347,
+      "ci95_low": -0.23250544799887285,
+      "ci95_high": -0.07149528455288494,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.75,
+      "cluster": "ligand_id",
+      "comparator": "random",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 0,
+      "point_uncertainty_minus_comparator_rmse": -0.14714207332238347,
+      "ci95_low": -0.23945185906372274,
+      "ci95_high": -0.06916975691485054,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.75,
+      "cluster": "condition_id",
+      "comparator": "tanimoto",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 0,
+      "point_uncertainty_minus_comparator_rmse": -0.16632251327927133,
+      "ci95_low": -0.25074229686842225,
+      "ci95_high": -0.08757355925340811,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.75,
+      "cluster": "condition_id",
+      "comparator": "mahalanobis",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 0,
+      "point_uncertainty_minus_comparator_rmse": -0.12849619258233114,
+      "ci95_low": -0.24306840169387936,
+      "ci95_high": -0.02339118573737294,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    }
+  ]
+}

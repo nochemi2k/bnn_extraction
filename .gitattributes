@@ -42,8 +42,8 @@
 #
 # Only the packed archives under artifacts/. Unpacked trees are gitignored and
 # are restored with scripts/unpack_artifacts.ps1; see artifacts/README.md.
-# Nothing else in this repository is large enough to need LFS: the biggest
-# tracked file is under 6 MB.
+# External-validation member checkpoints are below GitHub's per-file limit and
+# are tracked directly so each fold/member can be loaded without an archive.
 # ---------------------------------------------------------------------------
 artifacts/*.7z filter=lfs diff=lfs merge=lfs -text
 

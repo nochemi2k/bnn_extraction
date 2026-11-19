@@ -1,0 +1,10 @@
+retention,cluster,comparator,n_bootstrap,n_resamples_rejected_empty,point_uncertainty_minus_comparator_rmse,ci95_low,ci95_high,interpretation
+0.25,solute_smiles,random,2000,0,-0.1434126025087722,-0.1791629077648854,-0.10997621734738205,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.25,solute_smiles,tanimoto,2000,0,-0.09817820631927973,-0.16034851930319863,-0.0381579755296844,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.25,solute_smiles,mahalanobis,2000,0,-0.08938712299228724,-0.15273743906174125,-0.025807949336545767,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.5,solute_smiles,random,2000,0,-0.12073231613322104,-0.14321753909515203,-0.0972499016339854,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.5,solute_smiles,tanimoto,2000,0,-0.07408601119753078,-0.11590802364089822,-0.032318249974965275,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.5,solute_smiles,mahalanobis,2000,0,-0.07603931598106936,-0.11218253107480337,-0.04065774440680385,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.75,solute_smiles,random,2000,0,-0.08586940813767334,-0.10406286237967713,-0.06940839682967667,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.75,solute_smiles,tanimoto,2000,0,-0.06030097966077608,-0.08674569162604971,-0.03542023454794174,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.75,solute_smiles,mahalanobis,2000,0,-0.049293050258085724,-0.07263303895080836,-0.025806919498768247,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn

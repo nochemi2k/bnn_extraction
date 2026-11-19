@@ -1,0 +1,20 @@
+{
+  "recorded_from": "the environment used for the completed analyses",
+  "python": "3.11.9",
+  "platform": "Windows 10 x64",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.1.4",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.3.2",
+    "torch": "2.11.0+cu128",
+    "rdkit": "2023.9.6",
+    "openpyxl": "3.1.5"
+  },
+  "notes": [
+    "Fixed-prediction evaluation requires only numpy and pandas.",
+    "Preparation additionally requires scipy, scikit-learn, RDKit, and openpyxl as applicable.",
+    "Training and checkpoint inference additionally require PyTorch and the repository's existing src/uq_remake implementation and configs.",
+    "Numerical checkpoint verification uses the original CUDA MC-dropout protocol; CPU inference uses a different dropout random stream."
+  ]
+}

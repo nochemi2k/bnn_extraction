@@ -1,0 +1,138 @@
+{
+  "status": "complete",
+  "dataset": "lanthanide log separation factor",
+  "n_rows": 6298,
+  "full_model": {
+    "n_folds": 5,
+    "row_rmse_fold_mean": 0.7569524979775736,
+    "row_mae_fold_mean": 0.5114883950509559,
+    "metal_pair_balanced_rmse_fold_mean": 0.6829936481201775,
+    "condition_id_balanced_rmse_fold_mean": 0.6261058855198081,
+    "ligand_id_balanced_rmse_fold_mean": 0.6237137471904154,
+    "picp_90_fold_mean": 0.8295415170811431,
+    "mean_interval_width_90_fold_mean": 1.9795802215100657,
+    "median_interval_width_90_fold_mean": 1.7188818763889775,
+    "interval_score_90_fold_mean": 3.876977340660536,
+    "row_rmse_fold_sd": 0.1444382520397299,
+    "row_mae_fold_sd": 0.05871720217909638,
+    "metal_pair_balanced_rmse_fold_sd": 0.10770679715575028,
+    "condition_id_balanced_rmse_fold_sd": 0.12186700184711854,
+    "ligand_id_balanced_rmse_fold_sd": 0.19031365345584186,
+    "picp_90_fold_sd": 0.13179270190958023,
+    "mean_interval_width_90_fold_sd": 0.7920586571074015,
+    "median_interval_width_90_fold_sd": 0.59436401441311,
+    "interval_score_90_fold_sd": 0.9338955445419395
+  },
+  "training_metal_pair_mean_dummy": {
+    "n_folds": 5,
+    "row_rmse_fold_mean": 1.0469592203583136,
+    "row_mae_fold_mean": 0.7075981435641299,
+    "metal_pair_balanced_rmse_fold_mean": 0.8886776505225977,
+    "condition_id_balanced_rmse_fold_mean": 0.8003699522275356,
+    "row_rmse_fold_sd": 0.16187853094812024,
+    "row_mae_fold_sd": 0.08544402898385353,
+    "metal_pair_balanced_rmse_fold_sd": 0.12104159200948308,
+    "condition_id_balanced_rmse_fold_sd": 0.15387148844375467
+  },
+  "half_retention": {
+    "random": {
+      "n_folds": 5,
+      "row_rmse_fold_mean": 0.7525364538113932,
+      "row_mae_fold_mean": 0.5089404568438989,
+      "metal_pair_balanced_rmse_fold_mean": 0.6565495738100753,
+      "condition_id_balanced_rmse_fold_mean": 0.6188167957767261,
+      "ligand_id_balanced_rmse_fold_mean": 0.5934097839593226,
+      "row_rmse_fold_sd": 0.1369824258459838,
+      "row_mae_fold_sd": 0.055297581286221,
+      "metal_pair_balanced_rmse_fold_sd": 0.09516072686677687,
+      "condition_id_balanced_rmse_fold_sd": 0.12561965982722062,
+      "ligand_id_balanced_rmse_fold_sd": 0.14952516172068842
+    },
+    "uncertainty": {
+      "n_folds": 5,
+      "row_rmse_fold_mean": 0.5073854533493626,
+      "row_mae_fold_mean": 0.34351566808307454,
+      "metal_pair_balanced_rmse_fold_mean": 0.45992625441597373,
+      "condition_id_balanced_rmse_fold_mean": 0.3982507265070272,
+      "ligand_id_balanced_rmse_fold_mean": 0.4198477054779066,
+      "row_rmse_fold_sd": 0.1243034769620754,
+      "row_mae_fold_sd": 0.04490434477340533,
+      "metal_pair_balanced_rmse_fold_sd": 0.07820382241615267,
+      "condition_id_balanced_rmse_fold_sd": 0.05351016239513148,
+      "ligand_id_balanced_rmse_fold_sd": 0.08603544611358604
+    }
+  },
+  "bootstrap": [
+    {
+      "retention": 0.25,
+      "cluster": "condition_id",
+      "comparator": "random",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 1,
+      "point_uncertainty_minus_comparator_rmse": -0.3676261082251447,
+      "ci95_low": -0.4723603870412811,
+      "ci95_high": -0.2644888283402509,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.25,
+      "cluster": "ligand_id",
+      "comparator": "random",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 1,
+      "point_uncertainty_minus_comparator_rmse": -0.3676261082251447,
+      "ci95_low": -0.47838919931454205,
+      "ci95_high": -0.2543191977405287,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.5,
+      "cluster": "condition_id",
+      "comparator": "random",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 0,
+      "point_uncertainty_minus_comparator_rmse": -0.24515100046203062,
+      "ci95_low": -0.3319523267566416,
+      "ci95_high": -0.16324255292755183,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.5,
+      "cluster": "ligand_id",
+      "comparator": "random",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 0,
+      "point_uncertainty_minus_comparator_rmse": -0.24515100046203067,
+      "ci95_low": -0.3383816888952162,
+      "ci95_high": -0.15906510258889883,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.75,
+      "cluster": "condition_id",
+      "comparator": "random",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 0,
+      "point_uncertainty_minus_comparator_rmse": -0.14714207332238347,
+      "ci95_low": -0.23250544799887285,
+      "ci95_high": -0.07149528455288494,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    },
+    {
+      "retention": 0.75,
+      "cluster": "ligand_id",
+      "comparator": "random",
+      "n_bootstrap": 2000,
+      "n_resamples_rejected_empty": 0,
+      "point_uncertainty_minus_comparator_rmse": -0.14714207332238347,
+      "ci95_low": -0.23945185906372274,
+      "ci95_high": -0.06916975691485054,
+      "interpretation": "negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn"
+    }
+  ],
+  "bootstrap_scope": "condition-cell primary and ligand sensitivity, stratified by outer fold, 2000 replicates; fixed selected sets; no retraining variability",
+  "condition_signature": "all 21 condition fields; ligand and reference excluded; exact matching only",
+  "diluent_signature": "two solvent volume ratios and all 16 solvent-property fields; exact matching only",
+  "balanced_metric_rule": "per-group RMSE then unweighted mean; minimum three rows for metal pairs and ligands; all condition cells",
+  "canonical_outputs_modified": false
+}

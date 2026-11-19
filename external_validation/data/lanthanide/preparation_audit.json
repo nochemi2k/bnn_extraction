@@ -1,0 +1,16 @@
+{
+  "n_historical_pairs": 6298,
+  "n_prospective_pairs": 364,
+  "n_historical_ligands_with_pairs": 76,
+  "n_prospective_ligands": 4,
+  "feature_dimension": 2305,
+  "features": "released 2048 ECFP + 208 RDKit + 21 conditions + 14 metal descriptors per oriented metal",
+  "excluded_from_features": [
+    "log_D",
+    "reference",
+    "source",
+    "prospective information"
+  ],
+  "target": "logD_x - logD_y, increasing atomic-number orientation",
+  "split": "five ligand-full-feature-disjoint outer folds; 20% outer-training ligands for validation"
+}

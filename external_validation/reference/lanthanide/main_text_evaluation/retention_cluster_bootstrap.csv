@@ -1,0 +1,7 @@
+retention,cluster,comparator,n_bootstrap,n_resamples_rejected_empty,point_uncertainty_minus_comparator_rmse,ci95_low,ci95_high,interpretation
+0.25,condition_id,random,2000,1,-0.3676261082251447,-0.4723603870412811,-0.2644888283402509,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.25,ligand_id,random,2000,1,-0.3676261082251447,-0.47838919931454205,-0.2543191977405287,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.5,condition_id,random,2000,0,-0.24515100046203062,-0.3319523267566416,-0.16324255292755183,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.5,ligand_id,random,2000,0,-0.24515100046203067,-0.3383816888952162,-0.15906510258889883,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.75,condition_id,random,2000,0,-0.14714207332238347,-0.23250544799887285,-0.07149528455288494,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.75,ligand_id,random,2000,0,-0.14714207332238347,-0.23945185906372274,-0.06916975691485054,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn

@@ -1,0 +1,13 @@
+retention,cluster,comparator,n_bootstrap,n_resamples_rejected_empty,point_uncertainty_minus_comparator_rmse,ci95_low,ci95_high,interpretation
+0.25,condition_id,random,2000,1,-0.3676261082251447,-0.4723603870412811,-0.2644888283402509,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.25,ligand_id,random,2000,1,-0.3676261082251447,-0.47838919931454205,-0.2543191977405287,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.25,condition_id,tanimoto,2000,12,-0.3576524845870205,-0.5232003266564961,-0.20231533580931377,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.25,condition_id,mahalanobis,2000,28,-0.2682095238608334,-0.42036357690361337,-0.07061889809135055,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.5,condition_id,random,2000,0,-0.24515100046203062,-0.3319523267566416,-0.16324255292755183,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.5,ligand_id,random,2000,0,-0.24515100046203067,-0.3383816888952162,-0.15906510258889883,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.5,condition_id,tanimoto,2000,0,-0.22224147458591084,-0.3102708252801917,-0.12584775617149654,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.5,condition_id,mahalanobis,2000,0,-0.1499626512327399,-0.25982358260653615,-0.021222480077195027,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.75,condition_id,random,2000,0,-0.14714207332238347,-0.23250544799887285,-0.07149528455288494,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.75,ligand_id,random,2000,0,-0.14714207332238347,-0.23945185906372274,-0.06916975691485054,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.75,condition_id,tanimoto,2000,0,-0.16632251327927133,-0.25074229686842225,-0.08757355925340811,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn
+0.75,condition_id,mahalanobis,2000,0,-0.12849619258233114,-0.24306840169387936,-0.02339118573737294,negative favors uncertainty; conditional on fixed selected sets; empty paired resamples redrawn

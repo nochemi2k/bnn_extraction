@@ -1,0 +1,23 @@
+{
+  "rdkit_version": "2023.09.6",
+  "target": "LogS(mol/L)",
+  "filter_counts": {
+    "raw_rows": 125752,
+    "after_finite_target_temperature": 122249,
+    "after_non_equilibrium_exclusion": 120899,
+    "after_observed_phase_change_exclusion": 119044,
+    "excluded_invalid_solute_rows": 0,
+    "excluded_invalid_solvent_rows": 0,
+    "after_valid_descriptors": 119044,
+    "after_exact_replicate_median": 119043,
+    "exact_replicate_rows_collapsed": 1,
+    "solutes": 1581,
+    "solvents": 72,
+    "sources": 1792
+  },
+  "invalid_structures_excluded": [],
+  "replicate_rule": "median LogS only within canonical solute + canonical solvent + temperature + source + solid_form_label",
+  "protocol_rule": "exclude known synthetic/dynamic solubility and observed phase changes; retain unknown/not_checked optional metadata",
+  "split_rule": "five canonical-solute-disjoint GroupKFold outer folds; 20% of outer-training solutes for validation",
+  "feature_rule": "fixed 187-name RDKit selection for both solute and solvent plus temperature; train-only scaling"
+}

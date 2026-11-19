@@ -1,0 +1,72 @@
+{
+  "fold0": {
+    "fold": "fold0",
+    "feature_dimension": 2305,
+    "preprocessing": "train-only StandardScaler; no imputation; no PCA",
+    "n_train": 4179,
+    "n_val": 859,
+    "n_test": 1260,
+    "n_train_ligands": 48,
+    "n_val_ligands": 13,
+    "n_test_ligands": 15,
+    "n_prospective": 364,
+    "metal_orientation": "increasing atomic number; direct logD_x - logD_y target",
+    "feature_schema": "feature_names.json"
+  },
+  "fold1": {
+    "fold": "fold1",
+    "feature_dimension": 2305,
+    "preprocessing": "train-only StandardScaler; no imputation; no PCA",
+    "n_train": 4215,
+    "n_val": 822,
+    "n_test": 1261,
+    "n_train_ligands": 49,
+    "n_val_ligands": 13,
+    "n_test_ligands": 14,
+    "n_prospective": 364,
+    "metal_orientation": "increasing atomic number; direct logD_x - logD_y target",
+    "feature_schema": "feature_names.json"
+  },
+  "fold2": {
+    "fold": "fold2",
+    "feature_dimension": 2305,
+    "preprocessing": "train-only StandardScaler; no imputation; no PCA",
+    "n_train": 4024,
+    "n_val": 1015,
+    "n_test": 1259,
+    "n_train_ligands": 49,
+    "n_val_ligands": 13,
+    "n_test_ligands": 14,
+    "n_prospective": 364,
+    "metal_orientation": "increasing atomic number; direct logD_x - logD_y target",
+    "feature_schema": "feature_names.json"
+  },
+  "fold3": {
+    "fold": "fold3",
+    "feature_dimension": 2305,
+    "preprocessing": "train-only StandardScaler; no imputation; no PCA",
+    "n_train": 3835,
+    "n_val": 1203,
+    "n_test": 1260,
+    "n_train_ligands": 47,
+    "n_val_ligands": 12,
+    "n_test_ligands": 17,
+    "n_prospective": 364,
+    "metal_orientation": "increasing atomic number; direct logD_x - logD_y target",
+    "feature_schema": "feature_names.json"
+  },
+  "fold4": {
+    "fold": "fold4",
+    "feature_dimension": 2305,
+    "preprocessing": "train-only StandardScaler; no imputation; no PCA",
+    "n_train": 3198,
+    "n_val": 1842,
+    "n_test": 1258,
+    "n_train_ligands": 48,
+    "n_val_ligands": 12,
+    "n_test_ligands": 16,
+    "n_prospective": 364,
+    "metal_orientation": "increasing atomic number; direct logD_x - logD_y target",
+    "feature_schema": "feature_names.json"
+  }
+}

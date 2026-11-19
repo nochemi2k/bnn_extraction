@@ -1,0 +1,19 @@
+{
+  "model": "fixed five-member heteroscedastic MLP ensemble with MC dropout",
+  "members_per_fold": 5,
+  "folds": [
+    "fold0",
+    "fold1",
+    "fold2",
+    "fold3",
+    "fold4"
+  ],
+  "mc_test_passes": 30,
+  "mc_validation_passes": 30,
+  "device": "cuda",
+  "weights_saved": true,
+  "weight_format": "weight_io v1; per-member CPU state_dict with feature schema and fold scaler",
+  "checkpoint_inference_atol": 1e-06,
+  "hyperparameter_tuning": false,
+  "canonical_outputs_modified": false
+}
